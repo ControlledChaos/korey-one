@@ -1,0 +1,151 @@
+///
+/// Color variables
+///
+/// Some variables use colors set by args in the functions file.
+///
+/// @see includes/classes/backend/class-block-editor.php
+///
+
+// General colors.
+$white: #ffffff !default;
+$off_white: #eeeeee !default;
+$black: #000000 !default;
+$near_black: #1e1e1e !default;
+$dark_gray: #333333 !default;
+$medium_gray: #555555 !default;
+$light_gray: #888888 !default;
+$pale_gray: #cccccc !default;
+$red: #dd0000 !default;
+$orange: #ee6600 !default;
+$yellow: #f8ce30 !default;
+$green: #4b9960 !default;
+$blue: #0000ff !default;
+$violet:  #551a8b !default;
+$error: $red !default;
+$notify: $orange !default;
+$warning: $yellow !default;
+$success: $green !default;
+
+// Theme general colors: light mode.
+$body_bg: $white !default;
+$text_color: $dark_gray !default;
+$link_color: #0044aa !default;
+$link_action_color: lighten( $color: $link_color, $amount: 12% ) !default;
+
+// Theme general colors: dark mode.
+$body_bg_dark: $near_black !default;
+$text_color_dark: darken( $color: $white, $amount: 6.5% ) !default;
+$link_color_dark: $text_color_dark !default;
+$link_action_color_dark: darken( $color: $link_color_dark, $amount: 12% ) !default;
+
+/// Box colors: light mode.
+$box_background_color: inherit !default;
+$box_border_color: $pale_gray !default;
+$box_text_color: inherit !default;
+
+/// Box colors: dark mode.
+$box_background_color_dark: lighten( $color: $body_bg_dark, $amount: 2.5% ) !default;
+$box_border_color_dark: lighten( $color: $body_bg_dark, $amount: 12% ) !default;
+$box_text_color_dark: inherit !default;
+
+// Form colors: light mode.
+$form_background_color: inherit !default;
+$form_border_color: $box_border_color !default;
+$form_text_color: $text_color !default;
+$form_action_background_color: $form_background_color !default;
+$form_action_border_color: $link_action_color !default;
+$form_action_text_color: $text_color !default;
+$form_focus: $link_action_color !default;
+$form_checked: $link_action_color !default;
+$form_placeholder_color: $light_gray !default;
+
+// Form colors: dark mode.
+$form_background_color_dark: lighten( $color: $body_bg_dark, $amount: 5% ) !default;
+$form_border_color_dark: lighten( $color: $body_bg_dark, $amount: 25% ) !default;
+$form_text_color_dark: $text_color_dark !default;
+$form_action_background_color_dark: $form_background_color_dark !default;
+$form_action_border_color_dark: $link_action_color_dark !default;
+$form_action_text_color_dark: $text_color_dark !default;
+$form_focus_dark: $link_action_color_dark !default;
+$form_checked_dark: $link_action_color_dark !default;
+$form_placeholder_color_dark: lighten( $color: $form_background_color_dark, $amount: 40% ) !default;
+
+// Button colors: light mode.
+$button_background_color: $white !default;
+$button_border_color: $box_border_color !default;
+$button_text_color: $text_color !default;
+$button_action_background_color: $pale_gray !default;
+$button_action_border_color: $medium_gray !default;
+$button_action_text_color: $text_color !default;
+$button_disabled_background_color: $off_white !default;
+$button_disabled_border_color: $pale_gray !default;
+$button_disabled_text_color: $light_gray !default;
+
+// Button colors: dark mode.
+$button_background_color_dark: $form_background_color_dark !default;
+$button_border_color_dark: $form_border_color_dark !default;
+$button_text_color_dark: $text_color_dark !default;
+$button_action_background_color_dark: $link_action_color_dark !default;
+$button_action_border_color_dark: $button_border_color_dark !default;
+$button_action_text_color_dark: $text_color !default;
+$button_disabled_background_color_dark: lighten( $color: $body_bg_dark, $amount: 5% ) !default !default;
+$button_disabled_border_color_dark: $button_border_color_dark !default;
+$button_disabled_text_color_dark: lighten( $color: $body_bg_dark, $amount: 25% ) !default;
+
+// Header colors: light mode.
+$header_bg_color: $body_bg !default;
+$header_text_color: $text_color !default;
+$header_link_color: $link_color !default;
+$header_link_action_color: $link_action_color !default;
+
+// Header colors: dark mode.
+$header_bg_color_dark: $body_bg_dark !default;
+$header_text_color_dark: $white !default;
+$header_link_color_dark: $white !default;
+$header_link_action_color_dark: $link_action_color_dark !default;
+
+// Navigation colors: light mode.
+$nav_bg_color: $header_bg_color !default;
+$nav_text_color: $header_text_color !default;
+$nav_link_bg_color: none !default;
+$nav_link_action_bg_color: none !default;
+$nav_link_color: $header_link_color !default;
+$nav_link_action_color: $header_link_action_color !default;
+$subnav_bg_color: darken( $color: $nav_bg_color, $amount: 5% ) !default;
+$subnav_border_color: darken( $color: $box_border_color, $amount: 5% ) !default;
+$subnav_link_bg_color: none !default;
+$subnav_link_action_bg_color: lighten( $color: $nav_bg_color, $amount: 5% ) !default;
+$subnav_text_color: $nav_text_color !default;
+$subnav_link_color: $nav_link_color !default;
+$subnav_link_action_color: $nav_link_action_color !default;
+
+// Navigation colors: dark mode.
+$nav_bg_color_dark: $header_bg_color_dark !default;
+$nav_text_color_dark: $header_text_color_dark !default;
+$nav_link_bg_color_dark: none !default;
+$nav_link_action_bg_color_dark: none !default;
+$nav_link_color_dark: $header_link_color_dark !default;
+$nav_link_action_color_dark: $header_link_action_color_dark !default;
+$subnav_bg_color_dark: lighten( $color: $nav_bg_color_dark, $amount: 12% ) !default;
+$subnav_border_color_dark: darken( $color: $box_border_color_dark, $amount: 5% ) !default;
+$subnav_link_bg_color_dark: none !default;
+$subnav_link_action_bg_color_dark: lighten( $color: $nav_bg_color_dark, $amount: 25% ) !default;
+$subnav_text_color_dark: $nav_text_color_dark !default;
+$subnav_link_color_dark: $nav_link_color_dark !default;
+$subnav_link_action_color_dark: $nav_link_color_dark !default;
+
+@function button_svg_color() {
+	@return '%23' + str-slice( '#{$dark_gray}', 2, -1 );
+}
+
+@function button_svg_action_color() {
+	@return '%23' + str-slice( '#{$dark_gray}', 2, -1 );
+}
+
+@function button_svg_color_dark() {
+	@return '%23' + str-slice( '#{$off_white}', 2, -1 );
+}
+
+@function button_svg_action_color_dark() {
+	@return '%23' + str-slice( '#{$off_white}', 2, -1 );
+}

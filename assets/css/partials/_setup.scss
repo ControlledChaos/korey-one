@@ -1,0 +1,123 @@
+///
+/// Set up basic theme styles
+///
+/// These styles are general & miscellaneous both.
+/// Mostly it gets the ball rolling.
+///
+
+// Standard functions.
+@function svg_icon_color() {
+	@return '%23' + str-slice( '#{$dark_gray}', 2, -1 );
+}
+@function svg_icon_action_color() {
+	@return '%23' + str-slice( '#{$dark_gray}', 2, -1 );
+}
+
+// Dark mode functions.
+@function svg_icon_color_dark() {
+	@return '%23' + str-slice( '#{$white}', 2, -1 );
+}
+@function svg_icon_action_color_dark() {
+	@return '%23' + str-slice( '#{$white}', 2, -1 );
+}
+
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: var( --fct-font-stack, var( --fct-sans-stack ) );
+	font-size: var( --fct-font-size, 1rem );
+	line-height: var( --fct-line-height, 1.5 );
+	background: var( --fct-bg-color );
+	color: var( --fct-text-color );
+}
+
+.serif {
+	font-family: var( --fct-serif-stack );
+}
+
+.entry-content,
+.sidebar,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+	margin-top: 1em;
+}
+
+h1,
+h2 {
+	font-size: var( --fct-primary-heading-size, 1.625rem );
+	font-weight: var( --fct-primary-heading-weight, 700 );
+}
+
+h3 {
+	font-size: var( --fct-h3-heading-size, 1.3125rem );
+	font-weight: var( --fct-secondary-heading-weight, 700 );
+}
+
+h4 {
+	font-size: 1.25rem;
+	font-weight: var( --fct-h4-heading-weight, 700 );
+}
+
+a {
+	color: var( --fct-link-color );
+
+	&:hover,
+	&.hover,
+	&:focus,
+	&.focus {
+		color: var( --fct-link-action-color );
+	}
+}
+
+.dark-mode {
+	--fct-bg-color: #{$near_black};
+	--fct-text-color: #{$white};
+	--fct-link-color: #{$white};
+	--fct-link-action-color: #{$off_white};
+	--fct-box-border-color: #{$medium_gray};
+}
+
+@media ( prefers-color-scheme: dark ) {
+	:root {
+		--fct-bg-color: #{$near_black};
+		--fct-text-color: #{$white};
+		--fct-link-color: #{$white};
+		--fct-link-action-color: #{$off_white};
+		--fct-box-border-color: #{$medium_gray};
+	}
+}
+
+#wpadminbar,
+#wpadminbar .ab-top-menu > li.hover > .ab-item,
+#wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:focus,
+#wpadminbar:not(.mobile) .ab-top-menu > li:hover > .ab-item,
+#wpadminbar:not(.mobile) .ab-top-menu > li > .ab-item:focus,
+#wpadminbar .menupop .ab-sub-wrapper,
+#wpadminbar .shortlink-input {
+	background: var( --fct-adminbar-bg-color, var( --fct-frontend-adminbar-bg-color, #{$dark_gray} ) );
+}
+
+// Text meant only for screen readers.
+.screen-reader-text {
+	border: 0;
+	clip: rect( 1px, 1px, 1px, 1px );
+	-webkit-clip-path: inset(50%);
+	        clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}

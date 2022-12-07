@@ -1,0 +1,19 @@
+///
+/// Site layout RTL styles
+///
+
+.site-content {
+	.content-area {
+		margin-right: unset;
+		margin-left: var( --fct-content-separator );
+	}
+}
+
+@media screen and ( max-width: $break_primary_tablet ) {
+
+	.site-content {
+		.content-area {
+			margin-left: unset;
+		}
+	}
+}

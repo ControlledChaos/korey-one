@@ -1,0 +1,44 @@
+///
+/// Embedded posts
+///
+
+@import 'modules/_reset';
+@import 'modules/_colors';
+@import 'modules/_root';
+
+.wp-embed {
+	padding: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+	font-size: 1rem;
+	font-weight: normal;
+	line-height: 1.5;
+	background: var( --fct-bg-color );
+	color: $text_color;
+	border: 1px solid $box_border_color;
+	box-shadow: none;
+	overflow: auto;
+
+	.wp-embed-content {
+		padding: 0 1.5rem 1.5rem;
+	}
+
+	a,
+	.wp-embed-heading a {
+		color: $link_color;
+
+		&:visited {
+			color: $link_color;
+		}
+
+		&:hover,
+		&:focus {
+			color: $link_action_color;
+		}
+	}
+
+	.wp-embed-share-dialog-open {
+		.dashicons {
+			top: 4px;
+		}
+	}
+}

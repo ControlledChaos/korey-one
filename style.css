@@ -1,0 +1,25 @@
+/*
+Theme Name: Front Core
+Theme URI: https://github.com/ControlledChaos/frontcore
+Author: Controlled Chaos Design
+Author URI: https://github.com/ControlledChaos
+Description: Develop site-specific themes for ClassicPress, WordPress, and the antibrand system.
+Requires at least: WordPress 4.9.6
+Tested up to: 5.8
+Requires PHP: 5.4
+Version: 1.0.0
+Text Domain: frontcore
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+ */
+
+/**
+ * This theme enqueues a minified stylesheet compiled from SASS (.scss) files.
+ *
+ * This stylesheet only contains the above theme header that is necessary for theme activation.
+ *
+ * DO NOT delete this stylesheet!
+ */
+
+/**
+ * See `functions.php` for renaming instructions and author's notes.
+ */
