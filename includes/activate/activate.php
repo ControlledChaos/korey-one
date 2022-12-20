@@ -65,7 +65,7 @@ function activate() {
 		if ( 'themes.php' == $pagenow && is_admin() && isset( $_GET['activated'] ) ) {
 
 			// URL returns to Dashboard on closing the Customizer.
-			wp_redirect( admin_url( 'customize.php' ) . '?return=' . admin_url() );
+			// wp_redirect( admin_url( 'customize.php' ) . '?return=' . admin_url() );
 		}
 	}
 }
