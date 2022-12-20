@@ -4,22 +4,22 @@
  *
  * Used if the Advanced Custom Fields plugin is active.
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Content
  * @since      1.0.0
  */
 
-namespace FrontCore;
+namespace KoreyOne;
 
 // Alias namespaces.
-use FrontCore\Classes\Tags as Tags;
+use KoreyOne\Classes\Tags as Tags;
 
 ?>
 <div class="no-results not-found">
 
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'frontcore' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'korey-one' ); ?></h1>
 	</header>
 
 	<div class="page-content" itemprop="articleBody">
@@ -27,7 +27,7 @@ use FrontCore\Classes\Tags as Tags;
 
 			printf(
 				'<p>' . wp_kses(
-					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'frontcore' ),
+					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'korey-one' ),
 					[
 						'a' => [
 							'href' => [],
@@ -39,13 +39,13 @@ use FrontCore\Classes\Tags as Tags;
 
 		elseif ( is_search() ) : ?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'frontcore' ); ?></p>
+			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'korey-one' ); ?></p>
 			<?php
 			get_search_form();
 
 		else : ?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'frontcore' ); ?></p>
+			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'korey-one' ); ?></p>
 			<?php
 			get_search_form();
 

@@ -2,15 +2,15 @@
 /**
  * Site front page template
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Front Page
  * @since      1.0.0
  */
 
-namespace FrontCore;
+namespace KoreyOne;
 
-use function FrontCore\Tags\content_template;
+use function KoreyOne\Tags\content_template;
 
 get_header();
 
@@ -34,15 +34,15 @@ get_header();
 		 */
 		if ( is_home() ) {
 			the_posts_navigation( [
-				'prev_text' => __( 'Previous', 'frontcore' ),
-				'next_text' => __( 'Next', 'frontcore' )
+				'prev_text' => __( 'Previous', 'korey-one' ),
+				'next_text' => __( 'Next', 'korey-one' )
 			] );
 		}
 		?>
 		</main>
 	</div>
 	<?php
-	if ( ! is_page_template( FCT_TMPL_DIR . '/front-page-content-only.php' ) ) {
+	if ( ! is_page_template( KWO_TMPL_DIR . '/front-page-content-only.php' ) ) {
 		get_sidebar();
 	}
 	?>

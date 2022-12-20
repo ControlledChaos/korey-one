@@ -4,15 +4,15 @@
  *
  * Used if the requested permalink is not found (404 error).
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Errors
  * @since      1.0.0
  */
 
-namespace FrontCore;
+namespace KoreyOne;
 
-use function FrontCore\Tags\content_template;
+use function KoreyOne\Tags\content_template;
 
 get_header();
 

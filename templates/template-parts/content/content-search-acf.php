@@ -4,16 +4,16 @@
  *
  * Used if the Advanced Custom Fields plugin is active.
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Content
  * @since      1.0.0
  */
 
-namespace FrontCore;
+namespace KoreyOne;
 
 // Alias namespaces.
-use FrontCore\Tags as Tags;
+use KoreyOne\Tags as Tags;
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">

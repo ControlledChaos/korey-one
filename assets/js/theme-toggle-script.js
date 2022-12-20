@@ -10,22 +10,22 @@
 	$(window).load( function() {
 
 		var button = $( '.theme-toggle' );
-		var cookie_class = $.cookie( 'fct_theme_mode_class' );
-		var cookie_text  = $.cookie( 'fct_theme_mode_text' );
-		var cookie_hover = $.cookie( 'fct_theme_mode_hover' );
+		var cookie_class = $.cookie( 'kwo_theme_mode_class' );
+		var cookie_text  = $.cookie( 'kwo_theme_mode_text' );
+		var cookie_hover = $.cookie( 'kwo_theme_mode_hover' );
 
 		if ( ! cookie_class ) {
-			$.cookie( 'fct_theme_mode_class', 'light-mode', { path : '/', expires : 7, secure : true } );
+			$.cookie( 'kwo_theme_mode_class', 'light-mode', { path : '/', expires : 7, secure : true } );
 			$( 'html, body' ).removeClass( 'dark-mode' ).addClass( 'light-mode' );
 		}
 
 		if ( ! cookie_text ) {
-			$.cookie( 'fct_theme_mode_text', 'Go Dark', { path : '/', expires : 7, secure : true } );
+			$.cookie( 'kwo_theme_mode_text', 'Go Dark', { path : '/', expires : 7, secure : true } );
 			$( button ).text( 'Go Dark' );
 		}
 
 		if ( ! cookie_hover ) {
-			$.cookie( 'fct_theme_mode_hover', 'Switch to dark theme', { path : '/', expires : 7, secure : true } );
+			$.cookie( 'kwo_theme_mode_hover', 'Switch to dark theme', { path : '/', expires : 7, secure : true } );
 			$( button ).attr( 'title', 'Switch to dark theme' );
 		}
 
@@ -42,9 +42,9 @@
 
 			if ( $( 'html, body' ).hasClass( 'light-mode' ) ) {
 
-				$.cookie( 'fct_theme_mode_class', 'dark-mode', { path : '/', expires : 7, secure : true } );
-				$.cookie( 'fct_theme_mode_text', 'Go Light', { path : '/', expires : 7, secure : true } );
-				$.cookie( 'fct_theme_mode_hover', 'Switch to light theme', { path : '/', expires : 7, secure : true } );
+				$.cookie( 'kwo_theme_mode_class', 'dark-mode', { path : '/', expires : 7, secure : true } );
+				$.cookie( 'kwo_theme_mode_text', 'Go Light', { path : '/', expires : 7, secure : true } );
+				$.cookie( 'kwo_theme_mode_hover', 'Switch to light theme', { path : '/', expires : 7, secure : true } );
 
 				$( 'html, body' ).removeClass( 'light-mode' ).addClass( 'dark-mode' );
 				$( button ).text( 'Go Light' );
@@ -52,9 +52,9 @@
 
 			} else {
 
-				$.cookie( 'fct_theme_mode_class', 'light-mode', { path : '/', expires : 7, secure : true } );
-				$.cookie( 'fct_theme_mode_text', 'Go Dark', { path : '/', expires : 7, secure : true } );
-				$.cookie( 'fct_theme_mode_hover', 'Switch to dark theme', { path : '/', expires : 7, secure : true } );
+				$.cookie( 'kwo_theme_mode_class', 'light-mode', { path : '/', expires : 7, secure : true } );
+				$.cookie( 'kwo_theme_mode_text', 'Go Dark', { path : '/', expires : 7, secure : true } );
+				$.cookie( 'kwo_theme_mode_hover', 'Switch to dark theme', { path : '/', expires : 7, secure : true } );
 
 				$( 'html, body' ).removeClass( 'dark-mode' ).addClass( 'light-mode' );
 				$( button ).text( 'Go Dark' );

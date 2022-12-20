@@ -11,13 +11,13 @@
  * in a settings file is to prevent site administrators wrongly
  * or incorrectly configuring the site built by developers.
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Includes
  * @category   Configuration
  * @since      1.0.0
  */
 
-namespace FrontCore;
+namespace KoreyOne;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  * @var   string The required PHP version.
  */
-define( 'FCT_PHP_VERSION', '7.4' );
+define( 'KWO_PHP_VERSION', '7.4' );
 
 /**
  * Constant: Theme version
@@ -47,7 +47,7 @@ define( 'FCT_PHP_VERSION', '7.4' );
  * @var   string The latest theme version.
  */
 $theme_version = wp_get_theme()->get( 'Version' );
-define( 'FCT_VERSION', $theme_version );
+define( 'KWO_VERSION', $theme_version );
 
 /**
  * Constant: Theme file path
@@ -56,7 +56,7 @@ define( 'FCT_VERSION', $theme_version );
  * @var   string File path with trailing slash.
  */
 $theme_path = get_template_directory();
-define( 'FCT_PATH', $theme_path . '/' );
+define( 'KWO_PATH', $theme_path . '/' );
 
 /**
  * Constant: Templates directory
@@ -65,7 +65,7 @@ define( 'FCT_PATH', $theme_path . '/' );
  * @var   string File path without trailing slash.
  */
 $templates_dir = 'templates';
-define( 'FCT_TMPL_DIR', $templates_dir );
+define( 'KWO_TMPL_DIR', $templates_dir );
 
 /**
  * Constant: Template partials directory
@@ -73,8 +73,8 @@ define( 'FCT_TMPL_DIR', $templates_dir );
  * @since 1.0.0
  * @var   string File path without trailing slash.
  */
-$parts_dir = FCT_TMPL_DIR . '/template-parts';
-define( 'FCT_PARTS_DIR', $parts_dir );
+$parts_dir = KWO_TMPL_DIR . '/template-parts';
+define( 'KWO_PARTS_DIR', $parts_dir );
 
 /**
  * Constant: Theme file URL
@@ -83,7 +83,7 @@ define( 'FCT_PARTS_DIR', $parts_dir );
  * @var   string
  */
 $theme_url = get_template_directory_uri();
-define( 'FCT_URL', $theme_url );
+define( 'KWO_URL', $theme_url );
 
 /**
  * Constant: Companion plugin active
@@ -97,7 +97,7 @@ define( 'FCT_URL', $theme_url );
  *
  * @link https://github.com/ControlledChaos/sitecore
  *
- * @example ```if ( FCT_COMPANION ) {
+ * @example ```if ( KWO_COMPANION ) {
  *     // Execute code.
  * }```
  */
@@ -120,7 +120,7 @@ if ( \is_plugin_active( "$companion_dir/$companion_file" ) ) {
 }
 
 // Define the companion plugin constant.
-define( 'FCT_COMPANION', $companion );
+define( 'KWO_COMPANION', $companion );
 
 /**
  * Check for block editor
@@ -132,7 +132,7 @@ define( 'FCT_COMPANION', $companion );
  *                 if WordPress is less than 5.0.
  *                 Default is true.
  */
-function fct_has_blocks() {
+function kwo_has_blocks() {
 
 	// Get WordPress version.
 	global $wp_version;

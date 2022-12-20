@@ -6,13 +6,13 @@
  * on the theme's server, notably disable functionality
  * if the minimum version is not met.
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Includes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace FrontCore\PHP;
+namespace KoreyOne\PHP;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return self
  */
 function minimum() {
-	return FCT_PHP_VERSION;
+	return KWO_PHP_VERSION;
 }
 
 /**
@@ -69,8 +69,8 @@ function frontend_message() {
 	 * @var   string File path without trailing slash.
 	 */
 	$templates_dir = 'templates';
-	if ( ! defined( 'FCT_TMPL_DIR' ) ) {
-		define( 'FCT_TMPL_DIR', $templates_dir );
+	if ( ! defined( 'KWO_TMPL_DIR' ) ) {
+		define( 'KWO_TMPL_DIR', $templates_dir );
 	}
 
 	/**
@@ -79,15 +79,15 @@ function frontend_message() {
 	 * @since 1.0.0
 	 * @var   string File path without trailing slash.
 	 */
-	$parts_dir = FCT_TMPL_DIR . '/template-parts';
-	if ( ! defined( 'FCT_PARTS_DIR' ) ) {
-		define( 'FCT_PARTS_DIR', $parts_dir );
+	$parts_dir = KWO_TMPL_DIR . '/template-parts';
+	if ( ! defined( 'KWO_PARTS_DIR' ) ) {
+		define( 'KWO_PARTS_DIR', $parts_dir );
 	}
 
 	// Look first for a message template file.
-	$template = get_theme_file_path( FCT_PARTS_DIR . '/partials/frontend-php-message.php' );
+	$template = get_theme_file_path( KWO_PARTS_DIR . '/partials/frontend-php-message.php' );
 	if ( file_exists( $template ) ) {
-		$html = get_template_part( FCT_PARTS_DIR . '/partials/frontend-php-message' );
+		$html = get_template_part( KWO_PARTS_DIR . '/partials/frontend-php-message' );
 	}
 
 	// Message if the user is logged in and can switch themes.
@@ -95,14 +95,14 @@ function frontend_message() {
 
 		$html = sprintf(
 			'<h1>%s</h1>',
-			__( 'Theme Disabled', 'frontcore' )
+			__( 'Theme Disabled', 'korey-one' )
 		);
 
 		$html .= sprintf(
-			__( '<p>The active theme has been disabled because the minimum PHP version of <strong>%s</strong> has not been met. Go to the <a href="%s">%s</a> to activate another theme.</p>', 'frontcore' ),
+			__( '<p>The active theme has been disabled because the minimum PHP version of <strong>%s</strong> has not been met. Go to the <a href="%s">%s</a> to activate another theme.</p>', 'korey-one' ),
 			minimum(),
 			esc_attr( esc_url( self_admin_url( 'themes.php' ) ) ),
-			__( 'themes page', 'frontcore' )
+			__( 'themes page', 'korey-one' )
 		);
 
 	// Message for users who do not meet the conditions above.
@@ -110,11 +110,11 @@ function frontend_message() {
 
 		$html = sprintf(
 			'<h1>%s</h1>',
-			__( 'Down for Maintenance', 'frontcore' )
+			__( 'Down for Maintenance', 'korey-one' )
 		);
 
 		$html .= sprintf(
-			__( '<p>The %s website is down for maintenance. Please check back soon!.</p>', 'frontcore' ),
+			__( '<p>The %s website is down for maintenance. Please check back soon!.</p>', 'korey-one' ),
 			get_bloginfo( 'name' )
 		);
 	}

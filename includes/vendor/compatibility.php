@@ -2,13 +2,13 @@
 /**
  * Third-party code compatibility
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Vendor
  * @category   Functions
  * @since      1.0.0
  */
 
-namespace FrontCore\Compatibility;
+namespace KoreyOne\Compatibility;
 
 /**
  * Get pluggable path

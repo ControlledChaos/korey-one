@@ -4,20 +4,20 @@
  *
  * Used if the Advanced Custom Fields plugin is active.
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Content
  * @since      1.0.0
  */
 
-namespace FrontCore;
+namespace KoreyOne;
 
 // Alias namespaces.
-use FrontCore\Tags      as Tags,
-	FrontCore\Customize as Customize;
+use KoreyOne\Tags      as Tags,
+	KoreyOne\Customize as Customize;
 
 // Get the content display setting from the Customizer.
-$display = Customize\blog_format( get_theme_mod( 'fct_blog_format' ) );
+$display = Customize\blog_format( get_theme_mod( 'kwo_blog_format' ) );
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
@@ -57,7 +57,7 @@ $display = Customize\blog_format( get_theme_mod( 'fct_blog_format' ) );
 		} else {
 			the_content( sprintf(
 				wp_kses(
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'frontcore' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'korey-one' ),
 					[
 						'span' => [
 							'class' => [],
@@ -69,12 +69,12 @@ $display = Customize\blog_format( get_theme_mod( 'fct_blog_format' ) );
 		}
 
 		wp_link_pages( [
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'frontcore' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'korey-one' ),
 			'after'  => '</div>',
 		] );
 
 		if ( post_type_supports( get_post_type( get_the_ID() ), 'author' ) && is_single() ) {
-			get_template_part( FCT_PARTS_DIR . '/content/author-section' );
+			get_template_part( KWO_PARTS_DIR . '/content/author-section' );
 		}
 		?>
 	</div>

@@ -2,7 +2,7 @@
 /**
  * Advanced Custom Fields (ACF) compatibility
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Classes
  * @category   Vendor
  * @since      1.0.0
@@ -25,7 +25,7 @@
  * @link https://github.com/ControlledChaos/sitecore
  */
 
-namespace FrontCore\Classes\Vendor;
+namespace KoreyOne\Classes\Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -123,7 +123,7 @@ class Theme_ACF extends Plugin {
 		}
 
 		// Filter assets URL.
-		if ( ! $this->is_active() && ! FCT_COMPANION ) {
+		if ( ! $this->is_active() && ! KWO_COMPANION ) {
 			add_filter( 'acf/settings/url', [ $this, 'acf_settings_url' ] );
 		}
 
@@ -142,9 +142,9 @@ class Theme_ACF extends Plugin {
 	public function use_bundled() {
 
 		// Override constant.
-		if ( defined( 'FCT_USE_BUNDLED_ACF' ) && false == FCT_USE_BUNDLED_ACF ) {
+		if ( defined( 'KWO_USE_BUNDLED_ACF' ) && false == KWO_USE_BUNDLED_ACF ) {
 			return false;
-		} elseif ( FCT_COMPANION ) {
+		} elseif ( KWO_COMPANION ) {
 			return false;
 		}
 		return true;
@@ -159,7 +159,7 @@ class Theme_ACF extends Plugin {
 	 * @return string Returns the URL for ACF files.
 	 */
 	public function acf_settings_url( $url = '' ) {
-		$url = FCT_URL . '/includes/vendor/' . $this->bundled_dir . '/';
+		$url = KWO_URL . '/includes/vendor/' . $this->bundled_dir . '/';
 		return $url;
 	}
 
@@ -180,7 +180,7 @@ class Theme_ACF extends Plugin {
 		if ( is_multisite() && ! is_main_site() && ! is_super_admin( get_current_user_id() ) ) {
 			$show_admin = false;
 		}
-		return apply_filters( 'fct_acf_settings_show_admin', $show_admin );
+		return apply_filters( 'kwo_acf_settings_show_admin', $show_admin );
 	}
 
 	/**
@@ -192,7 +192,7 @@ class Theme_ACF extends Plugin {
 	 * @return string Returns the directory path.
 	 */
 	public function save_acf_json( $path = '' ) {
-		$path = FCT_PATH . 'includes/settings/acf-json';
+		$path = KWO_PATH . 'includes/settings/acf-json';
 		return $path;
 	}
 
@@ -206,7 +206,7 @@ class Theme_ACF extends Plugin {
 	 */
 	public function load_acf_json( $paths = [] ) {
 		unset( $paths[0] );
-		$paths[] = FCT_PATH . 'includes/settings/acf-json';
+		$paths[] = KWO_PATH . 'includes/settings/acf-json';
 		return $paths;
 	}
 

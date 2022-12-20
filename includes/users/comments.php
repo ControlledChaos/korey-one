@@ -2,16 +2,16 @@
 /**
  * Comments and discussion
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Includes
  * @category   Frontend
  * @since      1.0.0
  */
 
-namespace FrontCore\Comments;
+namespace KoreyOne\Comments;
 
 // Alias namespaces.
-use FrontCore\Classes\Vendor as Vendor;
+use KoreyOne\Classes\Vendor as Vendor;
 
 function setup() {
 
@@ -51,7 +51,7 @@ function comment_template( $comment_template ) {
 	);
 
 	// Look for a specific template as applied above.
-	$locate = locate_template( FCT_PARTS_DIR . '/users/' . $template . '.php' );
+	$locate = locate_template( KWO_PARTS_DIR . '/users/' . $template . '.php' );
 
 	// Use the specific template if found.
 	if ( locate_template( $template ) ) {

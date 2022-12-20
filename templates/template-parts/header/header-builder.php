@@ -2,16 +2,16 @@
 /**
  * Page builder header content template
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Headers
  * @since      1.0.0
  */
 
-namespace FrontCore;
+namespace KoreyOne;
 
 // Alias namespaces.
-use FrontCore\Tags as Tags;
+use KoreyOne\Tags as Tags;
 
 ?>
 <header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">

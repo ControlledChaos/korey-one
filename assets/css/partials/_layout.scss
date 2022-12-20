@@ -8,16 +8,16 @@
 
 .site-content {
 	display: flex;
-	max-width: var( --fct-content-width );
+	max-width: var( --kwo-content-width );
 	margin: 0 auto;
 	padding: 2em;
 
 	.content-area {
 		width: 100%;
-		margin-right: var( --fct-content-separator );
+		margin-right: var( --kwo-content-separator );
 
 		// Account for sidebar minimum and right margin.
-		max-width: calc( 100% - var( --fct-secondary-min-width ) - var( --fct-content-separator ) );
+		max-width: calc( 100% - var( --kwo-secondary-min-width ) - var( --kwo-content-separator ) );
 		overflow-x: hidden;
 	}
 }
@@ -42,8 +42,8 @@ main article {
 }
 
 #secondary {
-	min-width: var( --fct-secondary-min-width );
-	max-width: var( --fct-secondary-max-width );
+	min-width: var( --kwo-secondary-min-width );
+	max-width: var( --kwo-secondary-max-width );
 }
 
 @media screen and ( max-width: $break_primary_tablet ) {

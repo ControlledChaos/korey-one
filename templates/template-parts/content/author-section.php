@@ -2,24 +2,24 @@
 /**
  * Author info section
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Content
  * @since      1.0.0
  */
 
-namespace FrontCore;
+namespace KoreyOne;
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front,
-	FrontCore\Customize     as Customize;
+use KoreyOne\Classes\Front as Front,
+	KoreyOne\Customize     as Customize;
 
 // Get the author section display setting from the Customizer.
-$display = Customize\author_section( get_theme_mod( 'fct_author_section' ) );
+$display = Customize\author_section( get_theme_mod( 'kwo_author_section' ) );
 
 if ( (boolean) get_the_author_meta( 'description' ) && 'never' != $display ) :
 
-$options = get_post_meta( get_the_ID(), 'fct_post_options', true );
+$options = get_post_meta( get_the_ID(), 'kwo_post_options', true );
 
 $enable  = $options ? in_array( 'enable_author', $options, true ) : false;
 $disable = $options ? in_array( 'disable_author', $options, true ) : false;
@@ -42,7 +42,7 @@ if (
 		<h2 class="author-title">
 			<?php
 			printf(
-				__( 'By %s', 'frontcore' ),
+				__( 'By %s', 'korey-one' ),
 				esc_html( get_the_author() )
 			);
 			?>
@@ -55,7 +55,7 @@ if (
 
 		<?php if ( is_single() ) : ?>
 		<a class="author-link button" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-			<?php _e( 'View Archive', 'frontcore' ); ?>
+			<?php _e( 'View Archive', 'korey-one' ); ?>
 		</a>
 		<?php endif; ?>
 	</div>

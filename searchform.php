@@ -2,13 +2,13 @@
 /**
  * Default search form template
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Forms
  * @since      1.0.0
  */
 
-namespace FrontCore;
+namespace KoreyOne;
 
 // Avoid error on widgets admin screen.
 if ( is_admin() ) {
@@ -16,7 +16,7 @@ if ( is_admin() ) {
 }
 
 // Alias namespaces.
-use FrontCore\Tags as Tags;
+use KoreyOne\Tags as Tags;
 
 ?>
 <?php Tags\before_searchform(); ?>

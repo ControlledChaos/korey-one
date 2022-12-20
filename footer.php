@@ -2,16 +2,16 @@
 /**
  * Page footer template
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Footers
  * @since      1.0.0
  */
 
-namespace FrontCore;
+namespace KoreyOne;
 
 // Alias namespaces.
-use FrontCore\Tags as Tags;
+use KoreyOne\Tags as Tags;
 
 ?>
 	<?php Tags\before_footer(); ?>

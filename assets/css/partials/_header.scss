@@ -10,19 +10,19 @@
 	margin: 0;
 
 	/* Match <p> tag to <h1> tag on front page */
-	font-size: var( --fct-site-title-size, var( --fct-primary-heading-size, 2rem ) );
-	font-weight: var( --fct-site-title-weight, var( --fct-primary-heading-weight, 700 ) );
-	color: var( --fct-site-title-color, inherit );
+	font-size: var( --kwo-site-title-size, var( --kwo-primary-heading-size, 2rem ) );
+	font-weight: var( --kwo-site-title-weight, var( --kwo-primary-heading-weight, 700 ) );
+	color: var( --kwo-site-title-color, inherit );
 
 	& a {
-		color: var( --fct-site-title-link-color, var( --fct-site-title-color, inherit ) );
+		color: var( --kwo-site-title-link-color, var( --kwo-site-title-color, inherit ) );
 		text-decoration: inherit;
 	}
 }
 
 .site-description {
 	margin: 0;
-	font-size: var( --fct-site-description-size, inherit );
+	font-size: var( --kwo-site-description-size, inherit );
 }
 
 .site-header-image {
@@ -31,13 +31,13 @@
 
 .site-branding-wrap {
 	width: 100%;
-	max-width: var( --fct-content-width );
+	max-width: var( --kwo-content-width );
 	margin: 0 auto;
 
 	.site-branding {
 		display: flex;
 		width: 100%;
-		max-width: var( --fct-content-width );
+		max-width: var( --kwo-content-width );
 		margin: 0 auto;
 		padding: 1em 0 0;
 

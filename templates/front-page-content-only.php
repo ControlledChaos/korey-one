@@ -15,15 +15,15 @@
  * Template Name: Front Page Content Only
  * Template Post Type: page
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Posts
  * @since      1.0.0
  */
 
-namespace FrontCore;
+namespace KoreyOne;
 
-use function FrontCore\Tags\content_template;
+use function KoreyOne\Tags\content_template;
 
 get_header();
 

@@ -5,16 +5,16 @@
  * Extend this class to load a plugin and
  * add related filters & actions.
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Classes
  * @category   Vendor
  * @since      1.0.0
  */
 
-namespace FrontCore\Classes\Vendor;
+namespace KoreyOne\Classes\Vendor;
 
 // Alias namespaces.
-use Front_Core as Front_Core;
+use Korey_One as Korey_One;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Plugin {
 
 	// Define path to the vendor directory for bundled plugins.
-	CONST FCT_VENDOR_PATH = FCT_PATH . 'includes/vendor/';
+	CONST KWO_VENDOR_PATH = KWO_PATH . 'includes/vendor/';
 
 	/**
 	 * Installed plugin directory
@@ -149,7 +149,7 @@ class Plugin {
 		 * method will return true by default.
 		 * Define a unique constant in a child class.
 		 */
-		if ( defined( 'FCT_USE_THIS_PLUGIN' ) && false == FCT_USE_THIS_PLUGIN ) {
+		if ( defined( 'KWO_USE_THIS_PLUGIN' ) && false == KWO_USE_THIS_PLUGIN ) {
 			return false;
 		}
 		return true;
@@ -171,7 +171,7 @@ class Plugin {
 		$file = $this->bundled_file;
 
 		// Return the path to the core plugin file.
-		return self :: FCT_VENDOR_PATH . $dir . '/' . $file;
+		return self :: KWO_VENDOR_PATH . $dir . '/' . $file;
 	}
 
 	/**
@@ -203,7 +203,7 @@ class Plugin {
 		) {
 			$path = WP_PLUGIN_DIR . '/' . $dir . '/' . $file;
 		}
-		return apply_filters( 'fct_plugin_upgrade_path', $path );
+		return apply_filters( 'kwo_plugin_upgrade_path', $path );
 	}
 
 	/**
@@ -228,7 +228,7 @@ class Plugin {
 		) {
 			$basename = $dir . '/' . $file;
 		}
-		return apply_filters( 'fct_plugin_basic_basename', $basename );
+		return apply_filters( 'kwo_plugin_basic_basename', $basename );
 	}
 
 	/**
@@ -253,7 +253,7 @@ class Plugin {
 		) {
 			$basename = $dir . '/' . $file;
 		}
-		return apply_filters( 'fct_plugin_upgrade_basename', $basename );
+		return apply_filters( 'kwo_plugin_upgrade_basename', $basename );
 	}
 
 	/**
@@ -318,7 +318,7 @@ class Plugin {
 		if ( false == $this->allow_installed ) {
 			$allow = false;
 		}
-		return apply_filters( 'fct_plugin_allow_installed', $allow );
+		return apply_filters( 'kwo_plugin_allow_installed', $allow );
 	}
 
 	/**
@@ -337,7 +337,7 @@ class Plugin {
 		if ( false == $this->allow_upgrade ) {
 			$allow = false;
 		}
-		return apply_filters( 'fct_plugin_allow_upgrade', $allow );
+		return apply_filters( 'kwo_plugin_allow_upgrade', $allow );
 	}
 
 	/**
@@ -447,9 +447,9 @@ class Plugin {
 				<div class="update-message notice inline notice-error notice-alt">
 					<?php echo sprintf(
 						'<p>%s %s %s</p>',
-						__( 'This plugin is not allowed by the', 'frontcore' ),
-						FCT_NAME,
-						__( 'plugin to be activated.', 'frontcore' )
+						__( 'This plugin is not allowed by the', 'korey-one' ),
+						KWO_NAME,
+						__( 'plugin to be activated.', 'korey-one' )
 					); ?>
 				</div>
 			</td>

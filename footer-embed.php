@@ -2,7 +2,7 @@
 /**
  * Embedded content footer
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Footers
  * @since      1.0.0

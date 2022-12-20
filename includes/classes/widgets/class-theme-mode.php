@@ -2,16 +2,16 @@
 /**
  * Theme mode widget
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Classes
  * @category   Widgets
  * @since      1.0.0
  */
 
-namespace FrontCore\Classes\Widgets;
+namespace KoreyOne\Classes\Widgets;
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front;
+use KoreyOne\Classes\Front as Front;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -31,14 +31,14 @@ class Theme_Mode extends \WP_Widget {
 
 		$options = [
 			'classname'                   => 'theme-mode-widget',
-			'description'                 => __( 'Add a button to toggle light & dark modes.', 'frontcore' ),
+			'description'                 => __( 'Add a button to toggle light & dark modes.', 'korey-one' ),
 			'customize_selective_refresh' => true,
 		];
 
 		// Run the parent constructor.
 		parent :: __construct(
-			'fct_theme_mode',
-			$name = __( 'Theme Mode', 'frontcore' ),
+			'kwo_theme_mode',
+			$name = __( 'Theme Mode', 'korey-one' ),
 			$options
 		);
 
@@ -64,8 +64,8 @@ class Theme_Mode extends \WP_Widget {
 	public function theme_mode_script() {
 
 		?>
-		<script><?php echo file_get_contents( FCT_URL . '/assets/js/cookie.min.js' ); ?></script>
-		<script>(function(e){e(window).load(function(){var t=e(".theme-toggle"),o=e.cookie("fct_theme_mode_class"),h=e.cookie("fct_theme_mode_text"),m=e.cookie("fct_theme_mode_hover");o||(e.cookie("fct_theme_mode_class","light-mode",{path:"/",expires:7,secure:!0}),e("html, body").removeClass("dark-mode").addClass("light-mode")),h||(e.cookie("fct_theme_mode_text","<?php _e( 'Go Dark', 'frontcore' ); ?>",{path:"/",expires:7,secure:!0}),e(t).text("<?php _e( 'Go Dark', 'frontcore' ); ?>")),m||(e.cookie("fct_theme_mode_hover","<?php _e( 'Switch to dark theme', 'frontcore' ); ?>",{path:"/",expires:7,secure:!0}),e(t).attr("title","<?php _e( 'Switch to dark theme', 'frontcore' ); ?>")),o&&e("html, body").addClass(o),h&&e(t).text(h),e(t).click(function(){e("html, body").hasClass("light-mode")?(e.cookie("fct_theme_mode_class","dark-mode",{path:"/",expires:7,secure:!0}),e.cookie("fct_theme_mode_text","<?php _e( 'Go Light', 'frontcore' ); ?>",{path:"/",expires:7,secure:!0}),e.cookie("fct_theme_mode_hover","<?php _e( 'Switch to light theme', 'frontcore' ); ?>",{path:"/",expires:7,secure:!0}),e("html, body").removeClass("light-mode").addClass("dark-mode"),e(t).text("<?php _e( 'Go Light', 'frontcore' ); ?>"),e(t).attr("title","<?php _e( 'Switch to light theme', 'frontcore' ); ?>")):(e.cookie("fct_theme_mode_class","light-mode",{path:"/",expires:7,secure:!0}),e.cookie("fct_theme_mode_text","<?php _e( 'Go Dark', 'frontcore' ); ?>",{path:"/",expires:7,secure:!0}),e.cookie("fct_theme_mode_hover","<?php _e( 'Switch to dark theme', 'frontcore' ); ?>",{path:"/",expires:7,secure:!0}),e("html, body").removeClass("dark-mode").addClass("light-mode"),e(t).text("<?php _e( 'Go Dark', 'frontcore' ); ?>"),e(t).attr("title","<?php _e( 'Switch to dark theme', 'frontcore' ); ?>"))})})})(jQuery);</script>
+		<script><?php echo file_get_contents( KWO_URL . '/assets/js/cookie.min.js' ); ?></script>
+		<script>(function(e){e(window).load(function(){var t=e(".theme-toggle"),o=e.cookie("kwo_theme_mode_class"),h=e.cookie("kwo_theme_mode_text"),m=e.cookie("kwo_theme_mode_hover");o||(e.cookie("kwo_theme_mode_class","light-mode",{path:"/",expires:7,secure:!0}),e("html, body").removeClass("dark-mode").addClass("light-mode")),h||(e.cookie("kwo_theme_mode_text","<?php _e( 'Go Dark', 'korey-one' ); ?>",{path:"/",expires:7,secure:!0}),e(t).text("<?php _e( 'Go Dark', 'korey-one' ); ?>")),m||(e.cookie("kwo_theme_mode_hover","<?php _e( 'Switch to dark theme', 'korey-one' ); ?>",{path:"/",expires:7,secure:!0}),e(t).attr("title","<?php _e( 'Switch to dark theme', 'korey-one' ); ?>")),o&&e("html, body").addClass(o),h&&e(t).text(h),e(t).click(function(){e("html, body").hasClass("light-mode")?(e.cookie("kwo_theme_mode_class","dark-mode",{path:"/",expires:7,secure:!0}),e.cookie("kwo_theme_mode_text","<?php _e( 'Go Light', 'korey-one' ); ?>",{path:"/",expires:7,secure:!0}),e.cookie("kwo_theme_mode_hover","<?php _e( 'Switch to light theme', 'korey-one' ); ?>",{path:"/",expires:7,secure:!0}),e("html, body").removeClass("light-mode").addClass("dark-mode"),e(t).text("<?php _e( 'Go Light', 'korey-one' ); ?>"),e(t).attr("title","<?php _e( 'Switch to light theme', 'korey-one' ); ?>")):(e.cookie("kwo_theme_mode_class","light-mode",{path:"/",expires:7,secure:!0}),e.cookie("kwo_theme_mode_text","<?php _e( 'Go Dark', 'korey-one' ); ?>",{path:"/",expires:7,secure:!0}),e.cookie("kwo_theme_mode_hover","<?php _e( 'Switch to dark theme', 'korey-one' ); ?>",{path:"/",expires:7,secure:!0}),e("html, body").removeClass("dark-mode").addClass("light-mode"),e(t).text("<?php _e( 'Go Dark', 'korey-one' ); ?>"),e(t).attr("title","<?php _e( 'Switch to dark theme', 'korey-one' ); ?>"))})})})(jQuery);</script>
 		<?php
 	}
 
@@ -84,9 +84,9 @@ class Theme_Mode extends \WP_Widget {
 
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'frontcore' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'korey-one' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
-			<br /><span class="description"><?php _e( 'Title text will display above the toggle button (optional).', 'frontcore' ); ?></span>
+			<br /><span class="description"><?php _e( 'Title text will display above the toggle button (optional).', 'korey-one' ); ?></span>
 		</p>
 		<?php
 	}
@@ -127,13 +127,13 @@ class Theme_Mode extends \WP_Widget {
 		} else {
 			$title = '';
 		}
-		$title = apply_filters( 'fct_theme_mode_title', $title, $instance, $this->id_base );
+		$title = apply_filters( 'kwo_theme_mode_title', $title, $instance, $this->id_base );
 
 		// Toggle button markup.
-		$button = apply_filters( 'fct_theme_mode_widget_button', sprintf(
+		$button = apply_filters( 'kwo_theme_mode_widget_button', sprintf(
 			'<button class="theme-toggle" type="button" name="dark_light" title="%1s">%2s</button>',
-			__( 'Switch to dark theme', 'frontcore' ),
-			__( 'Go Dark', 'frontcore' )
+			__( 'Switch to dark theme', 'korey-one' ),
+			__( 'Go Dark', 'korey-one' )
 		) );
 
 		echo $args['before_widget'];

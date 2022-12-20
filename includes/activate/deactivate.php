@@ -2,13 +2,13 @@
 /**
  * Theme deactivation
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Includes
  * @category   Activation
  * @since      1.0.0
  */
 
-namespace FrontCore\Deactivate;
+namespace KoreyOne\Deactivate;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

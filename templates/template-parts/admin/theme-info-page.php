@@ -2,13 +2,13 @@
 /**
  * Theme info page template
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace FrontCore\Admin;
+namespace KoreyOne\Admin;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -31,7 +31,7 @@ $get_theme_tags   = $get_theme->get( 'Tags' );
 $screenshot_src   = $get_theme->get_screenshot();
 
 // Text if data is not provided by the theme.
-$not_provided = __( 'Not provided in the stylesheet header', 'frontcore' );
+$not_provided = __( 'Not provided in the stylesheet header', 'korey-one' );
 
 // Theme description.
 if ( $get_theme_desc ) {
@@ -85,26 +85,26 @@ if ( $get_theme_tags ) {
 ?>
 <div class="wrap theme-info-page">
 
-	<h1><?php _e( 'Active Theme Information', 'frontcore' ); ?></h1>
+	<h1><?php _e( 'Active Theme Information', 'korey-one' ); ?></h1>
 
 	<p class="description"><?php echo $get_theme_desc; ?></p>
 
 	<main>
 
-		<h2><?php _e( 'Theme Details', 'frontcore' ); ?></h2>
+		<h2><?php _e( 'Theme Details', 'korey-one' ); ?></h2>
 
 		<ul>
-			<li><strong><?php esc_html_e( 'Theme Name: ', 'frontcore' ); ?></strong><?php echo $get_theme_name; ?></li>
+			<li><strong><?php esc_html_e( 'Theme Name: ', 'korey-one' ); ?></strong><?php echo $get_theme_name; ?></li>
 			<?php if ( $get_template ) : ?>
-			<li><strong><?php _e( 'Template: ', 'frontcore' ); ?></strong><?php echo $parent_name; ?></li>
+			<li><strong><?php _e( 'Template: ', 'korey-one' ); ?></strong><?php echo $parent_name; ?></li>
 			<?php endif; ?>
-			<li><strong><?php esc_html_e( 'Description: ', 'frontcore' ); ?></strong><?php echo $description; ?></li>
-			<li><strong><?php esc_html_e( 'Theme URI: ', 'frontcore' ); ?></strong><?php echo $theme_uri; ?></li>
-			<li><strong><?php esc_html_e( 'Author: ', 'frontcore' ); ?></strong><?php echo $author; ?></li>
-			<li><strong><?php esc_html_e( 'Author URI: ', 'frontcore' ); ?></strong><?php echo $author_uri; ?></li>
-			<li><strong><?php esc_html_e( 'Version: ', 'frontcore' ); ?></strong><?php echo $version; ?></li>
-			<li><strong><?php esc_html_e( 'Text Domain: ', 'frontcore' ); ?></strong><?php echo $domain; ?></li>
-			<li><strong><?php esc_html_e( 'Tags: ', 'frontcore' ); ?></strong><?php echo $tags; ?></li>
+			<li><strong><?php esc_html_e( 'Description: ', 'korey-one' ); ?></strong><?php echo $description; ?></li>
+			<li><strong><?php esc_html_e( 'Theme URI: ', 'korey-one' ); ?></strong><?php echo $theme_uri; ?></li>
+			<li><strong><?php esc_html_e( 'Author: ', 'korey-one' ); ?></strong><?php echo $author; ?></li>
+			<li><strong><?php esc_html_e( 'Author URI: ', 'korey-one' ); ?></strong><?php echo $author_uri; ?></li>
+			<li><strong><?php esc_html_e( 'Version: ', 'korey-one' ); ?></strong><?php echo $version; ?></li>
+			<li><strong><?php esc_html_e( 'Text Domain: ', 'korey-one' ); ?></strong><?php echo $domain; ?></li>
+			<li><strong><?php esc_html_e( 'Tags: ', 'korey-one' ); ?></strong><?php echo $tags; ?></li>
 		</ul>
 
 		<?php

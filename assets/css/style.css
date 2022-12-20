@@ -261,31 +261,31 @@ b, strong, optgroup {
 }
 
 :root {
-  --fct-bg-color: #ffffff;
-  --fct-text-color: #333333;
-  --fct-link-color: #0000ff;
-  --fct-link-action-color: #551a8b;
-  --fct-sans-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --fct-serif-stack: 'Hoefler Text', 'Baskerville Old Face', Garamond, Times, 'Times New Roman', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --fct-box-border-color: #cccccc;
-  --fct-form--font-weight: 400;
-  --fct-form--bg-color: var( --fct-bg-color, inherit );
-  --fct-form--border-color: var( --fct-box-border-color );
-  --fct-form--action-border-color: #0000ff;
-  --fct-form--placeholder-color: #888888;
-  --fct-button--font-weight: 700;
-  --fct-button--bg-color: var( --fct-bg-color, inherit );
-  --fct-button--action-bg-color: #cccccc;
-  --fct-button--border-color: var( --fct-form--border-color );
-  --fct-button--text-color: var( --fct-form--text-color );
-  --fct-button--action-text-color: var( --fct-form--text-color );
-  --fct-content-width: 1280px;
-  --fct-secondary-min-width: 240px;
-  --fct-secondary-max-width: 320px;
-  --fct-content-separator: 2rem;
-  --fct-nav--bg-color: var( --fct-bg-color, inherit );
-  --fct-subnav---bg-color: var( --fct-nav--bg-color );
-  --fct-copyright-font-size: 0.825em;
+  --kwo-bg-color: #ffffff;
+  --kwo-text-color: #333333;
+  --kwo-link-color: #0000ff;
+  --kwo-link-action-color: #551a8b;
+  --kwo-sans-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --kwo-serif-stack: 'Hoefler Text', 'Baskerville Old Face', Garamond, Times, 'Times New Roman', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --kwo-box-border-color: #cccccc;
+  --kwo-form--font-weight: 400;
+  --kwo-form--bg-color: var( --kwo-bg-color, inherit );
+  --kwo-form--border-color: var( --kwo-box-border-color );
+  --kwo-form--action-border-color: #0000ff;
+  --kwo-form--placeholder-color: #888888;
+  --kwo-button--font-weight: 700;
+  --kwo-button--bg-color: var( --kwo-bg-color, inherit );
+  --kwo-button--action-bg-color: #cccccc;
+  --kwo-button--border-color: var( --kwo-form--border-color );
+  --kwo-button--text-color: var( --kwo-form--text-color );
+  --kwo-button--action-text-color: var( --kwo-form--text-color );
+  --kwo-content-width: 1280px;
+  --kwo-secondary-min-width: 240px;
+  --kwo-secondary-max-width: 320px;
+  --kwo-content-separator: 2rem;
+  --kwo-nav--bg-color: var( --kwo-bg-color, inherit );
+  --kwo-subnav---bg-color: var( --kwo-nav--bg-color );
+  --kwo-copyright-font-size: 0.825em;
 }
 
 html {
@@ -294,15 +294,15 @@ html {
 }
 
 body {
-  font-family: var(--fct-font-stack, var(--fct-sans-stack));
-  font-size: var(--fct-font-size, 1rem);
-  line-height: var(--fct-line-height, 1.5);
-  background: var(--fct-bg-color);
-  color: var(--fct-text-color);
+  font-family: var(--kwo-font-stack, var(--kwo-sans-stack));
+  font-size: var(--kwo-font-size, 1rem);
+  line-height: var(--kwo-line-height, 1.5);
+  background: var(--kwo-bg-color);
+  color: var(--kwo-text-color);
 }
 
 .serif {
-  font-family: var(--fct-serif-stack);
+  font-family: var(--kwo-serif-stack);
 }
 
 .entry-content,
@@ -321,43 +321,43 @@ ol {
 
 h1,
 h2 {
-  font-size: var(--fct-primary-heading-size, 1.625rem);
-  font-weight: var(--fct-primary-heading-weight, 700);
+  font-size: var(--kwo-primary-heading-size, 1.625rem);
+  font-weight: var(--kwo-primary-heading-weight, 700);
 }
 
 h3 {
-  font-size: var(--fct-h3-heading-size, 1.3125rem);
-  font-weight: var(--fct-secondary-heading-weight, 700);
+  font-size: var(--kwo-h3-heading-size, 1.3125rem);
+  font-weight: var(--kwo-secondary-heading-weight, 700);
 }
 
 h4 {
   font-size: 1.25rem;
-  font-weight: var(--fct-h4-heading-weight, 700);
+  font-weight: var(--kwo-h4-heading-weight, 700);
 }
 
 a {
-  color: var(--fct-link-color);
+  color: var(--kwo-link-color);
 }
 
 a:hover, a.hover, a:focus, a.focus {
-  color: var(--fct-link-action-color);
+  color: var(--kwo-link-action-color);
 }
 
 .dark-mode {
-  --fct-bg-color: #1e1e1e;
-  --fct-text-color: #ffffff;
-  --fct-link-color: #ffffff;
-  --fct-link-action-color: #eeeeee;
-  --fct-box-border-color: #555555;
+  --kwo-bg-color: #1e1e1e;
+  --kwo-text-color: #ffffff;
+  --kwo-link-color: #ffffff;
+  --kwo-link-action-color: #eeeeee;
+  --kwo-box-border-color: #555555;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fct-bg-color: #1e1e1e;
-    --fct-text-color: #ffffff;
-    --fct-link-color: #ffffff;
-    --fct-link-action-color: #eeeeee;
-    --fct-box-border-color: #555555;
+    --kwo-bg-color: #1e1e1e;
+    --kwo-text-color: #ffffff;
+    --kwo-link-color: #ffffff;
+    --kwo-link-action-color: #eeeeee;
+    --kwo-box-border-color: #555555;
   }
 }
 
@@ -368,7 +368,7 @@ a:hover, a.hover, a:focus, a.focus {
 #wpadminbar:not(.mobile) .ab-top-menu > li > .ab-item:focus,
 #wpadminbar .menupop .ab-sub-wrapper,
 #wpadminbar .shortlink-input {
-  background: var(--fct-adminbar-bg-color, var(--fct-frontend-adminbar-bg-color, #333333));
+  background: var(--kwo-adminbar-bg-color, var(--kwo-frontend-adminbar-bg-color, #333333));
 }
 
 .screen-reader-text {
@@ -393,15 +393,15 @@ a:hover, a.hover, a:focus, a.focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: var(--fct-content-width);
+  max-width: var(--kwo-content-width);
   margin: 0 auto;
   padding: 2em;
 }
 
 .site-content .content-area {
   width: 100%;
-  margin-right: var(--fct-content-separator);
-  max-width: calc( 100% - var( --fct-secondary-min-width ) - var( --fct-content-separator ));
+  margin-right: var(--kwo-content-separator);
+  max-width: calc( 100% - var( --kwo-secondary-min-width ) - var( --kwo-content-separator ));
   overflow-x: hidden;
 }
 
@@ -421,8 +421,8 @@ main article {
 }
 
 #secondary {
-  min-width: var(--fct-secondary-min-width);
-  max-width: var(--fct-secondary-max-width);
+  min-width: var(--kwo-secondary-min-width);
+  max-width: var(--kwo-secondary-max-width);
 }
 
 @media screen and (max-width: 800px) {
@@ -448,7 +448,7 @@ form * + * {
 fieldset {
   margin-top: 1em;
   padding: 1em 1.5em;
-  border: solid 1px var(--fct-form--border-color);
+  border: solid 1px var(--kwo-form--border-color);
 }
 
 legend {
@@ -464,10 +464,10 @@ button,
   max-width: 640px;
   padding: 1rem;
   font: inherit;
-  font-weight: var(--fct-form--font-weight, 400);
-  background-color: var(--fct-form--bg-color);
-  border: solid 1px var(--fct-form--border-color);
-  color: var(--fct-text-color);
+  font-weight: var(--kwo-form--font-weight, 400);
+  background-color: var(--kwo-form--bg-color);
+  border: solid 1px var(--kwo-form--border-color);
+  color: var(--kwo-text-color);
 }
 
 input:focus, input.focus,
@@ -479,7 +479,7 @@ button:focus,
 button.focus,
 .button:focus,
 .button.focus {
-  border-color: var(--fct-form--action-border-color);
+  border-color: var(--kwo-form--action-border-color);
 }
 
 label + input:not([type="checkbox"]):not([type="radio"]),
@@ -511,10 +511,10 @@ input[type="image"] {
   width: auto;
   line-height: 1;
   cursor: pointer;
-  font-weight: var(--fct-button--font-weight, 700);
-  background-color: var(--fct-button--bg-color);
-  border-color: var(--fct-button--border-color, var(--fct-form--border-color));
-  color: var(--fct-button--text-color, var(--fct-text-color));
+  font-weight: var(--kwo-button--font-weight, 700);
+  background-color: var(--kwo-button--bg-color);
+  border-color: var(--kwo-button--border-color, var(--kwo-form--border-color));
+  color: var(--kwo-button--text-color, var(--kwo-text-color));
   text-decoration: none;
 }
 
@@ -556,9 +556,9 @@ input[type="image"]:hover,
 input[type="image"].hover,
 input[type="image"]:focus,
 input[type="image"].focus {
-  background-color: var(--fct-button--action-bg-color);
-  border-color: var(--fct-button--action-border-color);
-  color: var(--fct-button--action-text-color);
+  background-color: var(--kwo-button--action-bg-color);
+  border-color: var(--kwo-button--action-border-color);
+  color: var(--kwo-button--action-text-color);
 }
 
 input[type="number"] {
@@ -600,23 +600,23 @@ option {
 }
 
 *::-webkit-input-placeholder {
-  color: var(--fct-form--placeholder-color);
+  color: var(--kwo-form--placeholder-color);
 }
 
 *::-o-placeholder {
-  color: var(--fct-form--placeholder-color);
+  color: var(--kwo-form--placeholder-color);
 }
 
 *:-ms-input-placeholder {
-  color: var(--fct-form--placeholder-color);
+  color: var(--kwo-form--placeholder-color);
 }
 
 *::-ms-input-placeholder {
-  color: var(--fct-form--placeholder-color);
+  color: var(--kwo-form--placeholder-color);
 }
 
 *::placeholder {
-  color: var(--fct-form--placeholder-color);
+  color: var(--kwo-form--placeholder-color);
 }
 
 .search-form {
@@ -653,19 +653,19 @@ h2 + .search-form {
 }
 
 .dark-mode {
-  --fct-form--bg-color: var( --fct-bg-color, inherit );
-  --fct-form--border-color: #555555;
-  --fct-form--action-border-color: #ffffff;
-  --fct-button--action-bg-color: #555555;
-  --fct-form--placeholder-color: #888888;
+  --kwo-form--bg-color: var( --kwo-bg-color, inherit );
+  --kwo-form--border-color: #555555;
+  --kwo-form--action-border-color: #ffffff;
+  --kwo-button--action-bg-color: #555555;
+  --kwo-form--placeholder-color: #888888;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fct-form--bg-color: var( --fct-bg-color, inherit );
-    --fct-form--border-color: #555555;
-    --fct-button--action-bg-color: #555555;
-    --fct-form--placeholder-color: #888888;
+    --kwo-form--bg-color: var( --kwo-bg-color, inherit );
+    --kwo-form--border-color: #555555;
+    --kwo-button--action-bg-color: #555555;
+    --kwo-form--placeholder-color: #888888;
   }
 }
 
@@ -676,19 +676,19 @@ h2 + .search-form {
 .site-title {
   margin: 0;
   /* Match <p> tag to <h1> tag on front page */
-  font-size: var(--fct-site-title-size, var(--fct-primary-heading-size, 2rem));
-  font-weight: var(--fct-site-title-weight, var(--fct-primary-heading-weight, 700));
-  color: var(--fct-site-title-color, inherit);
+  font-size: var(--kwo-site-title-size, var(--kwo-primary-heading-size, 2rem));
+  font-weight: var(--kwo-site-title-weight, var(--kwo-primary-heading-weight, 700));
+  color: var(--kwo-site-title-color, inherit);
 }
 
 .site-title a {
-  color: var(--fct-site-title-link-color, var(--fct-site-title-color, inherit));
+  color: var(--kwo-site-title-link-color, var(--kwo-site-title-color, inherit));
   text-decoration: inherit;
 }
 
 .site-description {
   margin: 0;
-  font-size: var(--fct-site-description-size, inherit);
+  font-size: var(--kwo-site-description-size, inherit);
 }
 
 .site-header-image {
@@ -697,7 +697,7 @@ h2 + .search-form {
 
 .site-branding-wrap {
   width: 100%;
-  max-width: var(--fct-content-width);
+  max-width: var(--kwo-content-width);
   margin: 0 auto;
 }
 
@@ -706,7 +706,7 @@ h2 + .search-form {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: var(--fct-content-width);
+  max-width: var(--kwo-content-width);
   margin: 0 auto;
   padding: 1em 0 0;
 }
@@ -767,7 +767,7 @@ h2 + .search-form {
   clear: both;
   display: block;
   width: 100%;
-  max-width: var(--fct-content-width);
+  max-width: var(--kwo-content-width);
   margin: 1em auto 0;
   padding: 0;
 }
@@ -797,8 +797,8 @@ h2 + .search-form {
   list-style: none;
   margin: 0;
   padding-left: 0;
-  background-color: var(--fct-nav--bg-color, inherit);
-  color: var(--fct-nav--text-color, inherit);
+  background-color: var(--kwo-nav--bg-color, inherit);
+  color: var(--kwo-nav--text-color, inherit);
 }
 
 .main-navigation ul ul {
@@ -808,11 +808,11 @@ h2 + .search-form {
   z-index: 99999;
   width: 100%;
   min-width: 160px;
-  background-color: var(--fct-subnav--bg-color);
-  border: solid 1px var(--fct-subnav--border-color, var(--fct-box-border-color));
+  background-color: var(--kwo-subnav--bg-color);
+  border: solid 1px var(--kwo-subnav--border-color, var(--kwo-box-border-color));
   -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  color: var(--fct-subnav--text-color, inherit);
+  color: var(--kwo-subnav--text-color, inherit);
 }
 
 @media screen and (max-width: 800px) {
@@ -842,13 +842,13 @@ h2 + .search-form {
 .main-navigation ul ul li a {
   width: 100%;
   padding: 0.5em 0.75em;
-  background-color: var(--fct-subnav--link-bg-color);
-  color: var(--fct-subnav--link-text-color, var(--fct-link-color));
+  background-color: var(--kwo-subnav--link-bg-color);
+  color: var(--kwo-subnav--link-text-color, var(--kwo-link-color));
 }
 
 .main-navigation ul ul li a:hover, .main-navigation ul ul li a:focus {
-  background-color: var(--fct-subnav--link-action-bg-color);
-  color: var(--fct-subnav--link-action-text-color, var(--fct-link-action-color));
+  background-color: var(--kwo-subnav--link-action-bg-color);
+  color: var(--kwo-subnav--link-action-text-color, var(--kwo-link-action-color));
 }
 
 .main-navigation li {
@@ -865,12 +865,12 @@ h2 + .search-form {
 .main-navigation a {
   display: inline-block;
   padding: 0.5em 0;
-  color: var(--fct-nav--link-text-color, var(--fct-link-color));
+  color: var(--kwo-nav--link-text-color, var(--kwo-link-color));
   text-decoration: none;
 }
 
 .main-navigation a:hover, .main-navigation a.hover, .main-navigation a:focus, .main-navigation a.focus {
-  color: var(--fct-nav--link-action-text-color, var(--fct-link-action-color));
+  color: var(--kwo-nav--link-action-text-color, var(--kwo-link-action-color));
 }
 
 .site-branding-wrap.nav-aside-branding .main-navigation {
@@ -925,9 +925,9 @@ h2 + .search-form {
   cursor: pointer;
   font-weight: bold;
   text-decoration: none;
-  background-color: var(--fct-button--bg-color);
-  border: solid 1px var(--fct-button--border-color, var(--fct-form--border-color));
-  color: var(--fct-button--text-color, var(--fct-text-color));
+  background-color: var(--kwo-button--bg-color);
+  border: solid 1px var(--kwo-button--border-color, var(--kwo-form--border-color));
+  color: var(--kwo-button--text-color, var(--kwo-text-color));
 }
 
 .site-main .comment-navigation button:hover, .site-main .comment-navigation button.hover, .site-main .comment-navigation button:focus, .site-main .comment-navigation button.focus,
@@ -951,9 +951,9 @@ h2 + .search-form {
 .site-main .post-navigation .button.hover,
 .site-main .post-navigation .button:focus,
 .site-main .post-navigation .button.focus {
-  background-color: var(--fct-button--action-bg-color);
-  border-color: var(--fct-button--action-border-color);
-  color: var(--fct-button--action-text-color);
+  background-color: var(--kwo-button--action-bg-color);
+  border-color: var(--kwo-button--action-border-color);
+  color: var(--kwo-button--action-text-color);
 }
 
 .site-main .comment-navigation button:before, .site-main .comment-navigation button:after,
@@ -1105,7 +1105,7 @@ h2 + .search-form {
 }
 
 .dark-mode {
-  --fct-subnav--link-action-bg-color: #555555;
+  --kwo-subnav--link-action-bg-color: #555555;
 }
 
 .dark-mode .site-main .comment-navigation button.nav-previous:before,
@@ -1176,7 +1176,7 @@ h2 + .search-form {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fct-subnav--link-action-bg-color: #555555;
+    --kwo-subnav--link-action-bg-color: #555555;
   }
   .site-main .comment-navigation button.nav-previous:before,
   .site-main .comment-navigation .button.nav-previous:before,
@@ -1350,7 +1350,7 @@ h2 + .search-form {
 
 .single .author-section {
   padding: 2rem;
-  border: solid 1px var(--fct-box-border-color);
+  border: solid 1px var(--kwo-box-border-color);
 }
 
 .author-title-wrapper {
@@ -1404,10 +1404,10 @@ h2 + .search-form {
 .calendar_wrap td {
   display: table-cell;
   padding: 3.25% 0.5rem 3%;
-  font-size: var(--fct-widget--calendar--font-size, 1em);
+  font-size: var(--kwo-widget--calendar--font-size, 1em);
   line-height: 1;
   text-align: center;
-  border: solid 1px var(--fct-box-border-color);
+  border: solid 1px var(--kwo-box-border-color);
 }
 
 .calendar_wrap table {
@@ -1441,7 +1441,7 @@ h2 + .search-form {
 
 .wp-block-calendar tbody td,
 .wp-block-calendar th {
-  border: solid 1px var(--fct-box-border-color);
+  border: solid 1px var(--kwo-box-border-color);
 }
 
 .wp-calendar-table {
@@ -1586,13 +1586,13 @@ article .gallery .gallery-item img {
 
 .footer-content {
   width: 100%;
-  max-width: var(--fct-content-width);
+  max-width: var(--kwo-content-width);
   margin: 0 auto;
   padding: 0 2em;
 }
 
 .copyright-text {
-  font-size: var(--fct-copyright-font-size);
+  font-size: var(--kwo-copyright-font-size);
   text-align: center;
 }
 

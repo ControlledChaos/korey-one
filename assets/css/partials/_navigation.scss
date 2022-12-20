@@ -6,7 +6,7 @@
 	clear: both;
 	display: block;
 	width: 100%;
-	max-width: var( --fct-content-width );
+	max-width: var( --kwo-content-width );
 	margin: 1em auto 0;
 	padding: 0;
 
@@ -26,8 +26,8 @@
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
-		background-color: var( --fct-nav--bg-color, inherit );
-		color: var( --fct-nav--text-color, inherit );
+		background-color: var( --kwo-nav--bg-color, inherit );
+		color: var( --kwo-nav--text-color, inherit );
 
 		ul {
 			position: absolute;
@@ -36,11 +36,11 @@
 			z-index: 99999;
 			width: 100%;
 			min-width: 160px;
-			background-color: var( --fct-subnav--bg-color );
-			border: solid 1px var( --fct-subnav--border-color, var( --fct-box-border-color ) );
+			background-color: var( --kwo-subnav--bg-color );
+			border: solid 1px var( --kwo-subnav--border-color, var( --kwo-box-border-color ) );
 			-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 					box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			color: var( --fct-subnav--text-color, inherit );
+			color: var( --kwo-subnav--text-color, inherit );
 
 			@media screen and ( max-width: $break_primary_tablet ) {
 				position: unset;
@@ -65,13 +65,13 @@
 				a {
 					width: 100%;
 					padding: 0.5em 0.75em;
-					background-color: var( --fct-subnav--link-bg-color );
-					color: var( --fct-subnav--link-text-color, var( --fct-link-color ) );
+					background-color: var( --kwo-subnav--link-bg-color );
+					color: var( --kwo-subnav--link-text-color, var( --kwo-link-color ) );
 
 					&:hover,
 					&:focus {
-						background-color: var( --fct-subnav--link-action-bg-color );
-						color: var( --fct-subnav--link-action-text-color, var( --fct-link-action-color ) );
+						background-color: var( --kwo-subnav--link-action-bg-color );
+						color: var( --kwo-subnav--link-action-text-color, var( --kwo-link-action-color ) );
 					}
 				}
 			}
@@ -92,14 +92,14 @@
 	a {
 		display: inline-block;
 		padding: 0.5em 0;
-		color: var( --fct-nav--link-text-color, var( --fct-link-color ) );
+		color: var( --kwo-nav--link-text-color, var( --kwo-link-color ) );
 		text-decoration: none;
 
 		&:hover,
 		&.hover,
 		&:focus,
 		&.focus {
-			color: var( --fct-nav--link-action-text-color, var( --fct-link-action-color ) );
+			color: var( --kwo-nav--link-action-text-color, var( --kwo-link-action-color ) );
 		}
 	}
 }
@@ -159,17 +159,17 @@
 			cursor: pointer;
 			font-weight: bold;
 			text-decoration: none;
-			background-color: var( --fct-button--bg-color );
-			border: solid 1px var( --fct-button--border-color, var( --fct-form--border-color ) );
-			color: var( --fct-button--text-color, var( --fct-text-color ) );
+			background-color: var( --kwo-button--bg-color );
+			border: solid 1px var( --kwo-button--border-color, var( --kwo-form--border-color ) );
+			color: var( --kwo-button--text-color, var( --kwo-text-color ) );
 
 			&:hover,
 			&.hover,
 			&:focus,
 			&.focus {
-				background-color: var( --fct-button--action-bg-color );
-				border-color: var( --fct-button--action-border-color );
-				color: var( --fct-button--action-text-color );
+				background-color: var( --kwo-button--action-bg-color );
+				border-color: var( --kwo-button--action-border-color );
+				color: var( --kwo-button--action-text-color );
 			}
 
 			&:before,
@@ -291,7 +291,7 @@
 
 .dark-mode {
 
-	--fct-subnav--link-action-bg-color: #{$medium_gray};
+	--kwo-subnav--link-action-bg-color: #{$medium_gray};
 
 	.site-main {
 		.comment-navigation,
@@ -336,7 +336,7 @@
 @media ( prefers-color-scheme: dark ) {
 
 	:root {
-		--fct-subnav--link-action-bg-color: #{$medium_gray};
+		--kwo-subnav--link-action-bg-color: #{$medium_gray};
 	}
 
 	.site-main {

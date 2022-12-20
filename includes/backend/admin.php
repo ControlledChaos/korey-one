@@ -2,16 +2,16 @@
 /**
  * Admin pages
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Includes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace FrontCore\Admin;
+namespace KoreyOne\Admin;
 
 // Alias namespaces.
-use FrontCore\Customize as Customize;
+use KoreyOne\Customize as Customize;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -71,10 +71,10 @@ function setup() {
 function admin_header() {
 
 	// Get Customizer settings.
-	$use_header = Customize\use_admin_header( get_theme_mod( 'fct_admin_header' ) );
+	$use_header = Customize\use_admin_header( get_theme_mod( 'kwo_admin_header' ) );
 
 	if ( $use_header ) {
-		get_template_part( FCT_PARTS_DIR . '/admin/admin-header' );
+		get_template_part( KWO_PARTS_DIR . '/admin/admin-header' );
 	}
 }
 
@@ -88,11 +88,11 @@ function admin_header() {
 function admin_body_class( $body_class ) {
 
 	// Get Customizer settings.
-	$use_theme  = Customize\use_admin_theme( get_theme_mod( 'fct_admin_theme' ) );
-	$use_header = Customize\use_admin_header( get_theme_mod( 'fct_admin_header' ) );
+	$use_theme  = Customize\use_admin_theme( get_theme_mod( 'kwo_admin_theme' ) );
+	$use_header = Customize\use_admin_header( get_theme_mod( 'kwo_admin_header' ) );
 
 	if ( $use_theme ) {
-		$body_class .= ' fct-admin-theme';
+		$body_class .= ' kwo-admin-theme';
 	}
 
 	if ( $use_header ) {
@@ -138,8 +138,8 @@ function appearance_menu() {
 
 	add_submenu_page(
 		'themes.php',
-		__( 'Customize', 'frontcore' ),
-		__( 'Customize', 'frontcore' ),
+		__( 'Customize', 'korey-one' ),
+		__( 'Customize', 'korey-one' ),
 		'customize',
 		$customize_url,
 		'',
@@ -158,8 +158,8 @@ function theme_options() {
 	// Add a submenu page under Themes.
 	$this->help_theme_options = add_submenu_page(
 		'themes.php',
-		__( 'Display Options', 'frontcore' ),
-		__( 'Display Options', 'frontcore' ),
+		__( 'Display Options', 'korey-one' ),
+		__( 'Display Options', 'korey-one' ),
 		'manage_options',
 		'frontend-display-options',
 		__NAMESPACE__ . '\\theme_options_output',
@@ -177,7 +177,7 @@ function theme_options() {
  * @return void
  */
 function theme_options_output() {
-	get_template_part( FCT_PARTS_DIR . '/admin/theme-options-page' );
+	get_template_part( KWO_PARTS_DIR . '/admin/theme-options-page' );
 }
 
 /**
@@ -197,7 +197,7 @@ function help_theme_options() {
 	// More information tab.
 	$screen->add_help_tab( [
 		'id'       => 'help_theme_options_info',
-		'title'    => __( 'More Information', 'frontcore' ),
+		'title'    => __( 'More Information', 'korey-one' ),
 		'content'  => null,
 		'callback' => __NAMESPACE__ . '\\help_theme_options_info'
 	] );
@@ -215,7 +215,7 @@ function help_theme_options() {
  * @return void
  */
 function help_theme_options_info() {
-	include_once get_theme_file_path( FCT_PARTS_DIR . '/partials/help-theme-options-info.php' );
+	include_once get_theme_file_path( KWO_PARTS_DIR . '/partials/help-theme-options-info.php' );
 }
 
 /**
@@ -226,22 +226,22 @@ function help_theme_options_info() {
  */
 function help_theme_options_sidebar() {
 
-	$html  = sprintf( '<h4>%1s</h4>', __( 'Author Credits', 'frontcore' ) );
+	$html  = sprintf( '<h4>%1s</h4>', __( 'Author Credits', 'korey-one' ) );
 	$html .= sprintf(
 		'<p>%1s %2s.</p>',
-		__( 'This theme was created by', 'frontcore' ),
+		__( 'This theme was created by', 'korey-one' ),
 		'Your Name'
 	);
 	$html .= sprintf(
 		'<p>%1s <br /><a href="%2s" target="_blank" rel="nofollow">%3s</a> <br />%4s</p>',
-		__( 'Visit', 'frontcore' ),
+		__( 'Visit', 'korey-one' ),
 		'https://example.com/',
 		'Example Site',
-		__( 'for more details.', 'frontcore' )
+		__( 'for more details.', 'korey-one' )
 	);
 	$html .= sprintf(
 		'<p>%1s</p>',
-		__( 'Change this sidebar to give yourself credit for the hard work you did customizing this theme.', 'frontcore' )
+		__( 'Change this sidebar to give yourself credit for the hard work you did customizing this theme.', 'korey-one' )
 		);
 
 	return $html;
@@ -258,10 +258,10 @@ function theme_info() {
 	// Add a submenu page under Themes.
 	add_submenu_page(
 		'themes.php',
-		__( 'Theme Info', 'frontcore' ),
-		__( 'Theme Info', 'frontcore' ),
+		__( 'Theme Info', 'korey-one' ),
+		__( 'Theme Info', 'korey-one' ),
 		'manage_options',
-		'frontcore-info',
+		'korey-one-info',
 		__NAMESPACE__ . '\\theme_info_output',
 		1
 	);
@@ -275,12 +275,12 @@ function theme_info() {
  */
 function theme_info_output() {
 
-	$output = get_theme_file_path( FCT_PARTS_DIR . '/admin/theme-info-page.php' );
+	$output = get_theme_file_path( KWO_PARTS_DIR . '/admin/theme-info-page.php' );
 	if ( file_exists( $output ) ) {
 		include $output;
 	} else { ?>
 		<div class="wrap theme-info-page">
-			<h1><?php _e( 'Template Error', 'frontcore' ); ?></h1>
+			<h1><?php _e( 'Template Error', 'korey-one' ); ?></h1>
 			<p class="description"><?php _e( 'The template file for this page was not located.' ); ?></p>
 		</div>
 	<?php }

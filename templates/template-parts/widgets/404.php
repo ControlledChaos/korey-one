@@ -2,13 +2,13 @@
 /**
  * 404 error page widgets
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Error
  * @since      1.0.0
  */
 
-namespace FrontCore;
+namespace KoreyOne;
 
 // Access widgets to check if they're registered.
 global $wp_widget_factory;
@@ -20,7 +20,7 @@ global $wp_widget_factory;
 	<?php dynamic_sidebar( 'error-404' ); ?>
 <?php else : ?>
 
-	<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'frontcore' ); ?></p>
+	<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'korey-one' ); ?></p>
 
 	<?php get_search_form(); ?>
 
@@ -32,7 +32,7 @@ global $wp_widget_factory;
 
 	<div class="widget widget_categories">
 
-		<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'frontcore' ); ?></h2>
+		<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'korey-one' ); ?></h2>
 
 		<ul>
 			<?php
@@ -50,7 +50,7 @@ global $wp_widget_factory;
 
 	$archive_content = sprintf(
 		'<p>%1s</p>',
-		esc_html__( 'Try looking in the monthly archives.', 'frontcore' )
+		esc_html__( 'Try looking in the monthly archives.', 'korey-one' )
 	);
 
 	if ( isset( $wp_widget_factory->widgets['WP_Widget_Archives'] ) ) {

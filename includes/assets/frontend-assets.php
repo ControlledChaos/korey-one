@@ -5,15 +5,15 @@
  * Methods for enqueueing and printing assets
  * such as JavaScript and CSS files.
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Includes
  * @category   Assets
  * @since      1.0.0
  */
 
-namespace FrontCore\Front_Assets;
+namespace KoreyOne\Front_Assets;
 
-use function FrontCore\Shared_Assets\suffix;
+use function KoreyOne\Shared_Assets\suffix;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -55,14 +55,19 @@ function frontend_scripts() {
 	wp_enqueue_script( 'jquery' );
 
 	// Navigation toggle and dropdown.
-	wp_enqueue_script( 'fct-navigation', get_theme_file_uri( '/assets/js/navigation' . suffix() . '.js' ), [], FCT_VERSION, true );
+	wp_enqueue_script( 'kwo-navigation', get_theme_file_uri( '/assets/js/navigation' . suffix() . '.js' ), [], KWO_VERSION, true );
 
 	// Skip link focus, for accessibility.
-	wp_enqueue_script( 'fct-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix' . suffix() . '.js' ), [], FCT_VERSION, true );
+	wp_enqueue_script( 'kwo-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix' . suffix() . '.js' ), [], KWO_VERSION, true );
 
 	// FitVids for responsive video embeds.
-	wp_enqueue_script( 'fct-fitvids', get_theme_file_uri( '/assets/js/jquery.fitvids' . suffix() . '.js' ), [ 'jquery' ], FCT_VERSION, true );
-	wp_add_inline_script( 'fct-fitvids', 'jQuery(document).ready(function($){ $( ".entry-content" ).fitVids(); });', true );
+	wp_enqueue_script( 'kwo-fitvids', get_theme_file_uri( '/assets/js/jquery.fitvids' . suffix() . '.js' ), [ 'jquery' ], KWO_VERSION, true );
+	wp_add_inline_script( 'kwo-fitvids', 'jQuery(document).ready(function($){ $( ".entry-content" ).fitVids(); });', true );
+
+	// FullPage.
+	if ( is_front_page() ) {
+		wp_enqueue_script( 'kwo-fullpage', get_theme_file_uri( '/assets/js/fullpage' . suffix() . '.js' ), [], KWO_VERSION, true );
+	}
 
 	// Comments scripts.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -79,7 +84,7 @@ function frontend_scripts() {
 function frontend_styles() {
 
 	// Google fonts.
-	// wp_enqueue_style( 'fct-google-fonts', 'add-url-here', [], FCT_VERSION, 'screen' );
+	// wp_enqueue_style( 'kwo-google-fonts', 'add-url-here', [], KWO_VERSION, 'screen' );
 
 	/**
 	 * Theme stylesheet
@@ -88,24 +93,29 @@ function frontend_styles() {
 	 * The main stylesheet, in the root directory, only contains the theme header but
 	 * it is necessary for theme activation. DO NOT delete the main stylesheet!
 	 */
-	wp_enqueue_style( 'fct-theme', get_theme_file_uri( '/assets/css/style' . suffix() . '.css' ), [], FCT_VERSION, 'all' );
+	wp_enqueue_style( 'kwo-theme', get_theme_file_uri( '/assets/css/style' . suffix() . '.css' ), [], KWO_VERSION, 'all' );
 
 	// Right-to-left languages.
 	if ( is_rtl() ) {
-		wp_enqueue_style( 'fct-theme-rtl', get_theme_file_uri( '/assets/css/style-rtl' . suffix() . '.css' ), [ 'fct-theme' ], FCT_VERSION, 'all' );
+		wp_enqueue_style( 'kwo-theme-rtl', get_theme_file_uri( '/assets/css/style-rtl' . suffix() . '.css' ), [ 'kwo-theme' ], KWO_VERSION, 'all' );
 	}
 
 	// Block styles.
 	if ( function_exists( 'has_blocks' ) ) {
-		wp_enqueue_style( 'fct-blocks', get_theme_file_uri( '/assets/css/blocks' . suffix() . '.css' ), [ 'wp-block-library', 'fct-theme' ], FCT_VERSION, 'all' );
+		wp_enqueue_style( 'kwo-blocks', get_theme_file_uri( '/assets/css/blocks' . suffix() . '.css' ), [ 'wp-block-library', 'kwo-theme' ], KWO_VERSION, 'all' );
 
 		if ( is_rtl() ) {
-			wp_enqueue_style( 'fct-blocks-rtl', get_theme_file_uri( '/assets/css/blocks-rtl' . suffix() . '.css' ), [ 'fct-blocks' ], FCT_VERSION, 'all' );
+			wp_enqueue_style( 'kwo-blocks-rtl', get_theme_file_uri( '/assets/css/blocks-rtl' . suffix() . '.css' ), [ 'kwo-blocks' ], KWO_VERSION, 'all' );
 		}
 	}
 
+	// FullPage.
+	if ( is_front_page() ) {
+		wp_enqueue_style( 'kwo-fullpage', get_theme_file_uri( '/assets/css/fullpage' . suffix() . '.css' ), [ 'kwo-theme' ], KWO_VERSION, 'all' );
+	}
+
 	// Print styles.
-	wp_enqueue_style( 'fct-print', get_theme_file_uri( '/assets/css/print' . suffix() . '.css' ), [], FCT_VERSION, 'print' );
+	wp_enqueue_style( 'kwo-print', get_theme_file_uri( '/assets/css/print' . suffix() . '.css' ), [], KWO_VERSION, 'print' );
 }
 
 /**

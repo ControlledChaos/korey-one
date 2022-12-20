@@ -4,17 +4,17 @@
  *
  * Adds metaboxes with fields, saves meta data.
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Includes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace FrontCore\Post_Options;
+namespace KoreyOne\Post_Options;
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front,
-	FrontCore\Customize     as Customize;
+use KoreyOne\Classes\Front as Front,
+	KoreyOne\Customize     as Customize;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -67,7 +67,7 @@ function metaboxes() {
 	unset( $post_types['elementor_library'], $post_types['fl-builder-template'] );
 
 	// Display Options metabox.
-	add_meta_box( 'fct_post_display', __( 'Display Options', 'frontcore' ), __NAMESPACE__ . '\\display_metabox', $post_types, 'side', 'default' );
+	add_meta_box( 'kwo_post_display', __( 'Display Options', 'korey-one' ), __NAMESPACE__ . '\\display_metabox', $post_types, 'side', 'default' );
 }
 
 /**
@@ -88,14 +88,14 @@ function display_metabox( $post ) {
 	$post_name = $get_post->labels->singular_name;
 
 	// Get header display setting from the Customizer.
-	$display_header = Customize\header_image( get_theme_mod( 'fct_header_image' ) );
+	$display_header = Customize\header_image( get_theme_mod( 'kwo_header_image' ) );
 
 	// Get the author section display setting from the Customizer.
-	$display_author = Customize\author_section( get_theme_mod( 'fct_author_section' ) );
+	$display_author = Customize\author_section( get_theme_mod( 'kwo_author_section' ) );
 
-	wp_nonce_field( "fct_post_{$post->ID}_options_nonce", 'fct_post_options_nonce' );
+	wp_nonce_field( "kwo_post_{$post->ID}_options_nonce", 'kwo_post_options_nonce' );
 
-	$stored_meta = get_post_meta( $post->ID, 'fct_post_options', true );
+	$stored_meta = get_post_meta( $post->ID, 'kwo_post_options', true );
 	if ( empty( $stored_meta ) ) {
 		$stored_meta = [];
 	} else {
@@ -128,15 +128,15 @@ function display_metabox( $post ) {
 
 ?>
 	<fieldset>
-		<legend class="screen-reader-text"><?php _e( 'Display Options Form', 'frontcore' ); ?></legend>
+		<legend class="screen-reader-text"><?php _e( 'Display Options Form', 'korey-one' ); ?></legend>
 
 		<?php if ( 'enable_per' == $display_header ) :
 		?>
 		<p>
 			<label for="enable_header">
-				<input id="enable_header" type="checkbox" name="fct_post_options[]" value="enable_header" <?php checked( $enable_header, 'enable_header' ); ?> />
+				<input id="enable_header" type="checkbox" name="kwo_post_options[]" value="enable_header" <?php checked( $enable_header, 'enable_header' ); ?> />
 				<?php printf(
-					__( 'Enable the header image for this %s.', 'frontcore' ),
+					__( 'Enable the header image for this %s.', 'korey-one' ),
 					strtolower( $post_name )
 			); ?>
 			</label>
@@ -145,9 +145,9 @@ function display_metabox( $post ) {
 		?>
 		<p>
 			<label for="disable_header">
-				<input id="disable_header" type="checkbox" name="fct_post_options[]" value="disable_header" <?php checked( $disable_header, 'disable_header' ); ?> />
+				<input id="disable_header" type="checkbox" name="kwo_post_options[]" value="disable_header" <?php checked( $disable_header, 'disable_header' ); ?> />
 				<?php printf(
-					__( 'Disable the header image for this %s.', 'frontcore' ),
+					__( 'Disable the header image for this %s.', 'korey-one' ),
 					strtolower( $post_name )
 			); ?>
 			</label>
@@ -158,9 +158,9 @@ function display_metabox( $post ) {
 		?>
 		<p>
 			<label for="enable_author">
-				<input id="enable_author" type="checkbox" name="fct_post_options[]" value="enable_author" <?php checked( $enable_author, 'enable_author' ); ?> />
+				<input id="enable_author" type="checkbox" name="kwo_post_options[]" value="enable_author" <?php checked( $enable_author, 'enable_author' ); ?> />
 				<?php printf(
-					__( 'Enable the author profile section for this %s.', 'frontcore' ),
+					__( 'Enable the author profile section for this %s.', 'korey-one' ),
 					strtolower( $post_name )
 			); ?>
 			</label>
@@ -169,9 +169,9 @@ function display_metabox( $post ) {
 		?>
 		<p>
 			<label for="disable_author">
-				<input id="disable_author" type="checkbox" name="fct_post_options[]" value="disable_author" <?php checked( $disable_author, 'disable_author' ); ?> />
+				<input id="disable_author" type="checkbox" name="kwo_post_options[]" value="disable_author" <?php checked( $disable_author, 'disable_author' ); ?> />
 				<?php printf(
-					__( 'Disable the author profile section for this %s.', 'frontcore' ),
+					__( 'Disable the author profile section for this %s.', 'korey-one' ),
 					strtolower( $post_name )
 			); ?>
 			</label>
@@ -180,8 +180,8 @@ function display_metabox( $post ) {
 		elseif ( post_type_supports( $typenow, 'author' ) && 'always' != $display_author ) :
 			printf(
 				'<p><a href="%s">%s</a></p>',
-				esc_url( admin_url( 'customize.php?url=' . get_permalink( $post->ID ) . '&autofocus[control]=fct_author_section' ) ),
-				__( 'Enable post author section', 'frontcore' )
+				esc_url( admin_url( 'customize.php?url=' . get_permalink( $post->ID ) . '&autofocus[control]=kwo_author_section' ) ),
+				__( 'Enable post author section', 'korey-one' )
 			);
 		endif; ?>
 	</fieldset>
@@ -202,7 +202,7 @@ function save_metadata( $post_id, $post, $update ) {
 	$is_autosave = wp_is_post_autosave( $post_id );
 	$is_revision = wp_is_post_revision( $post_id );
 
-	$is_valid_nonce = ( isset( $_POST['fct_post_options_nonce'] ) && wp_verify_nonce( $_POST['fct_post_options_nonce'], "fct_post_{$post_id}_options_nonce" ) ) ? true : false;
+	$is_valid_nonce = ( isset( $_POST['kwo_post_options_nonce'] ) && wp_verify_nonce( $_POST['kwo_post_options_nonce'], "kwo_post_{$post_id}_options_nonce" ) ) ? true : false;
 
 	// Stop here if autosave, revision or nonce is invalid.
 	if ( $is_autosave || $is_revision || ! $is_valid_nonce ) {
@@ -217,24 +217,24 @@ function save_metadata( $post_id, $post, $update ) {
 	// Save options metadata.
 	$checked = [];
 
-	if ( isset( $_POST['fct_post_options'] ) ) {
+	if ( isset( $_POST['kwo_post_options'] ) ) {
 
-		if ( in_array( 'enable_header', $_POST['fct_post_options'], true ) ) {
+		if ( in_array( 'enable_header', $_POST['kwo_post_options'], true ) ) {
 			$checked[] .= 'enable_header';
 		}
 
-		if ( in_array( 'disable_header', $_POST['fct_post_options'], true ) ) {
+		if ( in_array( 'disable_header', $_POST['kwo_post_options'], true ) ) {
 			$checked[] .= 'disable_header';
 		}
 
-		if ( in_array( 'enable_author', $_POST['fct_post_options'], true ) ) {
+		if ( in_array( 'enable_author', $_POST['kwo_post_options'], true ) ) {
 			$checked[] .= 'enable_author';
 		}
 
-		if ( in_array( 'disable_author', $_POST['fct_post_options'], true ) ) {
+		if ( in_array( 'disable_author', $_POST['kwo_post_options'], true ) ) {
 			$checked[] .= 'disable_author';
 		}
 	}
 
-	update_post_meta( $post_id, 'fct_post_options', $checked );
+	update_post_meta( $post_id, 'kwo_post_options', $checked );
 }

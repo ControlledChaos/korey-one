@@ -2,16 +2,16 @@
 /**
  * Search results template
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Archives
  * @since      1.0.0
  */
 
-namespace FrontCore;
+namespace KoreyOne;
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front;
+use KoreyOne\Classes\Front as Front;
 
 get_header();
 
@@ -26,23 +26,23 @@ get_header();
 		?>
 			<header class="page-header">
 				<h1 class="page-title">
-					<?php printf( esc_html__( 'Search Results for: %s', 'frontcore' ), '<span>' . get_search_query() . '</span>' );
+					<?php printf( esc_html__( 'Search Results for: %s', 'korey-one' ), '<span>' . get_search_query() . '</span>' );
 					?>
 				</h1>
 			</header>
 
 			<?php while ( have_posts() ) : the_post();
 
-				get_template_part( FCT_PARTS_DIR . '/content/content', 'search' . $fct_acf->suffix() );
+				get_template_part( KWO_PARTS_DIR . '/content/content', 'search' . $kwo_acf->suffix() );
 				endwhile;
 
 				the_posts_navigation( [
-					'prev_text' => __( 'Previous', 'frontcore' ),
-					'next_text' => __( 'Next', 'frontcore' )
+					'prev_text' => __( 'Previous', 'korey-one' ),
+					'next_text' => __( 'Next', 'korey-one' )
 				] );
 
 		else :
-			get_template_part( FCT_PARTS_DIR . '/content/content', 'none' . $fct_acf->suffix() );
+			get_template_part( KWO_PARTS_DIR . '/content/content', 'none' . $kwo_acf->suffix() );
 		endif;
 		?>
 

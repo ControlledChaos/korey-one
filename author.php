@@ -2,15 +2,15 @@
 /**
  * Author archive template
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Archives
  * @since      1.0.0
  */
 
-namespace FrontCore;
+namespace KoreyOne;
 
-use function FrontCore\Tags\content_template;
+use function KoreyOne\Tags\content_template;
 
 get_header();
 
@@ -30,12 +30,12 @@ get_header();
 				$name  = ucwords( $post->labels->menu_name );
 
 				if ( is_main_query() && ( is_paged() && 1 == $paged ) || ! is_paged() ) {
-					get_template_part( FCT_PARTS_DIR . '/content/author-section' );
+					get_template_part( KWO_PARTS_DIR . '/content/author-section' );
 				} else {
 					printf(
 						'<h1 class="page-title">%s %s %s</h1>',
 						$name,
-						__( 'Authored By', 'frontcore' ),
+						__( 'Authored By', 'korey-one' ),
 						esc_html( get_the_author() )
 					);
 				}
@@ -48,8 +48,8 @@ get_header();
 				endwhile;
 
 				the_posts_navigation( [
-					'prev_text' => __( 'Previous', 'frontcore' ),
-					'next_text' => __( 'Next', 'frontcore' )
+					'prev_text' => __( 'Previous', 'korey-one' ),
+					'next_text' => __( 'Next', 'korey-one' )
 				] );
 
 		else :

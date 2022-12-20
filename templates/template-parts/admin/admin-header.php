@@ -2,20 +2,20 @@
 /**
  * Admin header template
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace FrontCore\Admin;
+namespace KoreyOne\Admin;
 
 // Alias namespaces.
-use FrontCore\Tags      as Tags,
-	FrontCore\Customize as Customize;
+use KoreyOne\Tags      as Tags,
+	KoreyOne\Customize as Customize;
 
 // Get the navigation location setting from the Customizer.
-$nav_location = Customize\nav_location( get_theme_mod( 'fct_nav_location' ) );
+$nav_location = Customize\nav_location( get_theme_mod( 'kwo_nav_location' ) );
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

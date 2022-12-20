@@ -2,13 +2,13 @@
 /**
  * Images and galleries
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Includes
  * @category   Media
  * @since      1.0.0
  */
 
-namespace FrontCore\Images;
+namespace KoreyOne\Images;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

@@ -2,13 +2,13 @@
 /**
  * Theme options page template
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace FrontCore\Admin\Options;
+namespace KoreyOne\Admin\Options;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,18 +19,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 $title = sprintf(
 	'<h1 class="wp-heading-inline">%1s %2s</h1>',
 	get_bloginfo( 'name' ),
-	__( 'Display Options', 'frontcore' )
+	__( 'Display Options', 'korey-one' )
 );
 
 // Page description.
 $description = sprintf(
 	'<p class="description">%1s</p>',
-	__( 'This is a starter/example page. Use it or remove it.', 'frontcore' )
+	__( 'This is a starter/example page. Use it or remove it.', 'korey-one' )
 );
 
 ?>
 
-<div class="wrap frontcore-options-page">
+<div class="wrap korey-one-options-page">
 	<?php echo $title; ?>
 	<?php echo $description; ?>
 	<hr />

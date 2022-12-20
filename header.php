@@ -5,19 +5,19 @@
  * This is the template that displays all of the <head>
  * section and everything up until <div id="content">
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Headers
  * @since      1.0.0
  */
 
-namespace FrontCore;
+namespace KoreyOne;
 
 // Alias namespaces.
-use FrontCore\Tags as Tags;
+use KoreyOne\Tags as Tags;
 
 // Get the navigation location setting from the Customizer.
-$nav_location = Customize\nav_location( get_theme_mod( 'fct_nav_location' ) );
+$nav_location = Customize\nav_location( get_theme_mod( 'kwo_nav_location' ) );
 
 ?>
 <!doctype html>
@@ -36,7 +36,7 @@ do_action( 'before_html' ); ?>
 Tags\body_open();
 Tags\before_page();
 ?>
-<a class="skip-link screen-reader-text" href="#content"><?php esc_attr( esc_html_e( 'Skip to content', 'frontcore' ) ); ?></a>
+<a class="skip-link screen-reader-text" href="#content"><?php esc_attr( esc_html_e( 'Skip to content', 'korey-one' ) ); ?></a>
 <div id="page" class="site" itemscope="itemscope" itemtype="<?php esc_attr( Tags\site_schema() ); ?>">
 
 	<div class="site-header-wrap">

@@ -2,13 +2,13 @@
 /**
  * The default head section
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Headers
  * @since      1.0.0
  */
 
-namespace FrontCore;
+namespace KoreyOne;
 
 // Conditional canonical link.
 if ( is_home() && ! is_front_page() ) {

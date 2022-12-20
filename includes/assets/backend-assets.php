@@ -5,19 +5,19 @@
  * Methods for enqueueing and printing assets
  * such as JavaScript and CSS files.
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Includes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace FrontCore\Admin_Assets;
+namespace KoreyOne\Admin_Assets;
 
 // Alias namespaces.
-use FrontCore\Classes\Core as Core,
-	FrontCore\Customize    as Customize;
+use KoreyOne\Classes\Core as Core,
+	KoreyOne\Customize    as Customize;
 
-use function FrontCore\Shared_Assets\suffix;
+use function KoreyOne\Shared_Assets\suffix;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -64,14 +64,14 @@ function admin_scripts() {}
 function admin_styles() {
 
 	// Get Customizer settings.
-	$use_theme = Customize\use_admin_theme( get_theme_mod( 'fct_admin_theme' ) );
+	$use_theme = Customize\use_admin_theme( get_theme_mod( 'kwo_admin_theme' ) );
 
 	// Enqueue admin theme styles if set in the Customizer.
 	if ( $use_theme ) {
-		wp_enqueue_style( 'fct-admin', get_theme_file_uri( '/assets/css/admin' . suffix() . '.css' ), [], FCT_VERSION, 'all' );
+		wp_enqueue_style( 'kwo-admin', get_theme_file_uri( '/assets/css/admin' . suffix() . '.css' ), [], KWO_VERSION, 'all' );
 
 		if ( is_rtl() ) {
-			wp_enqueue_style( 'fct-admin-rtl', get_theme_file_uri( '/assets/css/admin-rtl' . suffix() . '.css' ), [], FCT_VERSION, 'all' );
+			wp_enqueue_style( 'kwo-admin-rtl', get_theme_file_uri( '/assets/css/admin-rtl' . suffix() . '.css' ), [], KWO_VERSION, 'all' );
 		}
 	}
 }

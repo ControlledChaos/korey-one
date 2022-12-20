@@ -2,13 +2,13 @@
 /**
  * Navigation menus
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Includes
  * @category   Navigation
  * @since      1.0.0
  */
 
-namespace FrontCore\Navigation;
+namespace KoreyOne\Navigation;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -44,10 +44,10 @@ function setup() {
 function register() {
 
 	// Register theme menus.
-	$menus = apply_filters( 'fct_nav_menus', [
-		'main'   => __( 'Main Menu', 'frontcore' ),
-		'footer' => __( 'Footer Menu', 'frontcore' ),
-		'social' => __( 'Social Menu', 'frontcore' )
+	$menus = apply_filters( 'kwo_nav_menus', [
+		'main'   => __( 'Main Menu', 'korey-one' ),
+		'footer' => __( 'Footer Menu', 'korey-one' ),
+		'social' => __( 'Social Menu', 'korey-one' )
 	] );
 	register_nav_menus( $menus );
 }
@@ -64,9 +64,9 @@ function register() {
 function nav_menu_items( $items, $args ) {
 
 	if ( 'main' == $args->theme_location && is_user_logged_in() ) {
-		$items .= '<li><a href="'. esc_url( wp_logout_url( site_url( '/' ) ) ) .'">' . __( 'Log Out', 'frontcore' ) . '</a></li>';
+		$items .= '<li><a href="'. esc_url( wp_logout_url( site_url( '/' ) ) ) .'">' . __( 'Log Out', 'korey-one' ) . '</a></li>';
 	} elseif ( 'main' == $args->theme_location ) {
-		$items .= '<li><a href="'. esc_url( wp_login_url( site_url( '/' ) ) ) .'">' . __( 'Log In', 'frontcore' ) . '</a></li>';
+		$items .= '<li><a href="'. esc_url( wp_login_url( site_url( '/' ) ) ) .'">' . __( 'Log In', 'korey-one' ) . '</a></li>';
 	}
 	return $items;
 }
@@ -78,5 +78,5 @@ function nav_menu_items( $items, $args ) {
  * @return void
  */
 function main_nav_fallback() {
-	get_template_part( FCT_PARTS_DIR . '/navigation/main-nav-fallback' );
+	get_template_part( KWO_PARTS_DIR . '/navigation/main-nav-fallback' );
 }

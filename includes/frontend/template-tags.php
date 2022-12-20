@@ -2,17 +2,17 @@
 /**
  * Frontend template tags
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Includes
  * @category   Frontend
  * @since      1.0.0
  */
 
-namespace FrontCore\Tags;
+namespace KoreyOne\Tags;
 
 // Alias namespaces.
-use FrontCore\Classes\Vendor as Vendor,
-	FrontCore\Customize      as Customize;
+use KoreyOne\Classes\Vendor as Vendor,
+	KoreyOne\Customize      as Customize;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -56,7 +56,7 @@ function setup() {
  * @return void
  */
 function head() {
-	do_action( 'FrontCore\head' );
+	do_action( 'KoreyOne\head' );
 }
 
 /**
@@ -69,7 +69,7 @@ function head() {
  */
 function body_open() {
 	do_action( 'wp_body_open' );
-	do_action( 'FrontCore\body_open' );
+	do_action( 'KoreyOne\body_open' );
 }
 
 /**
@@ -79,7 +79,7 @@ function body_open() {
  * @return void
  */
 function header() {
-	do_action( 'FrontCore\header' );
+	do_action( 'KoreyOne\header' );
 }
 
 /**
@@ -89,7 +89,7 @@ function header() {
  * @return void
  */
 function sidebar() {
-	do_action( 'FrontCore\sidebar' );
+	do_action( 'KoreyOne\sidebar' );
 }
 
 /**
@@ -99,7 +99,7 @@ function sidebar() {
  * @return void
  */
 function searchform() {
-	do_action( 'FrontCore\searchform' );
+	do_action( 'KoreyOne\searchform' );
 }
 
 /**
@@ -109,7 +109,7 @@ function searchform() {
  * @return void
  */
 function footer() {
-	do_action( 'FrontCore\footer' );
+	do_action( 'KoreyOne\footer' );
 }
 
 /**
@@ -128,67 +128,67 @@ function footer() {
 
 // Fires after opening `body` and before `#page`.
 function before_page() {
-	do_action( 'FrontCore\before_page' );
+	do_action( 'KoreyOne\before_page' );
 }
 
-// Fires before `FrontCore\before_header`.
+// Fires before `KoreyOne\before_header`.
 function nav_before_header() {
-	do_action( 'FrontCore\nav_before_header' );
+	do_action( 'KoreyOne\nav_before_header' );
 }
 
-// Fires before `FrontCore\header`.
+// Fires before `KoreyOne\header`.
 function before_header() {
-	do_action( 'FrontCore\before_header' );
+	do_action( 'KoreyOne\before_header' );
 }
 
-// Fires after `FrontCore\header`.
+// Fires after `KoreyOne\header`.
 function after_header() {
-	do_action( 'FrontCore\after_header' );
+	do_action( 'KoreyOne\after_header' );
 }
 
 // Fires after site branding.
 function nav_aside_branding() {
-	do_action( 'FrontCore\nav_aside_branding' );
+	do_action( 'KoreyOne\nav_aside_branding' );
 }
 
-// Fires after `FrontCore\after_header`.
+// Fires after `KoreyOne\after_header`.
 function nav_after_header() {
-	do_action( 'FrontCore\nav_after_header' );
+	do_action( 'KoreyOne\nav_after_header' );
 }
 
-// Fires before `FrontCore\sidebar`.
+// Fires before `KoreyOne\sidebar`.
 function before_sidebar() {
-	do_action( 'FrontCore\before_sidebar' );
+	do_action( 'KoreyOne\before_sidebar' );
 }
 
-// Fires after `FrontCore\sidebar`.
+// Fires after `KoreyOne\sidebar`.
 function after_sidebar() {
-	do_action( 'FrontCore\after_sidebar' );
+	do_action( 'KoreyOne\after_sidebar' );
 }
 
-// Fires before `FrontCore\searchform`.
+// Fires before `KoreyOne\searchform`.
 function before_searchform() {
-	do_action( 'FrontCore\before_searchform' );
+	do_action( 'KoreyOne\before_searchform' );
 }
 
-// Fires after `FrontCore\searchform`.
+// Fires after `KoreyOne\searchform`.
 function after_searchform() {
-	do_action( 'FrontCore\after_searchform' );
+	do_action( 'KoreyOne\after_searchform' );
 }
 
-// Fires before `FrontCore\footer`.
+// Fires before `KoreyOne\footer`.
 function before_footer() {
-	do_action( 'FrontCore\before_footer' );
+	do_action( 'KoreyOne\before_footer' );
 }
 
-// Fires after `FrontCore\footer`.
+// Fires after `KoreyOne\footer`.
 function after_footer() {
-	do_action( 'FrontCore\after_footer' );
+	do_action( 'KoreyOne\after_footer' );
 }
 
 // Fires after `#page` and before `wp_footer`.
 function after_page() {
-	do_action( 'FrontCore\after_page' );
+	do_action( 'KoreyOne\after_page' );
 }
 
 /**
@@ -459,9 +459,9 @@ function get_body_class( $class = '' ) {
 	if (
 		! is_active_sidebar( 'sidebar-default' ) ||
 		is_page_template( [
-			FCT_TMPL_DIR . '/front-page-content-only.php',
-			FCT_TMPL_DIR . '/no-sidebar.php',
-			FCT_TMPL_DIR . '/no-sidebar-no-featured.php'
+			KWO_TMPL_DIR . '/front-page-content-only.php',
+			KWO_TMPL_DIR . '/no-sidebar.php',
+			KWO_TMPL_DIR . '/no-sidebar-no-featured.php'
 		] )
 	) {
 		$classes[] = 'no-sidebar';
@@ -509,13 +509,13 @@ function site_schema() {
 		( function_exists( 'bbp_is_user_home' ) && bbp_is_user_home() )
 	) {
 		$itemtype = esc_attr( 'ProfilePage' );
-	} elseif ( is_page( 'about' ) || is_page( 'about-us' ) || is_page_template( [ FCT_TMPL_DIR . '/page-about.php', FCT_TMPL_DIR . '/about.php' ] ) ) {
+	} elseif ( is_page( 'about' ) || is_page( 'about-us' ) || is_page_template( [ KWO_TMPL_DIR . '/page-about.php', KWO_TMPL_DIR . '/about.php' ] ) ) {
 		$itemtype = esc_attr( 'AboutPage' );
-	} elseif ( is_page( 'contact' ) || is_page( 'contact-us' ) || is_page_template( [ FCT_TMPL_DIR . '/page-contact.php', FCT_TMPL_DIR . '/contact.php' ] ) ) {
+	} elseif ( is_page( 'contact' ) || is_page( 'contact-us' ) || is_page_template( [ KWO_TMPL_DIR . '/page-contact.php', KWO_TMPL_DIR . '/contact.php' ] ) ) {
 		$itemtype = esc_attr( 'ContactPage' );
-	} elseif ( is_page( 'faq' ) || is_page( 'faqs' ) || is_page_template( [ FCT_TMPL_DIR . '/page-faq.php', FCT_TMPL_DIR . '/faq.php' ] ) ) {
+	} elseif ( is_page( 'faq' ) || is_page( 'faqs' ) || is_page_template( [ KWO_TMPL_DIR . '/page-faq.php', KWO_TMPL_DIR . '/faq.php' ] ) ) {
 		$itemtype = esc_attr( 'QAPage' );
-	} elseif ( is_page( 'cart' ) || is_page( 'shopping-cart' ) || is_page( 'checkout' ) || is_page_template( [ FCT_TMPL_DIR . '/cart.php', FCT_TMPL_DIR . '/checkout.php' ] ) ) {
+	} elseif ( is_page( 'cart' ) || is_page( 'shopping-cart' ) || is_page( 'checkout' ) || is_page_template( [ KWO_TMPL_DIR . '/cart.php', KWO_TMPL_DIR . '/checkout.php' ] ) ) {
 		$itemtype = esc_attr( 'CheckoutPage' );
 	} elseif ( is_front_page() || is_page() ) {
 		$itemtype = esc_attr( 'WebPage' );
@@ -577,7 +577,7 @@ function site_logo( $html = null ) {
  * @return void
  */
 function navigation_main() {
-	get_template_part( FCT_PARTS_DIR . '/navigation/navigation-main' );
+	get_template_part( KWO_PARTS_DIR . '/navigation/navigation-main' );
 }
 
 /**
@@ -596,7 +596,7 @@ function content_template() {
 	$acf = new Vendor\Theme_ACF;
 
 	// Post query arguments to look for published posts.
-	$args = apply_filters( 'fct_content_template_query', [
+	$args = apply_filters( 'kwo_content_template_query', [
 		'post_status' => [ 'publish' ],
 		'post_type'   => [ get_post_type( get_the_ID() ) ]
 	] );
@@ -611,7 +611,7 @@ function content_template() {
 		if ( 'page' == get_option( 'show_on_front' ) && is_front_page() ) {
 			$template = 'content-front-page' . $acf->suffix();
 
-		} elseif ( is_page_template( FCT_TMPL_DIR . '/page-builder.php' ) ) {
+		} elseif ( is_page_template( KWO_TMPL_DIR . '/page-builder.php' ) ) {
 
 			$template = 'content-builder';
 
@@ -626,7 +626,7 @@ function content_template() {
 	}
 
 	// Look for a specific template as applied above.
-	$locate = locate_template( FCT_PARTS_DIR . '/content/' . $template . '.php' );
+	$locate = locate_template( KWO_PARTS_DIR . '/content/' . $template . '.php' );
 
 	// Use the specific template if found.
 	if ( $locate ) {
@@ -643,10 +643,10 @@ function content_template() {
 	}
 
 	// Apply a filter for unforeseen conditions.
-	$template = apply_filters( 'fct_content_template', $template );
+	$template = apply_filters( 'kwo_content_template', $template );
 
 	// Get the content template part.
-	return get_template_part( FCT_PARTS_DIR . '/content/' . $template );
+	return get_template_part( KWO_PARTS_DIR . '/content/' . $template );
 }
 
 /**
@@ -673,7 +673,7 @@ function posted_on() {
 
 	$posted_on = sprintf(
 		/* translators: %s: post date. */
-		esc_html_x( 'Posted on %s', 'post date', 'frontcore' ),
+		esc_html_x( 'Posted on %s', 'post date', 'korey-one' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
@@ -692,7 +692,7 @@ function posted_on() {
 function posted_by() {
 
 	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'frontcore' ),
+		esc_html_x( 'by %s', 'post author', 'korey-one' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -711,20 +711,20 @@ function posted_by() {
 function entry_footer() {
 
 	// Get the content display setting from the Customizer.
-	$blog_format = Customize\blog_format( get_theme_mod( 'fct_blog_format' ) );
+	$blog_format = Customize\blog_format( get_theme_mod( 'kwo_blog_format' ) );
 
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 
-		$categories_list = get_the_category_list( esc_html__( ', ', 'frontcore' ) );
+		$categories_list = get_the_category_list( esc_html__( ', ', 'korey-one' ) );
 		if ( $categories_list ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'frontcore' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'korey-one' ) . '</span>', $categories_list );
 		}
 
-		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'frontcore' ) );
+		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'korey-one' ) );
 
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'frontcore' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'korey-one' ) . '</span>', $tags_list );
 		}
 
 	}
@@ -735,7 +735,7 @@ function entry_footer() {
 		comments_popup_link(
 			sprintf(
 				wp_kses(
-					__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'frontcore' ),
+					__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'korey-one' ),
 					[
 						'span' => [
 							'class' => [],
@@ -763,10 +763,10 @@ function post_thumbnail() {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 		return;
 	} elseif (
-		is_page_template( FCT_TMPL_DIR . '/front-page-content-only.php' ) ||
-		is_page_template( FCT_TMPL_DIR . '/no-featured.php' ) ||
-		is_page_template( FCT_TMPL_DIR . '/no-sidebar-no-featured.php' ) ||
-		is_page_template( FCT_TMPL_DIR . '/page-builder.php' )
+		is_page_template( KWO_TMPL_DIR . '/front-page-content-only.php' ) ||
+		is_page_template( KWO_TMPL_DIR . '/no-featured.php' ) ||
+		is_page_template( KWO_TMPL_DIR . '/no-sidebar-no-featured.php' ) ||
+		is_page_template( KWO_TMPL_DIR . '/page-builder.php' )
 	) {
 		return;
 	}
@@ -818,8 +818,8 @@ function post_thumbnail() {
 function theme_mode_script() {
 
 	?>
-	<script><?php echo file_get_contents( FCT_URL . '/assets/js/cookie.min.js' ); ?></script>
-	<script>(function(e){e(window).load(function(){var t=e(".theme-toggle"),o=e.cookie("fct_theme_mode_class"),m=e.cookie("fct_theme_mode_text");o||(e.cookie("fct_theme_mode_class","light-mode",{path:"/",expires:7,secure:true}),e("html, body").removeClass("dark-mode").addClass("light-mode")),m||(e.cookie("fct_theme_mode_text","<?php _e('Dark Theme','frontcore'); ?>",{path:"/",expires:7,secure:true}),e(t).text("<?php _e('Dark Theme','frontcore'); ?>")),o&&e("html, body").addClass(o),m&&e(t).text(m),e(t).click(function(){e("html, body").hasClass("light-mode")?(e.cookie("fct_theme_mode_class","dark-mode",{path:"/",expires:7,secure:true}),e.cookie("fct_theme_mode_text","<?php _e('Light Theme','frontcore'); ?>",{path:"/",expires:7,secure:true}),e("html, body").removeClass("light-mode").addClass("dark-mode"),e(t).text("<?php _e('Light Theme','frontcore'); ?>")):(e.cookie("fct_theme_mode_class","light-mode",{path:"/",expires:7,secure:true}),e.cookie("fct_theme_mode_text","<?php _e('Dark Theme','frontcore'); ?>",{path:"/",expires:7,secure:true}),e("html, body").removeClass("dark-mode").addClass("light-mode"),e(t).text("<?php _e('Dark Theme','frontcore'); ?>"))})})})(jQuery);</script>
+	<script><?php echo file_get_contents( KWO_URL . '/assets/js/cookie.min.js' ); ?></script>
+	<script>(function(e){e(window).load(function(){var t=e(".theme-toggle"),o=e.cookie("kwo_theme_mode_class"),m=e.cookie("kwo_theme_mode_text");o||(e.cookie("kwo_theme_mode_class","light-mode",{path:"/",expires:7,secure:true}),e("html, body").removeClass("dark-mode").addClass("light-mode")),m||(e.cookie("kwo_theme_mode_text","<?php _e('Dark Theme','korey-one'); ?>",{path:"/",expires:7,secure:true}),e(t).text("<?php _e('Dark Theme','korey-one'); ?>")),o&&e("html, body").addClass(o),m&&e(t).text(m),e(t).click(function(){e("html, body").hasClass("light-mode")?(e.cookie("kwo_theme_mode_class","dark-mode",{path:"/",expires:7,secure:true}),e.cookie("kwo_theme_mode_text","<?php _e('Light Theme','korey-one'); ?>",{path:"/",expires:7,secure:true}),e("html, body").removeClass("light-mode").addClass("dark-mode"),e(t).text("<?php _e('Light Theme','korey-one'); ?>")):(e.cookie("kwo_theme_mode_class","light-mode",{path:"/",expires:7,secure:true}),e.cookie("kwo_theme_mode_text","<?php _e('Dark Theme','korey-one'); ?>",{path:"/",expires:7,secure:true}),e("html, body").removeClass("dark-mode").addClass("light-mode"),e(t).text("<?php _e('Dark Theme','korey-one'); ?>"))})})})(jQuery);</script>
 	<?php
 }
 
@@ -835,15 +835,15 @@ function theme_mode_script() {
 function theme_mode() {
 
 	// Add the toggle script to the footer if the widget is not active.
-	if ( is_active_widget( false, false, 'FrontCore\Classes\Widgets\Theme_Mode', true ) ) {
+	if ( is_active_widget( false, false, 'KoreyOne\Classes\Widgets\Theme_Mode', true ) ) {
 		add_action( 'wp_head', 'theme_mode_script' );
 	}
 
 	// Toggle button markup.
 	$button = sprintf(
 		'<button class="theme-toggle" type="button" name="dark_light" title="%1s">%2s</button>',
-		esc_html__( 'Toggle light/dark theme', 'frontcore' ),
-		esc_html__( 'Light Theme', 'frontcore' )
+		esc_html__( 'Toggle light/dark theme', 'korey-one' ),
+		esc_html__( 'Light Theme', 'korey-one' )
 	);
 
 	// Print the toggle button.
@@ -963,23 +963,23 @@ function post_navigation() {
  */
 function get_comments_title() {
 
-	$fct_comment_count = get_comments_number();
+	$kwo_comment_count = get_comments_number();
 
-	if ( '1' === $fct_comment_count ) {
+	if ( '1' === $kwo_comment_count ) {
 		$title = sprintf(
-			esc_html__( 'One comment on &ldquo;%1$s&rdquo;', 'frontcore' ),
+			esc_html__( 'One comment on &ldquo;%1$s&rdquo;', 'korey-one' ),
 			'<span>' . get_the_title() . '</span>'
 		);
 
 	} else {
 		$title = sprintf(
-			esc_html( _nx( '%1$s comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', $fct_comment_count, 'comments title', 'frontcore' ) ),
-			number_format_i18n( $fct_comment_count ),
+			esc_html( _nx( '%1$s comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', $kwo_comment_count, 'comments title', 'korey-one' ) ),
+			number_format_i18n( $kwo_comment_count ),
 			'<span>' . get_the_title() . '</span>'
 		);
 	}
 
-	return apply_filters( 'fct_get_comments_title', $title );
+	return apply_filters( 'kwo_get_comments_title', $title );
 }
 
 /**
@@ -1004,7 +1004,7 @@ function comment_form_args() {
 
 	$before_form = sprintf(
 		'<p>%s</p>',
-		__( 'Your email address will not be published. Required fields are marked *.', 'frontcore' )
+		__( 'Your email address will not be published. Required fields are marked *.', 'korey-one' )
 	);
 
 	$moderation = get_option( 'comment_moderation' );
@@ -1012,28 +1012,28 @@ function comment_form_args() {
 
 		$before_form .= sprintf(
 			'<p>%s</p>',
-			__( 'Your comment will be held for moderation before it appears here.', 'frontcore' )
+			__( 'Your comment will be held for moderation before it appears here.', 'korey-one' )
 		);
-		$submit_title_attr = __( 'Submit your comment for approval', 'frontcore' );
+		$submit_title_attr = __( 'Submit your comment for approval', 'korey-one' );
 
 	} else {
-		$submit_title_attr = __( 'Submit your comment', 'frontcore' );
+		$submit_title_attr = __( 'Submit your comment', 'korey-one' );
 	}
 
 	$args = [
-		'title_reply' => __( 'Submit a Comment', 'frontcore' ),
+		'title_reply' => __( 'Submit a Comment', 'korey-one' ),
 		'comment_notes_before' => $before_form,
 		'submit_button' => sprintf(
 			'<input type="submit" name="%1$s" id="%2$s" class="%3$s" value="%4$s" title="%5$s" />',
 			'submit',
 			'submit',
 			'submit',
-			__( 'Submit', 'frontcore' ),
+			__( 'Submit', 'korey-one' ),
 			$submit_title_attr
 		)
 	];
 
-	return apply_filters( 'fct_comment_form_args', $args );
+	return apply_filters( 'kwo_comment_form_args', $args );
 }
 
 /**
@@ -1059,12 +1059,12 @@ function get_comments_closed() {
 
 	if ( ! comments_open() ) {
 		return apply_filters(
-			'fct_get_comments_closed',
+			'kwo_get_comments_closed',
 			sprintf(
 				'%s %s %s',
-				__( 'Comments for this', 'frontcore' ),
+				__( 'Comments for this', 'korey-one' ),
 				strtolower( $post_type->labels->singular_name ),
-				__( 'are closed.', 'frontcore' )
+				__( 'are closed.', 'korey-one' )
 			)
 		);
 	}
@@ -1090,7 +1090,7 @@ function comments_closed() {
 		$html = '';
 	}
 
-	echo apply_filters( 'fct_comments_closed', $html );
+	echo apply_filters( 'kwo_comments_closed', $html );
 }
 
 /**
@@ -1113,7 +1113,7 @@ function get_previous_comments_link( $label = '' ) {
 	$prevpage = (int) $page - 1;
 
 	if ( empty( $label ) ) {
-		$label = __( 'Older Comments', 'frontcore' );
+		$label = __( 'Older Comments', 'korey-one' );
 	}
 
 	$html = sprintf(
@@ -1123,7 +1123,7 @@ function get_previous_comments_link( $label = '' ) {
 		preg_replace( '/&([^#])(?![a-z]{1,8};)/i', '&#038;$1', $label )
 	);
 
-	return apply_filters( 'fct_get_previous_comments_link', $html );
+	return apply_filters( 'kwo_get_previous_comments_link', $html );
 }
 
 /**
@@ -1160,7 +1160,7 @@ function get_next_comments_link( $label = '', $max_page = 0 ) {
 	}
 
 	if ( empty( $label ) ) {
-		$label = __( 'Newer Comments', 'frontcore' );
+		$label = __( 'Newer Comments', 'korey-one' );
 	}
 
 	$html = sprintf(
@@ -1170,7 +1170,7 @@ function get_next_comments_link( $label = '', $max_page = 0 ) {
 		preg_replace( '/&([^#])(?![a-z]{1,8};)/i', '&#038;$1', $label )
 	);
 
-	return apply_filters( 'fct_get_next_comments_link', $html );
+	return apply_filters( 'kwo_get_next_comments_link', $html );
 }
 
 /**
@@ -1192,10 +1192,10 @@ function get_comments_navigation( $args = [] ) {
 		$args = wp_parse_args(
 			$args,
 			[
-				'prev_text'          => __( 'Older comments', 'frontcore' ),
-				'next_text'          => __( 'Newer comments', 'frontcore' ),
-				'screen_reader_text' => __( 'Comments Navigation', 'frontcore' ),
-				'aria_label'         => __( 'Comments', 'frontcore' ),
+				'prev_text'          => __( 'Older comments', 'korey-one' ),
+				'next_text'          => __( 'Newer comments', 'korey-one' ),
+				'screen_reader_text' => __( 'Comments Navigation', 'korey-one' ),
+				'aria_label'         => __( 'Comments', 'korey-one' ),
 				'class'              => 'comment-navigation',
 			]
 		);

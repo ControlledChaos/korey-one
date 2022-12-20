@@ -2,13 +2,13 @@
 /**
  * Frontend head section
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Includes
  * @category   Frontend
  * @since      1.0.0
  */
 
-namespace FrontCore\Head;
+namespace KoreyOne\Head;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -41,7 +41,7 @@ function setup() {
 	add_action( 'init', $ns( 'disable_emojis' ) );
 
 	// Load the `<head>` section.
-	add_action( 'FrontCore\head', $ns( 'head' ) );
+	add_action( 'KoreyOne\head', $ns( 'head' ) );
 }
 
 /**
@@ -110,5 +110,5 @@ function disable_emojis() {
  * @return void
  */
 function head() {
-	include get_theme_file_path( FCT_PARTS_DIR . '/header/head.php' );
+	include get_theme_file_path( KWO_PARTS_DIR . '/header/head.php' );
 }

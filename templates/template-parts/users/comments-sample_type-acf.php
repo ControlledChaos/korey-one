@@ -5,16 +5,16 @@
  * This is the template that displays the area of the page that
  * contains both the current comments and the comment form.
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Users
  * @since      1.0.0
  */
 
-namespace FrontCore;
+namespace KoreyOne;
 
 // Alias namespaces.
-use FrontCore\Classes\Front as Front;
+use KoreyOne\Classes\Front as Front;
 
 /*
  * If the current post is protected by a password and

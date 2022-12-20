@@ -13,7 +13,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background: var( --fct-bg-color );
+	background: var( --kwo-bg-color );
 	font-size: 1.125rem;
 	line-height: 1.5;
 	color: $text_color;
@@ -90,7 +90,7 @@
 
 	#login {
 		width: 100%;
-		max-width: var( --fct-content-width );
+		max-width: var( --kwo-content-width );
 		margin: 0;
 		padding: 2rem;
 

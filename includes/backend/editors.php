@@ -4,16 +4,16 @@
  *
  * Methods for the block editor in WordPress 5.0 or greater.
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Includes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace FrontCore\Editors;
+namespace KoreyOne\Editors;
 
 // Alias namespaces.
-use  FrontCore\Classes\Core as Core;
+use  KoreyOne\Classes\Core as Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -72,33 +72,33 @@ function color_palettes() {
 	 */
 	$color_args = [
 		[
-			'name'  => __( 'Dark Gray', 'frontcore' ),
-			'slug'  => 'fct-dark-gray',
+			'name'  => __( 'Dark Gray', 'korey-one' ),
+			'slug'  => 'kwo-dark-gray',
 			'color' => '#333333',
 		],
 		[
-			'name'  => __( 'Medium Gray', 'frontcore' ),
-			'slug'  => 'fct-medium-gray',
+			'name'  => __( 'Medium Gray', 'korey-one' ),
+			'slug'  => 'kwo-medium-gray',
 			'color' => '#555555',
 		],
 		[
-			'name'  => __( 'Light Gray', 'frontcore' ),
-			'slug'  => 'fct-light-gray',
+			'name'  => __( 'Light Gray', 'korey-one' ),
+			'slug'  => 'kwo-light-gray',
 			'color' => '#888888',
 		],
 		[
-			'name'  => __( 'Pale Gray', 'frontcore' ),
-			'slug'  => 'fct-pale-gray',
+			'name'  => __( 'Pale Gray', 'korey-one' ),
+			'slug'  => 'kwo-pale-gray',
 			'color' => '#cccccc',
 		],
 		[
-			'name'  => __( 'White', 'frontcore' ),
-			'slug'  => 'fct-white',
+			'name'  => __( 'White', 'korey-one' ),
+			'slug'  => 'kwo-white',
 			'color' => '#ffffff',
 		],
 		[
-			'name'  => __( 'Error Red', 'frontcore' ),
-			'slug'  => 'fct-error',
+			'name'  => __( 'Error Red', 'korey-one' ),
+			'slug'  => 'kwo-error',
 			'color' => '#dc3232',
 		],
 		[
@@ -107,19 +107,19 @@ function color_palettes() {
 			'color' => '#ee6600',
 		],
 		[
-			'name'  => __( 'Warning Yellow', 'frontcore' ),
-			'slug'  => 'fct-warning',
+			'name'  => __( 'Warning Yellow', 'korey-one' ),
+			'slug'  => 'kwo-warning',
 			'color' => '#ffb900',
 		],
 		[
-			'name'  => __( 'Success Green', 'frontcore' ),
-			'slug'  => 'fct-success',
+			'name'  => __( 'Success Green', 'korey-one' ),
+			'slug'  => 'kwo-success',
 			'color' => '#46b450',
 		]
 	];
 
 	// Apply a filter to editor arguments.
-	$colors = apply_filters( 'fct_editor_colors', $color_args );
+	$colors = apply_filters( 'kwo_editor_colors', $color_args );
 
 	// Add theme color support.
 	add_theme_support( 'editor-color-palette', $colors );
@@ -160,7 +160,7 @@ function allow_custom_colors() {
 	$allowed = array_merge( $allowed_ids, $admin );
 
 	// Return a filtered array of allowed users.
-	return apply_filters( 'fct_allow_custom_colors', $allowed );
+	return apply_filters( 'kwo_allow_custom_colors', $allowed );
 }
 
 /**

@@ -5,13 +5,13 @@
  * Methods for enqueueing and printing assets
  * such as JavaScript and CSS files.
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Includes
  * @category   Assets
  * @since      1.0.0
  */
 
-namespace FrontCore\Shared_Assets;
+namespace KoreyOne\Shared_Assets;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -39,7 +39,7 @@ function setup() {
 	add_action( 'login_enqueue_scripts', $ns( 'login_styles' ) );
 
 	// Embedded content styles.
-	add_action( 'fct_embed_head', $ns( 'embed_styles' ) );
+	add_action( 'kwo_embed_head', $ns( 'embed_styles' ) );
 }
 
 /**
@@ -53,7 +53,7 @@ function setup() {
 function toolbar_styles() {
 
 	if ( is_user_logged_in() && is_admin_bar_showing() ) {
-		wp_enqueue_style( 'fct-toolbar', get_theme_file_uri( '/assets/css/toolbar' . suffix() . '.css' ), [], FCT_VERSION, 'screen' );
+		wp_enqueue_style( 'kwo-toolbar', get_theme_file_uri( '/assets/css/toolbar' . suffix() . '.css' ), [], KWO_VERSION, 'screen' );
 	}
 }
 
@@ -65,7 +65,7 @@ function toolbar_styles() {
  */
 function login_styles() {
 
-	wp_enqueue_style( 'fct-login', get_theme_file_uri( '/assets/css/login' . suffix() . '.css' ), [ 'login' ], FCT_VERSION, 'screen' );
+	wp_enqueue_style( 'kwo-login', get_theme_file_uri( '/assets/css/login' . suffix() . '.css' ), [ 'login' ], KWO_VERSION, 'screen' );
 }
 
 /**
@@ -76,7 +76,7 @@ function login_styles() {
  */
 function embed_styles() {
 
-	wp_enqueue_style( 'fct-embed', get_theme_file_uri( '/assets/css/embed' . suffix() . '.css' ), [], FCT_VERSION, 'screen' );
+	wp_enqueue_style( 'kwo-embed', get_theme_file_uri( '/assets/css/embed' . suffix() . '.css' ), [], KWO_VERSION, 'screen' );
 }
 
 /**

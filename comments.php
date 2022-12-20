@@ -7,7 +7,7 @@
  *
  * @see includes/users/comments.php for comment template filter.
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Templates
  * @category   Users
  * @since      1.0.0

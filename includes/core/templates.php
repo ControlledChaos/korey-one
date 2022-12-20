@@ -4,13 +4,13 @@
  *
  * Make page templates available to select post types and page types.
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Includes
  * @category   Setup
  * @since      1.0.0
  */
 
-namespace FrontCore\Templates;
+namespace KoreyOne\Templates;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -62,7 +62,7 @@ function front_page_default_template_title( $default_title ) {
 	$front_page = (int) get_option( 'page_on_front' );
 
 	if ( 'page' == $typenow && 'page' == $front_show && get_the_ID() == $front_page ) {
-		$default_title = __( 'Front Page Default', 'frontcore' );
+		$default_title = __( 'Front Page Default', 'korey-one' );
 	}
 	return $default_title;
 }
@@ -92,12 +92,12 @@ function front_page_templates( $post_templates ) {
 	if ( 'page' == $typenow && 'page' == $front_show && get_the_ID() == $front_page ) {
 
 		// Unset general templates.
-		unset( $post_templates[FCT_TMPL_DIR . '/no-sidebar.php'] );
-		unset( $post_templates[FCT_TMPL_DIR . '/no-featured.php'] );
-		unset( $post_templates[FCT_TMPL_DIR . '/no-sidebar-no-featured.php'] );
+		unset( $post_templates[KWO_TMPL_DIR . '/no-sidebar.php'] );
+		unset( $post_templates[KWO_TMPL_DIR . '/no-featured.php'] );
+		unset( $post_templates[KWO_TMPL_DIR . '/no-sidebar-no-featured.php'] );
 
 		// Set specific front page templates.
-		$post_templates[FCT_TMPL_DIR . '/front-page-content-only.php'] = __( 'Front Page Content Only', 'frontcore' );
+		$post_templates[KWO_TMPL_DIR . '/front-page-content-only.php'] = __( 'Front Page Content Only', 'korey-one' );
 	}
 
 	return $post_templates;
@@ -119,9 +119,9 @@ function post_templates( $post_templates ) {
 		return;
 	}
 
-	$post_templates[FCT_TMPL_DIR . '/no-sidebar.php']  = __( 'No Sidebar', 'frontcore' );
-	$post_templates[FCT_TMPL_DIR . '/no-featured.php'] = __( 'No Featured Image', 'frontcore' );
-	$post_templates[FCT_TMPL_DIR . '/no-sidebar-no-featured.php'] = __( 'No Sidebar, No Featured Image', 'frontcore' );
+	$post_templates[KWO_TMPL_DIR . '/no-sidebar.php']  = __( 'No Sidebar', 'korey-one' );
+	$post_templates[KWO_TMPL_DIR . '/no-featured.php'] = __( 'No Featured Image', 'korey-one' );
+	$post_templates[KWO_TMPL_DIR . '/no-sidebar-no-featured.php'] = __( 'No Sidebar, No Featured Image', 'korey-one' );
 
 	return $post_templates;
 }
@@ -145,9 +145,9 @@ function sample_templates( $post_templates ) {
 		return;
 	}
 
-	$post_templates[FCT_TMPL_DIR . '/no-sidebar.php']  = __( 'No Sidebar', 'frontcore' );
-	$post_templates[FCT_TMPL_DIR . '/no-featured.php'] = __( 'No Featured Image', 'frontcore' );
-	$post_templates[FCT_TMPL_DIR . '/no-sidebar-no-featured.php'] = __( 'No Sidebar, No Featured Image', 'frontcore' );
+	$post_templates[KWO_TMPL_DIR . '/no-sidebar.php']  = __( 'No Sidebar', 'korey-one' );
+	$post_templates[KWO_TMPL_DIR . '/no-featured.php'] = __( 'No Featured Image', 'korey-one' );
+	$post_templates[KWO_TMPL_DIR . '/no-sidebar-no-featured.php'] = __( 'No Sidebar, No Featured Image', 'korey-one' );
 
 	return $post_templates;
 }

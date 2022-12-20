@@ -7,46 +7,46 @@
 :root {
 
 	// General.
-	--fct-bg-color: #{$white};
-	--fct-text-color: #{$dark_gray};
-	--fct-link-color: #{$blue};
-	--fct-link-action-color: #{$violet};
+	--kwo-bg-color: #{$white};
+	--kwo-text-color: #{$dark_gray};
+	--kwo-link-color: #{$blue};
+	--kwo-link-action-color: #{$violet};
 
-	--fct-sans-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-	--fct-serif-stack: 'Hoefler Text', 'Baskerville Old Face', Garamond, Times, 'Times New Roman', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--kwo-sans-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--kwo-serif-stack: 'Hoefler Text', 'Baskerville Old Face', Garamond, Times, 'Times New Roman', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-	--fct-box-border-color: #{$pale_gray};
+	--kwo-box-border-color: #{$pale_gray};
 
 	// Forms & buttons.
-	--fct-form--font-weight: 400;
-	--fct-form--bg-color: var( --fct-bg-color, inherit );
-	--fct-form--border-color: var( --fct-box-border-color );
-	--fct-form--action-border-color: #{$blue};
-	--fct-form--placeholder-color: #{$light_gray};
+	--kwo-form--font-weight: 400;
+	--kwo-form--bg-color: var( --kwo-bg-color, inherit );
+	--kwo-form--border-color: var( --kwo-box-border-color );
+	--kwo-form--action-border-color: #{$blue};
+	--kwo-form--placeholder-color: #{$light_gray};
 
-	--fct-button--font-weight: 700;
-	--fct-button--bg-color: var( --fct-bg-color, inherit );
-	--fct-button--action-bg-color: #{$pale_gray};
-	--fct-button--border-color: var( --fct-form--border-color );
-	--fct-button--text-color: var( --fct-form--text-color );
-	--fct-button--action-text-color: var( --fct-form--text-color );
+	--kwo-button--font-weight: 700;
+	--kwo-button--bg-color: var( --kwo-bg-color, inherit );
+	--kwo-button--action-bg-color: #{$pale_gray};
+	--kwo-button--border-color: var( --kwo-form--border-color );
+	--kwo-button--text-color: var( --kwo-form--text-color );
+	--kwo-button--action-text-color: var( --kwo-form--text-color );
 
 	// Layout.
-	--fct-content-width: 1280px; // @see includes/classes/core/class-setup.php for media content width.
-	--fct-secondary-min-width: 240px;
-	--fct-secondary-max-width: 320px;
-	--fct-content-separator: 2rem;
+	--kwo-content-width: 1280px; // @see includes/classes/core/class-setup.php for media content width.
+	--kwo-secondary-min-width: 240px;
+	--kwo-secondary-max-width: 320px;
+	--kwo-content-separator: 2rem;
 
 	// Header.
 
 	// Navigation.
-	--fct-nav--bg-color: var( --fct-bg-color, inherit );
-	--fct-subnav---bg-color: var( --fct-nav--bg-color );
+	--kwo-nav--bg-color: var( --kwo-bg-color, inherit );
+	--kwo-subnav---bg-color: var( --kwo-nav--bg-color );
 
 	// Main content.
 
 	// Widgets.
 
 	// Footer
-	--fct-copyright-font-size: 0.825em;
+	--kwo-copyright-font-size: 0.825em;
 }

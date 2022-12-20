@@ -7,68 +7,68 @@
 @import 'partials/_forms';
 
 // Block editor background color classes.
-.has-fct-dark-gray-background-color {
+.has-kwo-dark-gray-background-color {
 	background-color: $dark_gray;
 }
 
-.has-fct-medium-gray-background-color {
+.has-kwo-medium-gray-background-color {
 	background-color: $medium_gray;
 }
 
-.has-fct-light-gray-background-color {
+.has-kwo-light-gray-background-color {
 	background-color: $light_gray;
 }
 
-.has-fct-pale-gray-background-color {
+.has-kwo-pale-gray-background-color {
 	background-color: $pale_gray;
 }
 
-.has-fct-white-background-color {
+.has-kwo-white-background-color {
 	background-color: $white;
 }
 
-.has-fct-error-background-color {
+.has-kwo-error-background-color {
 	background-color: $error;
 }
 
-.has-fct-warning-background-color {
+.has-kwo-warning-background-color {
 	background-color: $warning;
 }
 
-.has-fct-success-background-color {
+.has-kwo-success-background-color {
 	background-color: $success;
 }
 
 // Block editor text color classes.
-.has-fct-dark-gray-color {
+.has-kwo-dark-gray-color {
 	color: $dark_gray;
 }
 
-.has-fct-medium-gray-color {
+.has-kwo-medium-gray-color {
 	color: $medium_gray;
 }
 
-.has-fct-light-gray-color {
+.has-kwo-light-gray-color {
 	color: $light_gray;
 }
 
-.has-fct-pale-gray-color {
+.has-kwo-pale-gray-color {
 	color: $pale_gray;
 }
 
-.has-fct-white-color {
+.has-kwo-white-color {
 	color: $white;
 }
 
-.has-fct-error-color {
+.has-kwo-error-color {
 	color: $error;
 }
 
-.has-fct-warning-color {
+.has-kwo-warning-color {
 	color: $warning;
 }
 
-.has-fct-success-color {
+.has-kwo-success-color {
 	color: $success;
 }
 
@@ -85,7 +85,7 @@
 /// Layout
 ///
 .wp-block-cover__inner-container {
-	max-width: var( --fct-content-width );
+	max-width: var( --kwo-content-width );
 	margin: 0 auto;
 	padding: 2em;
 }

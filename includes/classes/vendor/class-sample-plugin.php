@@ -2,13 +2,13 @@
 /**
  * Sample plugin compatibility
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Classes
  * @category   Vendor
  * @since      1.0.0
  */
 
-namespace FrontCore\Classes\Vendor;
+namespace KoreyOne\Classes\Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -93,7 +93,7 @@ class Sample_Plugin extends Plugin {
 	public function use_bundled() {
 
 		// Override constant.
-		if ( defined( 'FCT_USE_SAMPLE_PLUGIN' ) && false == FCT_USE_SAMPLE_PLUGIN ) {
+		if ( defined( 'KWO_USE_SAMPLE_PLUGIN' ) && false == KWO_USE_SAMPLE_PLUGIN ) {
 			return false;
 		}
 		return true;

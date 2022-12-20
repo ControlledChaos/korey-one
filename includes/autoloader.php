@@ -2,13 +2,13 @@
 /**
  * Class autoloader
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Includes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace FrontCore;
+namespace KoreyOne;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,19 +23,19 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  * @var   array Defines an array of class file paths.
  */
-define( 'FCT_CLASS', [
-	'core'       => FCT_PATH . 'includes/classes/core/class-',
-	'settings'   => FCT_PATH . 'includes/classes/settings/class-',
-	'tools'      => FCT_PATH . 'includes/classes/tools/class-',
-	'media'      => FCT_PATH . 'includes/classes/media/class-',
-	'users'      => FCT_PATH . 'includes/classes/users/class-',
-	'navigation' => FCT_PATH . 'includes/classes/navigation/class-',
-	'widgets'    => FCT_PATH . 'includes/classes/widgets/class-',
-	'vendor'     => FCT_PATH . 'includes/classes/vendor/class-',
-	'admin'      => FCT_PATH . 'includes/classes/backend/class-',
-	'front'      => FCT_PATH . 'includes/classes/frontend/class-',
-	'customize'  => FCT_PATH . 'includes/classes/customizer/class-',
-	'general'    => FCT_PATH . 'includes/classes/class-',
+define( 'KWO_CLASS', [
+	'core'       => KWO_PATH . 'includes/classes/core/class-',
+	'settings'   => KWO_PATH . 'includes/classes/settings/class-',
+	'tools'      => KWO_PATH . 'includes/classes/tools/class-',
+	'media'      => KWO_PATH . 'includes/classes/media/class-',
+	'users'      => KWO_PATH . 'includes/classes/users/class-',
+	'navigation' => KWO_PATH . 'includes/classes/navigation/class-',
+	'widgets'    => KWO_PATH . 'includes/classes/widgets/class-',
+	'vendor'     => KWO_PATH . 'includes/classes/vendor/class-',
+	'admin'      => KWO_PATH . 'includes/classes/backend/class-',
+	'front'      => KWO_PATH . 'includes/classes/frontend/class-',
+	'customize'  => KWO_PATH . 'includes/classes/customizer/class-',
+	'general'    => KWO_PATH . 'includes/classes/class-',
 ] );
 
 /**
@@ -44,7 +44,7 @@ define( 'FCT_CLASS', [
  * @since 1.0.0
  * @var   string Defines the namespace of class files.
  */
-define( 'FCT_CLASS_NS', __NAMESPACE__ . '\Classes' );
+define( 'KWO_CLASS_NS', __NAMESPACE__ . '\Classes' );
 
 /**
  * Array of classes to register
@@ -58,14 +58,14 @@ define( 'FCT_CLASS_NS', __NAMESPACE__ . '\Classes' );
  * @since 1.0.0
  * @var   array Defines an array of class files to register.
  */
-define( 'FCT_CLASSES', [
+define( 'KWO_CLASSES', [
 
 	// Widgets classes.
-	FCT_CLASS_NS . '\Widgets\Theme_Mode' => FCT_CLASS['widgets'] . 'theme-mode.php',
+	KWO_CLASS_NS . '\Widgets\Theme_Mode' => KWO_CLASS['widgets'] . 'theme-mode.php',
 
 	// Vendor classes.
-	FCT_CLASS_NS . '\Vendor\Plugin'    => FCT_CLASS['vendor'] . 'plugin.php',
-	FCT_CLASS_NS . '\Vendor\Theme_ACF' => FCT_CLASS['vendor'] . 'theme-acf.php',
+	KWO_CLASS_NS . '\Vendor\Plugin'    => KWO_CLASS['vendor'] . 'plugin.php',
+	KWO_CLASS_NS . '\Vendor\Theme_ACF' => KWO_CLASS['vendor'] . 'theme-acf.php',
 ] );
 
 /**
@@ -77,8 +77,8 @@ define( 'FCT_CLASSES', [
  */
 spl_autoload_register(
 	function ( string $class ) {
-		if ( isset( FCT_CLASSES[ $class ] ) ) {
-			require FCT_CLASSES[ $class ];
+		if ( isset( KWO_CLASSES[ $class ] ) ) {
+			require KWO_CLASSES[ $class ];
 		}
 	}
 );

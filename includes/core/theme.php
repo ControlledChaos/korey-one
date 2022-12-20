@@ -2,15 +2,15 @@
 /**
  * Theme setup
  *
- * @package    Front_Core
+ * @package    Korey_One
  * @subpackage Includes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace FrontCore\Theme;
+namespace KoreyOne\Theme;
 
-use function FrontCore\Shared_Assets\suffix;
+use function KoreyOne\Shared_Assets\suffix;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -68,7 +68,7 @@ function setup() {
 function setup_theme() {
 
 	// Load domain for translation.
-	load_theme_textdomain( 'frontcore' );
+	load_theme_textdomain( 'korey-one' );
 
 	// Browser title tag support.
 	add_theme_support( 'title-tag' );
@@ -96,75 +96,19 @@ function setup_theme() {
 		'script'
 		] );
 
-	// Post format support.
-	add_theme_support( 'post-formats', [
-		'aside',
-		'image',
-		'video',
-		'audio',
-		'link',
-		'quote',
-		'status',
-		'chat'
-	 ] );
-
 	// Refresh widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
 	// Featured image support.
 	add_theme_support( 'post-thumbnails' );
 
-	/**
-	 * Default header images
-	 *
-	 * These appear in the customizer as "Suggested" images.
-	 * If no header image is set then the `default-header.jpg`
-	 * image in the `assets/images` directory is used.
-	 */
-	$default_headers = apply_filters( 'fct_default_headers', [
-		'avocado_green' => [
-			'url'           => '%s/assets/images/avocado-green.jpg',
-			'thumbnail_url' => '%s/assets/images/avocado-green.jpg',
-			'description'   => __( 'Green Avocado', 'frontcore' ),
-		],
-		'avocado_blue' => [
-			'url'           => '%s/assets/images/avocado-blue.jpg',
-			'thumbnail_url' => '%s/assets/images/avocado-blue.jpg',
-			'description'   => __( 'Blue Avocado', 'frontcore' ),
-		],
-		'avocado_violet' => [
-			'url'           => '%s/assets/images/avocado-violet.jpg',
-			'thumbnail_url' => '%s/assets/images/avocado-violet.jpg',
-			'description'   => __( 'Violet Avocado', 'frontcore' ),
-		]
-	] );
-	$headers = register_default_headers( $default_headers );
-
-	// Add header support.
-	add_theme_support( 'custom-header', apply_filters( 'fct_custom_header', [
-		'width'              => 2048,
-		'height'             => 878,
-		'flex-height'        => true,
-		'default-image'      => $headers,
-		'video'              => false,
-		'wp-head-callback'   => __NAMESPACE__ . '\\header_style'
-	] ) );
-
-	// Add logo support.
-	add_theme_support( 'custom-logo', apply_filters( 'fct_custom_logo', [
-		'width'       => 160,
-		'height'      => 160,
-		'flex-width'  => true,
-		'flex-height' => true
-	] ) );
-
 	// Set content width.
 	if ( ! isset( $content_width ) ) {
-		$content_width = apply_filters( 'fct_content_width', 1280 );
+		$content_width = apply_filters( 'kwo_content_width', 1280 );
 	}
 
 	// Embed sizes.
-	$embed = apply_filters( 'fct_embed_size', [
+	$embed = apply_filters( 'kwo_embed_size', [
 		'embed_size_w' => 1280,
 		'embed_size_h' => 720
 	] );
@@ -172,7 +116,7 @@ function setup_theme() {
 	update_option( 'embed_size_h', $embed['embed_size_h'] );
 
 	// Add stylesheet for the content editor.
-	add_editor_style( 'assets/css/editor' . suffix() . '.css', [ 'fct-admin' ], '', 'screen' );
+	add_editor_style( 'assets/css/editor' . suffix() . '.css', [ 'kwo-admin' ], '', 'screen' );
 }
 
 /**
@@ -183,7 +127,7 @@ function setup_theme() {
  *
  * @since  1.0.0
  * @param  string $page_template The filename of the template to check against.
- *                               Example: FCT_TMPL_DIR . '/abc-123.php'.
+ *                               Example: KWO_TMPL_DIR . '/abc-123.php'.
  * @global object $post
  * @return bool Returns true if the page template is being used.
  */
@@ -349,10 +293,10 @@ function excerpt_more_auto( $more ) {
 	$html = sprintf(
 		'&hellip; <a class="read-more" href="%s">%s</a>',
 		get_permalink( get_the_ID() ),
-		__( 'Read more', 'frontcore' )
+		__( 'Read more', 'korey-one' )
 	);
 
-	return apply_filters( 'fct_excerpt_more', $html );
+	return apply_filters( 'kwo_excerpt_more', $html );
 }
 
 /**
@@ -371,7 +315,7 @@ function excerpt_more_manual( $text ) {
 	global $post;
 
 	$post_content   = $post->post_content;
-	$excerpt_length = apply_filters( 'fct_excerpt_length', 55 );
+	$excerpt_length = apply_filters( 'kwo_excerpt_length', 55 );
 	$more_content   = substr( $post_content, 0, strpos( $post_content, '<!--more-->' ) );
 	$post_excerpt   = wp_trim_words( $post_content, $excerpt_length, '' );
 	$more_excerpt   = wp_trim_words( $more_content, $excerpt_length, '' );
@@ -385,7 +329,7 @@ function excerpt_more_manual( $text ) {
 		$text .= sprintf(
 			'&hellip; <a class="read-more" href="%s">%s</a>',
 			get_permalink( get_the_ID() ),
-		__( 'Read more', 'frontcore' )
+		__( 'Read more', 'korey-one' )
 		);
 
 	// Excerpt cut short by the "more" tag (paginated post).
@@ -394,7 +338,7 @@ function excerpt_more_manual( $text ) {
 		$text .= sprintf(
 			'&hellip; <a class="read-more" href="%s">%s</a>',
 			get_permalink( get_the_ID() ),
-		__( 'Continue reading', 'frontcore' )
+		__( 'Continue reading', 'korey-one' )
 		);
 
 	// Short excerpt.
@@ -403,7 +347,7 @@ function excerpt_more_manual( $text ) {
 		$text .= sprintf(
 			'<a class="read-more" href="%s">%s %s</a>',
 			get_permalink( get_the_ID() ),
-		__( 'Go to', 'frontcore' ),
+		__( 'Go to', 'korey-one' ),
 		$post_name
 		);
 	}
