@@ -537,9 +537,20 @@ function site_schema() {
  */
 function site_logo( $html = null ) {
 
-	// Get the custom logo URL.
-	$logo = get_theme_mod( 'custom_logo' );
-	$src  = wp_get_attachment_image_src( $logo , 'full' );
+	// Get the custom logo data.
+	$logo    = get_theme_mod( 'custom_logo' );
+	$caption = wp_get_attachment_caption( $logo );
+	$alt     = get_post_meta( $logo, '_wp_attachment_image_alt', true );
+	$src     = wp_get_attachment_image_src( $logo , 'full' );
+
+	// Image caption.
+	if ( $caption ) {
+		$caption = $caption;
+	} elseif ( $alt ) {
+		$caption = $alt;
+	} else {
+		$caption = get_bloginfo( 'name' );
+	}
 
 	// Markup if a logo has been set.
 	if ( has_custom_logo( get_current_blog_id() ) ) {
@@ -563,6 +574,10 @@ function site_logo( $html = null ) {
 				esc_attr( esc_url( $src[0] ) )
 			);
 		}
+		$html .= sprintf(
+			'<figcaption class="screen-reader-text">%s</figcaption>',
+			esc_attr( $caption )
+		);
 		$html .= '</figure>';
 	}
 
