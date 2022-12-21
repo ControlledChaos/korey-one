@@ -544,7 +544,7 @@ function site_logo( $html = null ) {
 	// Markup if a logo has been set.
 	if ( has_custom_logo( get_current_blog_id() ) ) {
 
-		$html = '<div class="site-logo">';
+		$html = '<figure class="site-logo">';
 
 		// Do not link if on the front page.
 		if ( is_front_page() ) {
@@ -563,7 +563,7 @@ function site_logo( $html = null ) {
 				esc_attr( esc_url( $src[0] ) )
 			);
 		}
-		$html .= '</div>';
+		$html .= '</figure>';
 	}
 
 	// Return the logo markup or null.

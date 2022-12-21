@@ -25,6 +25,9 @@
   --kwo-secondary-min-width: 240px;
   --kwo-secondary-max-width: 320px;
   --kwo-content-separator: 2rem;
+  --kwo-logo-max-width: 80px;
+  --kwo-logo-max-height: 80px;
+  --kwo-logo-radius: 50%;
   --kwo-nav--bg-color: var( --kwo-bg-color, inherit );
   --kwo-subnav---bg-color: var( --kwo-nav--bg-color );
   --kwo-copyright-font-size: 0.825em;
@@ -85,15 +88,20 @@
   }
 }
 
-.site-branding-wrap .site-branding img {
+.site-branding-wrap .site-branding .site-logo {
   margin-right: 1em;
-  max-height: 80px;
 }
 
 @media screen and (max-width: 600px) {
-  .site-branding-wrap .site-branding img {
+  .site-branding-wrap .site-branding .site-logo {
     margin: 0;
   }
+}
+
+.site-branding-wrap .site-branding .site-logo img {
+  display: block;
+  max-width: var(--kwo-logo-max-width);
+  border-radius: var(--kwo-logo-radius);
 }
 
 .site-branding-wrap.nav-aside-branding {

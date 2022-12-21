@@ -94,13 +94,21 @@ function setup_theme() {
 		'caption',
 		'style',
 		'script'
-		] );
+	] );
 
 	// Refresh widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
 	// Featured image support.
 	add_theme_support( 'post-thumbnails' );
+
+	// Add logo support.
+	add_theme_support( 'custom-logo', apply_filters( 'kwo_custom_logo', [
+		'width'       => 160,
+		'height'      => 160,
+		'flex-width'  => true,
+		'flex-height' => true
+	] ) );
 
 	// Set content width.
 	if ( ! isset( $content_width ) ) {
