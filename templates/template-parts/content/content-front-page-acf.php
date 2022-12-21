@@ -30,37 +30,16 @@ use KoreyOne\Tags as Tags;
 	</header>
 
 	<?php if ( is_singular() ) {
-		if (
-			! is_page_template( KWO_TMPL_DIR . '/no-featured.php' ) ||
-			! is_page_template( KWO_TMPL_DIR . '/no-sidebar-no-featured.php' )
-		) {
+		if ( ! is_page_template( [
+			KWO_TMPL_DIR . '/front-page-sections.php',
+			KWO_TMPL_DIR . '/no-featured.php',
+			KWO_TMPL_DIR . '/no-sidebar-no-featured.php'
+		] ) ) {
 			Tags\post_thumbnail();
 		}
 	} ?>
 
 	<div class="entry-content" itemprop="articleBody">
-
-		<?php
-
-		the_content();
-
-		wp_link_pages( [
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'korey-one' ),
-			'after'  => '</div>',
-		] );
-
-		?>
-
+		<?php the_content(); ?>
 	</div>
-
-	<?php if ( is_single() ) :
-
-	?>
-	<footer class="entry-footer">
-		<?php  Tags\entry_footer(); ?>
-	</footer>
-	<?php
-
-	endif; ?>
-
 </article>

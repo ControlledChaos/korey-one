@@ -42,7 +42,8 @@ get_header();
 		</main>
 	</div>
 	<?php
-	if ( ! is_page_template( KWO_TMPL_DIR . '/front-page-content-only.php' ) ) {
+	if (
+		! is_page_template( [ KWO_TMPL_DIR . '/front-page-sections.php', KWO_TMPL_DIR . '/front-page-content-only.php' ] ) ) {
 		get_sidebar();
 	}
 	?>
