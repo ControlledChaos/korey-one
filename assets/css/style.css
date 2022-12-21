@@ -261,17 +261,17 @@ b, strong, optgroup {
 }
 
 :root {
-  --kwo-bg-color: #ffffff;
-  --kwo-text-color: #333333;
-  --kwo-link-color: #0000ff;
-  --kwo-link-action-color: #551a8b;
+  --kwo-bg-color: #111111;
+  --kwo-text-color: #ffffff;
+  --kwo-link-color: #ffffff;
+  --kwo-link-action-color: #ffffff;
   --kwo-sans-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --kwo-serif-stack: 'Hoefler Text', 'Baskerville Old Face', Garamond, Times, 'Times New Roman', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --kwo-box-border-color: #cccccc;
   --kwo-form--font-weight: 400;
   --kwo-form--bg-color: var( --kwo-bg-color, inherit );
   --kwo-form--border-color: var( --kwo-box-border-color );
-  --kwo-form--action-border-color: #0000ff;
+  --kwo-form--action-border-color: #ffffff;
   --kwo-form--placeholder-color: #888888;
   --kwo-button--font-weight: 700;
   --kwo-button--bg-color: var( --kwo-bg-color, inherit );
@@ -344,7 +344,7 @@ a:hover, a.hover, a:focus, a.focus {
 }
 
 .dark-mode {
-  --kwo-bg-color: #1e1e1e;
+  --kwo-bg-color: #111111;
   --kwo-text-color: #ffffff;
   --kwo-link-color: #ffffff;
   --kwo-link-action-color: #eeeeee;
@@ -353,7 +353,7 @@ a:hover, a.hover, a:focus, a.focus {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --kwo-bg-color: #1e1e1e;
+    --kwo-bg-color: #111111;
     --kwo-text-color: #ffffff;
     --kwo-link-color: #ffffff;
     --kwo-link-action-color: #eeeeee;

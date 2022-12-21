@@ -7,10 +7,10 @@
 :root {
 
 	// General.
-	--kwo-bg-color: #{$white};
-	--kwo-text-color: #{$dark_gray};
-	--kwo-link-color: #{$blue};
-	--kwo-link-action-color: #{$violet};
+	--kwo-bg-color: #{$near_black};
+	--kwo-text-color: #{$white};
+	--kwo-link-color: #{$white};
+	--kwo-link-action-color: #{$white};
 
 	--kwo-sans-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 	--kwo-serif-stack: 'Hoefler Text', 'Baskerville Old Face', Garamond, Times, 'Times New Roman', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -21,7 +21,7 @@
 	--kwo-form--font-weight: 400;
 	--kwo-form--bg-color: var( --kwo-bg-color, inherit );
 	--kwo-form--border-color: var( --kwo-box-border-color );
-	--kwo-form--action-border-color: #{$blue};
+	--kwo-form--action-border-color: #{$white};
 	--kwo-form--placeholder-color: #{$light_gray};
 
 	--kwo-button--font-weight: 700;

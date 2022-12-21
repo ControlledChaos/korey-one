@@ -54,7 +54,7 @@ a:hover, a.hover, a:focus, a.focus {
 }
 
 .dark-mode {
-  --kwo-bg-color: #1e1e1e;
+  --kwo-bg-color: #111111;
   --kwo-text-color: #ffffff;
   --kwo-link-color: #ffffff;
   --kwo-link-action-color: #eeeeee;
@@ -63,7 +63,7 @@ a:hover, a.hover, a:focus, a.focus {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --kwo-bg-color: #1e1e1e;
+    --kwo-bg-color: #111111;
     --kwo-text-color: #ffffff;
     --kwo-link-color: #ffffff;
     --kwo-link-action-color: #eeeeee;
