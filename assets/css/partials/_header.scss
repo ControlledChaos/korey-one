@@ -9,9 +9,10 @@
 .site-title {
 	margin: 0;
 
+	font-family: var( --kwo-heading-stack, var( --kwo-font-stack, var( --kwo-sans-stack ) ) );
 	/* Match <p> tag to <h1> tag on front page */
 	font-size: var( --kwo-site-title-size, var( --kwo-primary-heading-size, 2rem ) );
-	font-weight: var( --kwo-site-title-weight, var( --kwo-primary-heading-weight, 700 ) );
+	font-weight: var( --kwo-site-title-weight, var( --kwo-primary-heading-weight ) );
 	color: var( --kwo-site-title-color, inherit );
 
 	& a {
