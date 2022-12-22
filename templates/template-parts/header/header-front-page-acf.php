@@ -50,8 +50,6 @@ $disable = $options ? in_array( 'disable_header', $options, true ) : false;
 
 			</div>
 		</div>
-		<?php if ( 'aside' == $nav_location ) {
-				Tags\nav_aside_branding();
-		} ?>
+		<?php Tags\front_page_sections_nav(); ?>
 	</div>
 </header>

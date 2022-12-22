@@ -64,8 +64,9 @@ function frontend_scripts() {
 	wp_enqueue_script( 'kwo-fitvids', get_theme_file_uri( '/assets/js/jquery.fitvids' . suffix() . '.js' ), [ 'jquery' ], KWO_VERSION, true );
 	wp_add_inline_script( 'kwo-fitvids', 'jQuery(document).ready(function($){ $( ".entry-content" ).fitVids(); });', true );
 
-	// FullPage.
+	// FullPage & slider.
 	if ( is_front_page() && is_page_template( KWO_TMPL_DIR . '/front-page-sections.php' ) ) {
+		wp_enqueue_script( 'kwo-slider', get_theme_file_uri( '/assets/js/slider' . suffix() . '.js' ), [], KWO_VERSION, true );
 		wp_enqueue_script( 'kwo-fullpage', get_theme_file_uri( '/assets/js/fullpage' . suffix() . '.js' ), [], KWO_VERSION, true );
 		wp_enqueue_script( 'kwo-fullpage-ext', get_theme_file_uri( '/assets/js/fullpage.extensions' . suffix() . '.js' ), [], KWO_VERSION, true );
 	}
@@ -110,8 +111,9 @@ function frontend_styles() {
 		}
 	}
 
-	// FullPage.
+	// FullPage & slider.
 	if ( is_front_page() && is_page_template( KWO_TMPL_DIR . '/front-page-sections.php' ) ) {
+		wp_enqueue_style( 'kwo-slider', get_theme_file_uri( '/assets/css/slider' . suffix() . '.css' ), [], KWO_VERSION, 'all' );
 		wp_enqueue_style( 'kwo-fullpage', get_theme_file_uri( '/assets/css/fullpage' . suffix() . '.css' ), [ 'kwo-theme' ], KWO_VERSION, 'all' );
 	}
 

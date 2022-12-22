@@ -459,6 +459,7 @@ function get_body_class( $class = '' ) {
 	if (
 		! is_active_sidebar( 'sidebar-default' ) ||
 		is_page_template( [
+			KWO_TMPL_DIR . '/front-page-sections.php',
 			KWO_TMPL_DIR . '/front-page-content-only.php',
 			KWO_TMPL_DIR . '/no-sidebar.php',
 			KWO_TMPL_DIR . '/no-sidebar-no-featured.php'
@@ -1271,4 +1272,75 @@ function get_comments_list() {
  */
 function comments_list() {
 	echo get_comments_list();
+}
+
+/**
+ * Front page sections navigation
+ *
+ * @since  1.0.0
+ * @return mixed Returns a navigation element.
+ *               Returns null is no sections.
+ */
+function front_page_sections_nav() {
+
+	// Get the front page option.
+	$front_show = (string) get_option( 'show_on_front' );
+	$front_page = (int) get_option( 'page_on_front' );
+
+	if ( 'page' != $front_show || ! is_front_page() ) {
+		return;
+	}
+
+	if ( ! class_exists( 'acf_pro' ) ) {
+		return;
+	}
+
+	$sections = [];
+	if ( get_the_ID() == $front_page ) {
+
+		$front_sections = get_field( 'front_sections', $front_page );
+
+		if ( $front_sections ) {
+			foreach( $front_sections as $section ) {
+				$heading = $section['front_section_heading'];
+				$menu    = $section['front_section_menu'];
+				if ( $menu ) {
+					$sections[] .= $menu;
+				} else {
+					$sections[] .= $heading;
+				}
+			}
+		}
+	}
+
+	printf(
+		'<nav id="site-navigation" class="main-navigation"><div class="menu-toggle">
+		<button aria-controls="main-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"/></svg> %s</button></div><div class="menu-main-container"><ul>',
+		esc_html__( 'Menu', 'korey-one' )
+	);
+
+	$items = [];
+	printf(
+		'<li class="screen-reader-text active" data-menuanchor="slider"><a href="#slider">%s</a></li>',
+		__( 'Intro' )
+	);
+	foreach( $sections as $section ) {
+
+		printf(
+			'<li data-menuanchor="%s"><a href="#%s">%s</a></li>',
+			preg_replace( "/[^A-Za-z0-9]/", '', strtolower( $section ) ),
+			preg_replace( "/[^A-Za-z0-9]/", '', strtolower( $section ) ),
+			$section
+		);
+	}
+	// if ( has_nav_menu( 'front' ) ) {
+		wp_nav_menu( [
+			'theme_location' => 'front',
+			'menu_id'        => 'front-page-menu',
+			'container'      => false,
+			'items_wrap'     => '%3$s',
+			'fallback_cb'    => false,
+		] );
+	// }
+	echo '</ul></div></nav>';
 }

@@ -28,12 +28,15 @@
   --kwo-logo-max-width: 80px;
   --kwo-logo-max-height: 80px;
   --kwo-logo-radius: 50%;
+  --kwo-site-description--font-size: 1.5rem;
+  --kwo-site-description--spacing: 0.03em;
   --kwo-nav--bg-color: var( --kwo-bg-color, inherit );
   --kwo-subnav---bg-color: var( --kwo-nav--bg-color );
   --kwo-copyright-font-size: 0.825em;
 }
 
 .site-header {
+  width: 100%;
   padding: 0 2em;
 }
 
@@ -53,7 +56,10 @@
 
 .site-description {
   margin: 0;
-  font-size: var(--kwo-site-description-size, inherit);
+  font-family: var(--kwo-heading-stack, var(--kwo-font-stack, var(--kwo-sans-stack)));
+  font-size: var(--kwo-site-description--font-size);
+  letter-spacing: var(--kwo-site-description--spacing, 0.03em);
+  line-height: var(--kwo-site-description--line-height, 1);
 }
 
 .site-header-image {
@@ -131,6 +137,31 @@
   .site-branding-wrap.nav-aside-branding .site-title-description {
     text-align: center;
   }
+}
+
+.page-template-front-page-sections .site-header-wrap {
+  background-color: inherit;
+  z-index: 5000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity .25s;
+  transition: opacity .25s;
+}
+
+.page-template-front-page-sections .site-header-wrap.header-wrap-scrolled {
+  opacity: 1;
+  visibility: visible;
+}
+
+.page-template-front-page-sections.fp-viewing-slider .site-header-wrap {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity .25s;
+  transition: opacity .25s;
 }
 
 .site-branding-wrap {

@@ -30,6 +30,13 @@
 			overflow: unset;
 		}
 	}
+
+	&.page-template-front-page-sections {
+		.site-content {
+			max-width: 100vw;
+			padding: 0;
+		}
+	}
 }
 
 main article {

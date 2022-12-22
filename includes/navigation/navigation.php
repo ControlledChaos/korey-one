@@ -46,6 +46,7 @@ function register() {
 	// Register theme menus.
 	$menus = apply_filters( 'kwo_nav_menus', [
 		'main'   => __( 'Main Menu', 'korey-one' ),
+		'front'  => __( 'Front Page More', 'korey-one' ),
 		'footer' => __( 'Footer Menu', 'korey-one' ),
 		'social' => __( 'Social Menu', 'korey-one' )
 	] );
