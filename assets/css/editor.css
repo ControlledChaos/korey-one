@@ -215,3 +215,117 @@ article .gallery .gallery-item img {
 .avatar {
   border-radius: 50%;
 }
+
+.image-gallery {
+  list-style: none;
+  display: -ms-grid;
+  display: grid;
+  gap: 0.5rem;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+}
+
+@media screen and (max-width: 800px) {
+  .image-gallery {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .image-gallery {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.image-gallery img {
+  display: block;
+  -webkit-filter: grayscale(20%);
+          filter: grayscale(20%);
+  -webkit-transition: all .25s;
+  transition: all .25s;
+  background: #111111;
+  color: #ffffff;
+}
+
+.image-gallery img:hover {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+.image-gallery.medium-video-gallery {
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.image-gallery.large-thumbnail-gallery {
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+}
+
+@media screen and (max-width: 800px) {
+  .image-gallery.large-thumbnail-gallery {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .image-gallery.large-thumbnail-gallery {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.image-gallery figure {
+  position: relative;
+  border: solid 1px #333333;
+}
+
+.image-gallery figure figcaption {
+  position: absolute;
+  top: auto;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+@media screen and (max-width: 640px) {
+  .image-gallery figure figcaption {
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .image-gallery figure figcaption {
+    display: none;
+  }
+}
+
+.fancybox-bg {
+  background-color: #111111;
+}
+
+.fancybox-active #wpadminbar {
+  z-index: 9999;
+}
+
+.fancybox-active #wpadminbar * {
+  opacity: 0;
+}
+
+.fancybox-thumbs {
+  background-color: #111111;
+}
+
+.fancybox-thumbs__list a:before {
+  border-color: #ffffff;
+  border-width: 4px;
+}
