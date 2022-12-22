@@ -8,7 +8,7 @@
  * @since      1.0.0
  */
 
-use JPierce_Front\Classes\Front as Front;
+use KoreyOne\Tags as Tags;
 
 // Get ACF fields for the current layout.
 $grid_tax     = get_sub_field( 'front_grid_taxonomy' );
@@ -168,7 +168,7 @@ while ( $query->have_posts() ) : $query->the_post();
 
 		?>
 		<div class="project-grid-gallery project-gallery-hidden" id="<?php echo 'gallery-' . get_the_ID(); ?>">
-			<?php Front\tags()->projects_galleries(); ?>
+			<?php Tags\projects_galleries(); ?>
 		</div>
 		<?php
 

@@ -1344,3 +1344,61 @@ function front_page_sections_nav() {
 	// }
 	echo '</ul></div></nav>';
 }
+
+/**
+ * Featured projects galleries
+ *
+ * Used for modal galleries in project grids.
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function projects_galleries() {
+
+	$gallery = get_field( 'project_gallery', get_the_ID() );
+	$title   = get_field( 'project_title', get_the_ID() );
+	$count   = null;
+
+	if ( $title ) {
+		$title = $title;
+	} else {
+		$title = get_the_title();
+	}
+
+	if ( $gallery ) :
+
+		$count = 0;
+
+		foreach ( $gallery as $image ) : $count++;
+
+			if ( $count != 1 ) :
+
+			?>
+			<a class="gallery-image" data-fancybox="<?php echo 'gallery-' . get_the_ID(); ?>" data-type="image" data-fancybox-group="<?php echo 'gallery-' . get_the_ID(); ?>" data-caption="<?php echo __( 'Scenes from ' ) . $title; ?>" href="<?php echo $image['url']; ?>" title="<?php echo __( 'Scenes from ', 'korey-one' ) . $title; ?>">
+				<img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
+			</a>
+			<?php endif;
+
+			if ( ++$count == 16 ) break;
+		endforeach;
+	endif; ?>
+
+	<?php
+
+	if ( $count > 8 ) :
+
+		?>
+		<a class="fancybox-notice" data-fancybox="<?php echo 'gallery-' . get_the_ID(); ?>" data-src="<?php echo '#fancybox-page-link-' . get_the_ID(); ?>" href="javascript:;"></a>
+
+		<div class="fancybox-page-link" id="<?php echo 'fancybox-page-link-' . get_the_ID(); ?>" data-type="image" data-fancybox-group="<?php echo 'gallery-' . get_the_ID(); ?>" data-caption="<?php echo __( 'Scenes from ' ) . $title; ?>">
+
+			<h3><?php the_title(); ?></h3>
+
+			<p><?php _e( 'More photos, video & info available on this project\'s page.', 'korey-one' ); ?></p>
+
+			<p><a class="fancybox-link" href="<?php the_permalink(); ?>"><?php _e( 'Take me there', 'korey-one' ); ?></a> | <a href="javascript:jQuery.fancybox.close();"><?php _e( 'Close', 'korey-one' ); ?></a></p>
+		</div>
+		<?php
+
+	endif;
+}
