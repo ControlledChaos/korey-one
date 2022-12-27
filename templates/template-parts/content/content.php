@@ -29,7 +29,7 @@ $display = Customize\blog_format( get_theme_mod( 'kwo_blog_format' ) );
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		}
 
-		if ( is_single() ) : ?>
+		if ( is_singular( 'post' ) ) : ?>
 
 		<div class="entry-meta">
 			<?php
@@ -43,7 +43,7 @@ $display = Customize\blog_format( get_theme_mod( 'kwo_blog_format' ) );
 
 	</header>
 
-	<?php if ( is_singular() ) {
+	<?php if ( is_singular() && ! is_singular( [ 'project' ] ) ) {
 		Tags\post_thumbnail();
 	} ?>
 
