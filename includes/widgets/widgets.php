@@ -30,7 +30,7 @@ function setup() {
 
 	// Register the theme mode widget.
 	add_action( 'widgets_init', function() {
-		register_widget( 'KoreyOne\Classes\Widgets\Theme_Mode' );
+		// register_widget( 'KoreyOne\Classes\Widgets\Theme_Mode' );
 	} );
 
 	// Register widget areas.
