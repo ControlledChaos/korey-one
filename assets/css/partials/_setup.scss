@@ -7,10 +7,10 @@
 
 // Standard functions.
 @function svg_icon_color() {
-	@return '%23' + str-slice( '#{$dark_gray}', 2, -1 );
+	@return '%23' + str-slice( '#{$white}', 2, -1 );
 }
 @function svg_icon_action_color() {
-	@return '%23' + str-slice( '#{$dark_gray}', 2, -1 );
+	@return '%23' + str-slice( '#{$white}', 2, -1 );
 }
 
 // Dark mode functions.
@@ -27,6 +27,7 @@ html {
 }
 
 body {
+	position: relative;
 	font-family: var( --kwo-font-stack, var( --kwo-sans-stack ) );
 	font-size: var( --kwo-font-size, 1rem );
 	line-height: var( --kwo-line-height, 1.5 );

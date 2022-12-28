@@ -44,7 +44,7 @@
 		width: 100%;
 		max-width: var( --kwo-content-width );
 		margin: 0 auto;
-		padding: 1em 0 0;
+		padding: 1rem 0;
 
 		@media screen and ( max-width: $break_primary_phone ) {
 			flex-direction: column;
@@ -110,6 +110,20 @@
 			opacity: 0;
 			visibility: hidden;
 			transition: opacity .25s;
+		}
+	}
+
+	&.admin-bar {
+		.site-header-wrap {
+			top: 32px;
+
+			@media screen and ( max-width: 782px ) {
+				top: 46px;
+			}
+
+			@media screen and ( max-width: 600px ) {
+				/* Styles */
+			}
 		}
 	}
 }

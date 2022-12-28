@@ -148,7 +148,7 @@
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
-		margin: 0 0 1.5em;
+		margin: 1rem 0;
 		overflow: hidden;
 
 		button,
@@ -280,13 +280,6 @@
 			}
 		}
 	}
-}
-
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
 }
 
 .dark-mode {

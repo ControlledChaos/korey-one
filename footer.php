@@ -26,58 +26,60 @@ use KoreyOne\Tags as Tags;
 <?php if ( is_front_page() && is_page_template( KWO_TMPL_DIR . '/front-page-sections.php' ) ) : ?>
 <script>
 jQuery(document).ready( function($) {
-	$( '#front-page-sections' ).fullpage({
-		// anchors         : [ <?php // echo Front\tags()->front_page_sections(); ?> ],
-		lockAnchors     : true,
-		menu            : '#site-navigation',
-		navigation      : true,
-		dragAndMove     : true,
-		sectionSelector : '.front-page-section',
-		paddingTop      : '64px',
-		paddingBottom   : '32px',
-		responsiveWidth     : 480,
-		responsiveHeight    : 560,
-		scrollOverflow      : true,
-		scrollOverflowReset : true,
-		afterRender     : function() {
-			$( '.intro-slides' ).slick({
-				slidesToShow   : 1,
-				slidesToScroll : 1,
-				autoplay       : true,
-				autoplaySpeed  : 4000,
-				speed          : 750,
-				fade           : true,
-				easing         : 'easeInOut',
-				adaptiveHeight : false,
-				pauseOnHover   : false,
-				arrows         : false,
-				dots           : false
-			});
-		},
-		afterLoad : function( origin, destination, direction ) {
-			var leavingSection = this;
-			if ( origin.index == 0 && direction =='down' ) {
-				$( '.site-header-wrap' ).addClass( 'header-wrap-scrolled' );
+	if ( $.isFunction( $.fn.fullpage ) ) {
+		$( '#front-page-sections' ).fullpage({
+			// anchors         : [ <?php // echo Front\tags()->front_page_sections(); ?> ],
+			lockAnchors     : true,
+			menu            : '#site-navigation',
+			navigation      : true,
+			dragAndMove     : true,
+			sectionSelector : '.front-page-section',
+			paddingTop      : '64px',
+			paddingBottom   : '32px',
+			responsiveWidth     : 480,
+			responsiveHeight    : 560,
+			scrollOverflow      : true,
+			scrollOverflowReset : true,
+			afterRender     : function() {
+				$( '.intro-slides' ).slick({
+					slidesToShow   : 1,
+					slidesToScroll : 1,
+					autoplay       : true,
+					autoplaySpeed  : 4000,
+					speed          : 750,
+					fade           : true,
+					easing         : 'easeInOut',
+					adaptiveHeight : false,
+					pauseOnHover   : false,
+					arrows         : false,
+					dots           : false
+				});
+			},
+			afterLoad : function( origin, destination, direction ) {
+				var leavingSection = this;
+				if ( origin.index == 0 && direction =='down' ) {
+					$( '.site-header-wrap' ).addClass( 'header-wrap-scrolled' );
+				}
+			},
+			onLeave : function( origin, destination, direction ) {
+				var leavingSection = this;
+				if ( destination.index == 0 ) {
+					$( '.site-header-wrap' ).removeClass( 'header-wrap-scrolled' );
+				}
 			}
-		},
-		onLeave : function( origin, destination, direction ) {
-			var leavingSection = this;
-			if ( destination.index == 0 ) {
-				$( '.site-header-wrap' ).removeClass( 'header-wrap-scrolled' );
-			}
-		}
-	});
-	// Make FullPage work with id attributes for no JS navigation fallback.
-	$( '#site-navigation ul li a' ).click( function() {
-		let newSlide = $(this).closest( 'li' ).data( 'menuanchor' )
-		$.fn.fullpage.moveTo( newSlide, 1 );
-	});
-	$(document).on( 'click', '#intro-entry-link', function() {
-		fullpage_api.moveSectionDown();
-	});
-	$( '#site-navigation ul li a' ).click( function() {
-		$( '.main-navigation' ).removeClass( 'toggled' );
-	});
+		});
+		// Make FullPage work with id attributes for no JS navigation fallback.
+		$( '#site-navigation ul li a' ).click( function() {
+			let newSlide = $(this).closest( 'li' ).data( 'menuanchor' )
+			$.fn.fullpage.moveTo( newSlide, 1 );
+		});
+		$(document).on( 'click', '#intro-entry-link', function() {
+			fullpage_api.moveSectionDown();
+		});
+		$( '#site-navigation ul li a' ).click( function() {
+			$( '.main-navigation' ).removeClass( 'toggled' );
+		});
+	}
 });
 </script>
 <?php else : // Else not front page. ?>
@@ -89,14 +91,28 @@ jQuery(document).ready( function($) {
 		scroll_top = $( '.site-header' ).outerHeight();
 
 		if ( $(this).scrollTop() > scroll_top ) {
-			$( '.site-header-wrap' ).addClass( 'headerr-wrap-scrolled' );
+			$( '.site-header-wrap' ).addClass( 'header-wrap-scrolled' );
 		} else {
-			$( '.site-header-wrap' ).removeClass( 'headerr-wrap-scrolled' );
+			$( '.site-header-wrap' ).removeClass( 'header-wrap-scrolled' );
 		}
 	});
 })(jQuery);
 </script>
 <?php endif; ?>
+
+<script>
+jQuery(document).ready( function($) {
+
+	if ( $.isFunction( $.fn.tooltipster ) ) {
+		$( '.button.tooltip' ).tooltipster( {
+			theme    : 'kwo-tooltips',
+			delay    : 80,
+			distance : 35 ,
+			animationDuration : 250,
+		} );
+	}
+});
+</script>
 
 <style>.no-js body { visibility: visible !important; }</style>
 </body>

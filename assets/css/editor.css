@@ -4,6 +4,7 @@ html {
 }
 
 body {
+  position: relative;
   font-family: var(--kwo-font-stack, var(--kwo-sans-stack));
   font-size: var(--kwo-font-size, 1rem);
   line-height: var(--kwo-line-height, 1.5);

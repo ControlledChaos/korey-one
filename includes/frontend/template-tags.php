@@ -36,7 +36,7 @@ function setup() {
 	add_filter( 'previous_posts_link_attributes', function() {
 
 		// Need to be opposite of the filter name!?!
-		$attr = 'class="button nav-next"';
+		$attr = 'class="button nav-next tooltip"';
 		return $attr;
 	} );
 
@@ -44,7 +44,7 @@ function setup() {
 	add_filter( 'next_posts_link_attributes', function() {
 
 		// Need to be opposite of the filter name!?!
-		$attr = 'class="button nav-previous"';
+		$attr = 'class="button nav-previous tooltip"';
 		return $attr;
 	} );
 }
@@ -959,11 +959,11 @@ function post_navigation() {
 	<nav class="post-navigation">
 
 		<?php if ( $prev ) : ?>
-		<a class="button nav-previous" href="<?php echo $prev_url; ?>" title="<?php echo get_the_title( $prev ); ?>"><?php echo $prev_text; ?></a>
+		<a class="button nav-previous tooltip" href="<?php echo $prev_url; ?>" title="<?php echo get_the_title( $prev ); ?>"><?php echo $prev_text; ?></a>
 		<?php endif; ?>
 
 		<?php if ( $next ) : ?>
-		<a class="button nav-next" href="<?php echo $next_url; ?>" title="<?php echo get_the_title( $next ); ?>"><?php echo $next_text; ?></a>
+		<a class="button nav-next tooltip" href="<?php echo $next_url; ?>" title="<?php echo get_the_title( $next ); ?>"><?php echo $next_text; ?></a>
 		<?php endif; ?>
 	</nav>
 	<?php

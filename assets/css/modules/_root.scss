@@ -30,7 +30,7 @@
 
 	--kwo-button--font-weight: 700;
 	--kwo-button--bg-color: var( --kwo-bg-color, inherit );
-	--kwo-button--action-bg-color: #{$pale_gray};
+	--kwo-button--action-bg-color: rgba( 255, 255, 255, 0.0625 );
 	--kwo-button--border-color: var( --kwo-form--border-color );
 	--kwo-button--text-color: var( --kwo-form--text-color );
 	--kwo-button--action-text-color: var( --kwo-form--text-color );

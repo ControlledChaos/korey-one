@@ -17,7 +17,7 @@
   --kwo-form--placeholder-color: #888888;
   --kwo-button--font-weight: 700;
   --kwo-button--bg-color: var( --kwo-bg-color, inherit );
-  --kwo-button--action-bg-color: #cccccc;
+  --kwo-button--action-bg-color: rgba( 255, 255, 255, 0.0625 );
   --kwo-button--border-color: var( --kwo-form--border-color );
   --kwo-button--text-color: var( --kwo-form--text-color );
   --kwo-button--action-text-color: var( --kwo-form--text-color );
@@ -79,7 +79,7 @@
   width: 100%;
   max-width: var(--kwo-content-width);
   margin: 0 auto;
-  padding: 1em 0 0;
+  padding: 1rem 0;
 }
 
 @media screen and (max-width: 600px) {
@@ -162,6 +162,22 @@
   visibility: hidden;
   -webkit-transition: opacity .25s;
   transition: opacity .25s;
+}
+
+.page-template-front-page-sections.admin-bar .site-header-wrap {
+  top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+  .page-template-front-page-sections.admin-bar .site-header-wrap {
+    top: 46px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .page-template-front-page-sections.admin-bar .site-header-wrap {
+    /* Styles */
+  }
 }
 
 .site-branding-wrap {
