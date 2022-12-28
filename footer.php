@@ -104,10 +104,10 @@ jQuery(document).ready( function($) {
 jQuery(document).ready( function($) {
 
 	if ( $.isFunction( $.fn.tooltipster ) ) {
-		$( '.button.tooltip' ).tooltipster( {
+		$( '.button.tooltip, a.tooltip' ).tooltipster( {
 			theme    : 'kwo-tooltips',
-			delay    : 80,
-			distance : 35 ,
+			delay    : 72,
+			distance : 36 ,
 			animationDuration : 250,
 		} );
 	}
