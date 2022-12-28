@@ -248,6 +248,45 @@
 	}
 }
 
+.project-additional-videos {
+
+	ul {
+		list-style: none;
+
+		li {
+			margin: var( --kwo-add-video--list-item--margin, 0.325em 0 0 0 );
+			font-size: var( --kwo-add-video--list-item--font-size, 1.25rem );
+			font-weight: var( --kwo-add-video--list-item--font-weight, 600 );
+			line-height: var( --kwo-add-video--list-item--line-height, 1.2 );
+
+			a {
+				position: relative;
+				display: inline-block;
+				text-decoration: var( --kwo-add-video--list-item-a--text-decoration, none );
+
+				&:after {
+					content: '';
+					display: block;
+					position: absolute;
+					left: 0;
+					bottom: -0.25em;
+					width: 100%;
+					height: 0.06em;
+					background-color: rgba( 255, 255, 255, 0.85 );
+					transform: scale(0%);
+					transition: all 0.2s;
+				}
+
+				&:hover {
+					&:after {
+						transform: scale(100%);
+					}
+				}
+			}
+		}
+	}
+}
+
 ///
 /// Contact page templates
 ///
