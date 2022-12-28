@@ -6,10 +6,11 @@
 	width: 100%;
 	max-width: var( --kwo-content-width );
 	margin: 0 auto;
-	padding: 0 2em;
+	padding: 2rem;
 }
 
 .copyright-text {
-	font-size: var( --kwo-copyright-font-size );
+	margin: var( --kwo-copyright--margin, 0 );
+	font-size: var( --kwo-copyright--font-size );
 	text-align: center;
 }

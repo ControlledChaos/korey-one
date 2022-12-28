@@ -58,6 +58,7 @@ h2 {
 	font-family: var( --kwo-heading-stack, var( --kwo-font-stack, var( --kwo-sans-stack ) ) );
 	font-size: var( --kwo-primary-heading-size, 1.75rem );
 	font-weight: var( --kwo-primary-heading-weight );
+	line-height: var( --kwo-primary-heading--line-height, 1.2 );
 	letter-spacing: var( --kwo-primary-heading-spacing, normal );
 }
 

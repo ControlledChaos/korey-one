@@ -2,13 +2,61 @@
 /// Sidebar & widget styles
 ///
 
-#secondary ul,
-#secondary ol {
-	padding-left: 1em;
+#secondary {
+
+	ul,
+	ol {
+		list-style: none;
+		padding: 0;
+
+		li {
+			margin: var( --kwo-widget--sidebar--list-item--margin, var( --kwo-widget--list-item--margin, 0.325em 0 0 0 ) );
+			font-size: var( --kwo-widget--sidebar--list-item--font-size, var( --kwo-widget--list-item--font-size, 1.1875rem ) );
+			font-weight: var( --kwo-widget--sidebar--list-item--font-weight, var( --kwo-widget--list-item--font-weight, 600 ) );
+			line-height: var( --kwo-widget--sidebar--list-item--line-height, var( --kwo-widget--list-item--line-height, 1.2 ) );
+
+			a {
+				position: relative;
+				display: inline-block;
+				text-decoration: var( --kwo-widget--sidebar--list-item-a--text-decoration, var( --kwo-widget--list-item-a--text-decoration, none ) );
+
+				&:after {
+					content: '';
+					display: block;
+					position: absolute;
+					left: 0;
+					bottom: -0.25em;
+					width: 100%;
+					height: 0.06em;
+					background-color: rgba( 255, 255, 255, 0.85 );
+					transform: scale(0%);
+					transition: all 0.2s;
+				}
+
+				&:hover {
+					&:after {
+						transform: scale(100%);
+					}
+				}
+			}
+		}
+	}
+
+	.wp-block-search {
+		.wp-block-search__label {
+			display: none;
+		}
+	}
 }
 
 .widget {
 	margin: 0 0 1.5em;
+
+	h2,
+	h3 {
+		font-size: var( --kwo-widget--heading--font-size, 1.75rem );
+		line-height: var( --kwo-widget--heading--line-height, 1.1 );
+	}
 
 	& select {
 		max-width: 100%;
