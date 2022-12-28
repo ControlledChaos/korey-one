@@ -15,7 +15,7 @@
   --kwo-form--border-color: var( --kwo-box-border-color );
   --kwo-form--action-border-color: #ffffff;
   --kwo-form--placeholder-color: #888888;
-  --kwo-button--font-weight: 700;
+  --kwo-button--font-weight: 600;
   --kwo-button--bg-color: var( --kwo-bg-color, inherit );
   --kwo-button--action-bg-color: rgba( 255, 255, 255, 0.0625 );
   --kwo-button--border-color: var( --kwo-form--border-color );

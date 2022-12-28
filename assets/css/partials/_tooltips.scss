@@ -1,0 +1,66 @@
+///
+/// jQuery tooltips
+///
+
+.tooltipster-sidetip.kwo-tooltips .tooltipster-box,
+.tooltipster-follower.kwo-tooltips .tooltipster-box {
+	border: solid 1px $white;
+	border-radius: 0px;
+	box-shadow: none;
+}
+
+.tooltipster-sidetip.kwo-tooltips .tooltipster-content,
+.tooltipster-follower.kwo-tooltips .tooltipster-content {
+	background: $near_black;
+	color: $white;
+	border-radius: 0px;
+	// padding: 1rem;
+	line-height: 1;
+	font-family: var( --kwo-font-stack, var( --kwo-sans-stack ) );
+	font-size: var( --kwo-tooltips--font-size, 0.875rem );
+	font-weight: var( --kwo-tooltips--font-weight, 700 );
+}
+
+.tooltipster-sidetip.kwo-tooltips.tooltipster-bottom .tooltipster-arrow,
+.tooltipster-sidetip.kwo-tooltips.tooltipster-top .tooltipster-arrow {
+	height: 12px;
+	bottom: -3px;
+	margin-left: -11px;
+	width: 24px;
+}
+
+.tooltipster-sidetip.kwo-tooltips.tooltipster-bottom .tooltipster-arrow-border,
+.tooltipster-follower.kwo-tooltips.tooltipster-bottom .tooltipster-arrow-border {
+	border-bottom-color: $white;
+}
+
+.tooltipster-sidetip.kwo-tooltips.tooltipster-left .tooltipster-arrow-border,
+.tooltipster-follower.kwo-tooltips.tooltipster-left .tooltipster-arrow-border {
+	border-left-color: $white;
+}
+
+.tooltipster-sidetip.kwo-tooltips.tooltipster-right .tooltipster-arrow-border,
+.tooltipster-follower.kwo-tooltips.tooltipster-right .tooltipster-arrow-border {
+	border-right-color: $white;
+}
+
+.tooltipster-sidetip.kwo-tooltips.tooltipster-top .tooltipster-arrow-border,
+.tooltipster-follower.kwo-tooltips.tooltipster-top .tooltipster-arrow-border {
+	border-top-color: $white;
+}
+
+.tooltipster-sidetip.kwo-tooltips.tooltipster-bottom .tooltipster-arrow-background {
+	border-bottom-color: $near_black;
+}
+
+.tooltipster-sidetip.kwo-tooltips.tooltipster-left .tooltipster-arrow-background {
+	border-left-color: $near_black;
+}
+
+.tooltipster-sidetip.kwo-tooltips.tooltipster-right .tooltipster-arrow-background {
+	border-right-color: $near_black;
+}
+
+.tooltipster-sidetip.kwo-tooltips.tooltipster-top .tooltipster-arrow-background {
+	border-top-color: $near_black;
+}

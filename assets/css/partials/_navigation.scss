@@ -157,7 +157,7 @@
 			width: auto;
 			padding: 1rem;
 			cursor: pointer;
-			font-weight: bold;
+			font-weight: var( --kwo-button--font-weight, 700 );
 			text-decoration: none;
 			background-color: var( --kwo-button--bg-color );
 			border: solid 1px var( --kwo-button--border-color, var( --kwo-form--border-color ) );
