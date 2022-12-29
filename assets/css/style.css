@@ -294,6 +294,7 @@ b, strong, optgroup {
   --kwo-site-description--spacing: 0.03em;
   --kwo-nav--bg-color: var( --kwo-bg-color, inherit );
   --kwo-subnav---bg-color: var( --kwo-nav--bg-color );
+  --kwpd-single-project--trailer-embed--margin-top: 1.5rem;
   --kwo-copyright--font-size: 0.825em;
 }
 
@@ -1672,7 +1673,9 @@ h2 + .search-form {
 
 .widget h2,
 .widget h3 {
+  font-family: var(--kwo-heading-stack, var(--kwo-font-stack, var(--kwo-sans-stack)));
   font-size: var(--kwo-widget--heading--font-size, 1.75rem);
+  font-weight: var(--kwo-primary-heading-weight);
   line-height: var(--kwo-widget--heading--line-height, 1.1);
 }
 
@@ -1710,6 +1713,11 @@ h2 + .search-form {
 .calendar_wrap tfoot #next,
 .calendar_wrap .wp-calendar-nav-next {
   text-align: right;
+}
+
+.wp-block-calendar table {
+  width: 100%;
+  max-width: 320px;
 }
 
 .wp-block-calendar table th {

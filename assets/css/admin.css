@@ -32,6 +32,7 @@
   --kwo-site-description--spacing: 0.03em;
   --kwo-nav--bg-color: var( --kwo-bg-color, inherit );
   --kwo-subnav---bg-color: var( --kwo-nav--bg-color );
+  --kwpd-single-project--trailer-embed--margin-top: 1.5rem;
   --kwo-copyright--font-size: 0.825em;
 }
 

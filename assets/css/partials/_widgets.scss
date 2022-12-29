@@ -54,7 +54,9 @@
 
 	h2,
 	h3 {
+		font-family: var( --kwo-heading-stack, var( --kwo-font-stack, var( --kwo-sans-stack ) ) );
 		font-size: var( --kwo-widget--heading--font-size, 1.75rem );
+		font-weight: var( --kwo-primary-heading-weight );
 		line-height: var( --kwo-widget--heading--line-height, 1.1 );
 	}
 
@@ -100,6 +102,11 @@
 }
 
 .wp-block-calendar {
+
+	table {
+		width: 100%;
+		max-width: 320px;
+	}
 
 	table th {
 		font-weight: 700;
