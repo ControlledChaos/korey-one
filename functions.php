@@ -100,12 +100,18 @@ foreach ( glob( KWO_PATH . 'includes/frontend/*.php' ) as $filename ) {
 foreach ( glob( KWO_PATH . 'includes/backend/*.php' ) as $filename ) {
 	require $filename;
 }
+foreach ( glob( KWO_PATH . 'includes/fields/*.php' ) as $filename ) {
+	require $filename;
+}
 foreach ( glob( KWO_PATH . 'includes/users/*.php' ) as $filename ) {
 	require $filename;
 }
 foreach ( glob( KWO_PATH . 'includes/assets/*.php' ) as $filename ) {
 	require $filename;
 }
+
+// Vendor (plugin) classes.
+$kwo_acf = new Vendor\Theme_ACF;
 
 // Theme activation and deactivation.
 Activate\setup();
@@ -118,16 +124,14 @@ Shared_Assets\setup();
 Navigation\setup();
 Widgets\setup();
 Images\setup();
-
-// Vendor (plugin) classes.
-$kwo_acf = new Vendor\Theme_ACF;
+Front_Sections\setup();
 
 // ACF filters.
 if ( $kwo_acf->use_bundled() || class_exists( 'acf' ) ) {
 	$kwo_acf->filters();
 }
 
-// Frontend classes.
+// Frontend functions.
 if ( ! is_admin() ) {
 	Head\setup();
 	Tags\setup();
@@ -136,10 +140,10 @@ if ( ! is_admin() ) {
 	Comments\setup();
 }
 
-// Backend classes.
+// Backend functions.
 if ( is_admin() ) {
 	Admin\setup();
-	Post_Options\setup();
+	// Post_Options\setup();
 	Admin_Assets\setup();
 	Editors\setup();
 }
