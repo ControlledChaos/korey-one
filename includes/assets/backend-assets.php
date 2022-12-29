@@ -74,4 +74,5 @@ function admin_styles() {
 			wp_enqueue_style( 'kwo-admin-rtl', get_theme_file_uri( '/assets/css/admin-rtl' . suffix() . '.css' ), [], KWO_VERSION, 'all' );
 		}
 	}
+	wp_enqueue_style( 'kwo-admin-acf', get_theme_file_uri( '/assets/css/admin-acf' . suffix() . '.css' ), [], KWO_VERSION, 'all' );
 }
