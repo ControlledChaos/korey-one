@@ -8,6 +8,9 @@
  * @since      1.0.0
  */
 
+// Alias namespaces.
+use KoreyOne\Tags as Tags;
+
 $slides = get_field( 'intro_slides' );
 
 /**
@@ -56,9 +59,11 @@ if ( 0 == $overlay['alpha'] ) {
 	$alpha = $overlay['alpha'];
 }
 
+if ( $slides ) :
+
 ?>
+<?php if ( ! empty( $overlay ) ) : ?>
 <style>
-	<?php if ( ! empty( $overlay ) ) : ?>
 	.intro-slides li:before {
 		background-color: rgba( <?php echo $overlay['red']; ?>, <?php echo $overlay['green']; ?>, <?php echo $overlay['blue']; ?>, <?php echo $alpha; ?> );
 	}
@@ -73,22 +78,25 @@ if ( 0 == $overlay['alpha'] ) {
 	.front-page-intro .entry-icon svg {
 		fill: <?php echo $color; ?> !important;
 	}
-	<?php endif; ?>
 </style>
+<?php endif; // $overlay ?>
 <div class="intro-slideshow" role="presentation">
-	<?php
-	if ( $slides ) : ?>
-		<ul class="intro-slides">
-			<?php foreach( $slides as $slides ): ?>
-				<li style="background-image: url('<?php echo $slides['url']; ?>');">
-					<span class="screen-reader-text"><?php echo esc_attr( $slides['title'] ); ?></span>
-				</li>
-			<?php endforeach; ?>
-		</ul>
-	<?php endif; ?>
+	<ul class="intro-slides">
+		<?php foreach( $slides as $slides ): ?>
+			<li style="background-image: url('<?php echo $slides['url']; ?>');">
+				<span class="screen-reader-text"><?php echo esc_attr( $slides['title'] ); ?></span>
+			</li>
+		<?php endforeach; ?>
+	</ul>
 </div>
+<?php
+
+endif; // $slides
+
+?>
 <header class="intro-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
 
+	<?php if ( ! $slides ) { echo Tags\site_logo(); } ?>
 	<p class="site-title"><?php echo wp_kses( $site_title, $allowed_html ); ?></p>
 	<p class="site-description"><?php echo wp_kses( $site_desc, $allowed_html ); ?></p>
 
