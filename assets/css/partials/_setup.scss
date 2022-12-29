@@ -108,7 +108,7 @@ a {
 #wpadminbar:not(.mobile) .ab-top-menu > li > .ab-item:focus,
 #wpadminbar .menupop .ab-sub-wrapper,
 #wpadminbar .shortlink-input {
-	background: var( --kwo-adminbar-bg-color, var( --kwo-frontend-adminbar-bg-color, #{$dark_gray} ) );
+	background: var( --kwo-adminbar-bg-color, var( --kwo-frontend-adminbar-bg-color, #{$near_black} ) );
 }
 
 // Text meant only for screen readers.

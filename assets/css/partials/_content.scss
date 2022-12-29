@@ -147,12 +147,19 @@
 	header {
 		position: relative;
 		width: 100%;
+		padding: 0 2rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 		text-align: center;
 
 		.site-title {
-			font-size: 72px;
-			font-weight: 300;
+			font-family: var( --kwo-heading-stack, var( --kwo-font-stack, var( --kwo-sans-stack ) ) );
+			font-size: var( --kwo-intro--site-title--font-size, 64px );
+			font-weight: var( --kwo-intro--site-title--font-weight, 300 );
 			color: $white;
+			line-height: 1;
 
 			span {
 				color: $white;
@@ -160,11 +167,21 @@
 		}
 
 		.site-description {
-			margin-top: 1vh;
+			margin-top: 3vh;
 			font-family: var( --kwo-heading-stack, var( --kwo-font-stack, var( --kwo-sans-stack ) ) );
 			font-size: var( --kwo-intro--site-description--font-size, 36px );
 			font-weight: var( --kwo-intro--site-description--font-weight, 400 );
 			color: $white;
+		}
+
+		.site-logo {
+			margin-bottom: 2vh;
+
+			img {
+				display: block;
+				max-width: 140px;
+				border-radius: var( --kwo-logo-radius );
+			}
 		}
 	}
 
@@ -290,12 +307,22 @@
 ///
 /// Contact page templates
 ///
+.contact-agents {
+	display: flex;
+	gap: 0 6vw;
+	flex-wrap: wrap;
+}
+
 .agents-list {
 	list-style: none;
-	margin-top: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin: 0;
 
 	li {
-		margin-top: 1em;
+		min-width: 200px;
+		margin: 0.5em 0 0 0;
 	}
 }
 
@@ -303,7 +330,7 @@
 	margin: 0;
 
 	&.agent-id {
-		font-size: 1.125rem;
-		font-weight: 400;
+		font-size: 1em;
+		font-weight: 700;
 	}
 }

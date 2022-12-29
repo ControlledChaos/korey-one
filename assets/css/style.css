@@ -382,7 +382,7 @@ a:hover, a.hover, a:focus, a.focus {
 #wpadminbar:not(.mobile) .ab-top-menu > li > .ab-item:focus,
 #wpadminbar .menupop .ab-sub-wrapper,
 #wpadminbar .shortlink-input {
-  background: var(--kwo-adminbar-bg-color, var(--kwo-frontend-adminbar-bg-color, #333333));
+  background: var(--kwo-adminbar-bg-color, var(--kwo-frontend-adminbar-bg-color, #111111));
 }
 
 .screen-reader-text {
@@ -1472,13 +1472,29 @@ h2 + .search-form {
 .front-page-intro header {
   position: relative;
   width: 100%;
+  padding: 0 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
 }
 
 .front-page-intro header .site-title {
-  font-size: 72px;
-  font-weight: 300;
+  font-family: var(--kwo-heading-stack, var(--kwo-font-stack, var(--kwo-sans-stack)));
+  font-size: var(--kwo-intro--site-title--font-size, 64px);
+  font-weight: var(--kwo-intro--site-title--font-weight, 300);
   color: #ffffff;
+  line-height: 1;
 }
 
 .front-page-intro header .site-title span {
@@ -1486,11 +1502,21 @@ h2 + .search-form {
 }
 
 .front-page-intro header .site-description {
-  margin-top: 1vh;
+  margin-top: 3vh;
   font-family: var(--kwo-heading-stack, var(--kwo-font-stack, var(--kwo-sans-stack)));
   font-size: var(--kwo-intro--site-description--font-size, 36px);
   font-weight: var(--kwo-intro--site-description--font-weight, 400);
   color: #ffffff;
+}
+
+.front-page-intro header .site-logo {
+  margin-bottom: 2vh;
+}
+
+.front-page-intro header .site-logo img {
+  display: block;
+  max-width: 140px;
+  border-radius: var(--kwo-logo-radius);
 }
 
 .front-page-intro .entry-link {
@@ -1601,13 +1627,29 @@ h2 + .search-form {
           transform: scale(100%);
 }
 
+.contact-agents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0 6vw;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .agents-list {
   list-style: none;
-  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0;
 }
 
 .agents-list li {
-  margin-top: 1em;
+  min-width: 200px;
+  margin: 0.5em 0 0 0;
 }
 
 .agent-line-item {
@@ -1615,8 +1657,8 @@ h2 + .search-form {
 }
 
 .agent-line-item.agent-id {
-  font-size: 1.125rem;
-  font-weight: 400;
+  font-size: 1em;
+  font-weight: 700;
 }
 
 #secondary ul,

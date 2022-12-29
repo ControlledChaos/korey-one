@@ -82,7 +82,7 @@ a:hover, a.hover, a:focus, a.focus {
 #wpadminbar:not(.mobile) .ab-top-menu > li > .ab-item:focus,
 #wpadminbar .menupop .ab-sub-wrapper,
 #wpadminbar .shortlink-input {
-  background: var(--kwo-adminbar-bg-color, var(--kwo-frontend-adminbar-bg-color, #333333));
+  background: var(--kwo-adminbar-bg-color, var(--kwo-frontend-adminbar-bg-color, #111111));
 }
 
 .screen-reader-text {
