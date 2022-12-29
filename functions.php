@@ -124,7 +124,7 @@ Shared_Assets\setup();
 Navigation\setup();
 Widgets\setup();
 Images\setup();
-Front_Sections\setup();
+Fields\Front_Sections\setup();
 
 // ACF filters.
 if ( $kwo_acf->use_bundled() || class_exists( 'acf' ) ) {
