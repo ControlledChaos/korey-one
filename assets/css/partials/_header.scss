@@ -4,7 +4,6 @@
 
 .site-header {
 	width: 100%;
-	padding: 0 2em;
 }
 
 .site-title {
@@ -38,6 +37,7 @@
 	width: 100%;
 	max-width: var( --kwo-content-width );
 	margin: 0 auto;
+	padding: 0 2em;
 
 	.site-branding {
 		display: flex;
