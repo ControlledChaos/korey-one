@@ -924,6 +924,7 @@ h2 + .search-form {
 .main-navigation li {
   overflow: visible;
   cursor: default;
+  font-weight: 600;
 }
 
 .main-navigation li:hover > ul,
@@ -1142,19 +1143,17 @@ h2 + .search-form {
 
 .menu-toggle button svg {
   position: relative;
-  vertical-align: baseline;
+  top: -0.0625em;
   fill: currentColor;
 }
 
 .menu-toggle button svg.menu-open {
-  top: 0.05em;
   width: 1rem;
   height: 1rem;
 }
 
 .menu-toggle button svg.menu-close {
   display: none;
-  top: 0.13em;
   width: 1.1rem;
   height: 1.1rem;
 }
@@ -1165,76 +1164,6 @@ h2 + .search-form {
 
 .main-navigation.toggled-open button svg.menu-close {
   display: inline;
-}
-
-.dark-mode {
-  --kwo-subnav--link-action-bg-color: #555555;
-}
-
-.dark-mode .site-main .comment-navigation button.nav-previous:before,
-.dark-mode .site-main .comment-navigation .button.nav-previous:before,
-.dark-mode .site-main .posts-navigation .nav-links button.nav-previous:before,
-.dark-mode .site-main .posts-navigation .nav-links .button.nav-previous:before,
-.dark-mode .site-main .post-navigation button.nav-previous:before,
-.dark-mode .site-main .post-navigation .button.nav-previous:before {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'><path fill='%23ffffff' d='M231.293 473.899l19.799-19.799c4.686-4.686 4.686-12.284 0-16.971L70.393 256 251.092 74.87c4.686-4.686 4.686-12.284 0-16.971L231.293 38.1c-4.686-4.686-12.284-4.686-16.971 0L4.908 247.515c-4.686 4.686-4.686 12.284 0 16.971L214.322 473.9c4.687 4.686 12.285 4.686 16.971-.001z'/></svg>");
-}
-
-.dark-mode .site-main .comment-navigation button.nav-previous:hover:before, .dark-mode .site-main .comment-navigation button.nav-previous.hover:before, .dark-mode .site-main .comment-navigation button.nav-previous:focus:before, .dark-mode .site-main .comment-navigation button.nav-previous.focus:before,
-.dark-mode .site-main .comment-navigation .button.nav-previous:hover:before,
-.dark-mode .site-main .comment-navigation .button.nav-previous.hover:before,
-.dark-mode .site-main .comment-navigation .button.nav-previous:focus:before,
-.dark-mode .site-main .comment-navigation .button.nav-previous.focus:before,
-.dark-mode .site-main .posts-navigation .nav-links button.nav-previous:hover:before,
-.dark-mode .site-main .posts-navigation .nav-links button.nav-previous.hover:before,
-.dark-mode .site-main .posts-navigation .nav-links button.nav-previous:focus:before,
-.dark-mode .site-main .posts-navigation .nav-links button.nav-previous.focus:before,
-.dark-mode .site-main .posts-navigation .nav-links .button.nav-previous:hover:before,
-.dark-mode .site-main .posts-navigation .nav-links .button.nav-previous.hover:before,
-.dark-mode .site-main .posts-navigation .nav-links .button.nav-previous:focus:before,
-.dark-mode .site-main .posts-navigation .nav-links .button.nav-previous.focus:before,
-.dark-mode .site-main .post-navigation button.nav-previous:hover:before,
-.dark-mode .site-main .post-navigation button.nav-previous.hover:before,
-.dark-mode .site-main .post-navigation button.nav-previous:focus:before,
-.dark-mode .site-main .post-navigation button.nav-previous.focus:before,
-.dark-mode .site-main .post-navigation .button.nav-previous:hover:before,
-.dark-mode .site-main .post-navigation .button.nav-previous.hover:before,
-.dark-mode .site-main .post-navigation .button.nav-previous:focus:before,
-.dark-mode .site-main .post-navigation .button.nav-previous.focus:before {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'><path fill='%23ffffff' d='M231.293 473.899l19.799-19.799c4.686-4.686 4.686-12.284 0-16.971L70.393 256 251.092 74.87c4.686-4.686 4.686-12.284 0-16.971L231.293 38.1c-4.686-4.686-12.284-4.686-16.971 0L4.908 247.515c-4.686 4.686-4.686 12.284 0 16.971L214.322 473.9c4.687 4.686 12.285 4.686 16.971-.001z'/></svg>");
-}
-
-.dark-mode .site-main .comment-navigation button.nav-next:after,
-.dark-mode .site-main .comment-navigation .button.nav-next:after,
-.dark-mode .site-main .posts-navigation .nav-links button.nav-next:after,
-.dark-mode .site-main .posts-navigation .nav-links .button.nav-next:after,
-.dark-mode .site-main .post-navigation button.nav-next:after,
-.dark-mode .site-main .post-navigation .button.nav-next:after {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'><path fill='%23ffffff' d='M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z'/></svg>");
-}
-
-.dark-mode .site-main .comment-navigation button.nav-next:hover:after, .dark-mode .site-main .comment-navigation button.nav-next.hover:after, .dark-mode .site-main .comment-navigation button.nav-next:focus:after, .dark-mode .site-main .comment-navigation button.nav-next.focus:after,
-.dark-mode .site-main .comment-navigation .button.nav-next:hover:after,
-.dark-mode .site-main .comment-navigation .button.nav-next.hover:after,
-.dark-mode .site-main .comment-navigation .button.nav-next:focus:after,
-.dark-mode .site-main .comment-navigation .button.nav-next.focus:after,
-.dark-mode .site-main .posts-navigation .nav-links button.nav-next:hover:after,
-.dark-mode .site-main .posts-navigation .nav-links button.nav-next.hover:after,
-.dark-mode .site-main .posts-navigation .nav-links button.nav-next:focus:after,
-.dark-mode .site-main .posts-navigation .nav-links button.nav-next.focus:after,
-.dark-mode .site-main .posts-navigation .nav-links .button.nav-next:hover:after,
-.dark-mode .site-main .posts-navigation .nav-links .button.nav-next.hover:after,
-.dark-mode .site-main .posts-navigation .nav-links .button.nav-next:focus:after,
-.dark-mode .site-main .posts-navigation .nav-links .button.nav-next.focus:after,
-.dark-mode .site-main .post-navigation button.nav-next:hover:after,
-.dark-mode .site-main .post-navigation button.nav-next.hover:after,
-.dark-mode .site-main .post-navigation button.nav-next:focus:after,
-.dark-mode .site-main .post-navigation button.nav-next.focus:after,
-.dark-mode .site-main .post-navigation .button.nav-next:hover:after,
-.dark-mode .site-main .post-navigation .button.nav-next.hover:after,
-.dark-mode .site-main .post-navigation .button.nav-next:focus:after,
-.dark-mode .site-main .post-navigation .button.nav-next.focus:after {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'><path fill='%23ffffff' d='M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z'/></svg>");
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1322,11 +1251,112 @@ h2 + .search-form {
   .main-navigation ul li:not(:last-of-type) {
     margin-right: 1em;
   }
+  .main-navigation ul li:hover > ul,
+  .main-navigation ul li:focus > ul,
+  .main-navigation ul li.focus > ul {
+    left: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+    -webkit-transition: opacity 0.15s linear, left 0s 0.15s, -webkit-transform 0.15s linear;
+    transition: opacity 0.15s linear, left 0s 0.15s, -webkit-transform 0.15s linear;
+    transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
+    transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s, -webkit-transform 0.15s linear;
+  }
   .main-navigation ul ul {
     display: block;
+    position: absolute;
+    top: calc( 100% + 1rem - 2px);
+    left: -999em;
+    z-index: 99999;
+    width: 100%;
+    min-width: 200px;
+    padding: 0 1rem 0.625rem;
+    background-color: #111111;
+    border: solid 1px #ffffff;
+    -webkit-transform: translateY(0.5rem);
+            transform: translateY(0.5rem);
+    opacity: 0;
+    -webkit-transition: opacity 0.15s linear, left 0s 0.15s, -webkit-transform 0.15s linear;
+    transition: opacity 0.15s linear, left 0s 0.15s, -webkit-transform 0.15s linear;
+    transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
+    transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s, -webkit-transform 0.15s linear;
+  }
+  .main-navigation ul ul:before, .main-navigation ul ul:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 100%;
+  }
+  .main-navigation ul ul:before {
+    height: 1rem;
+    left: 0;
+    right: 0;
+  }
+  .main-navigation ul ul:after {
+    border: 0.625rem solid transparent;
+    border-bottom-color: transparent;
+    border-bottom-color: #ffffff;
+    right: 1.25rem;
+  }
+  .main-navigation ul ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .main-navigation ul ul li:not(:first-of-type) {
+    margin-top: 0.625rem;
   }
   .main-navigation ul ul li:not(:last-of-type) {
     margin-right: 0;
+  }
+  .main-navigation ul ul li .main-nav-icon svg {
+    fill: #ffffff;
+    stroke: #ffffff;
+  }
+  .main-navigation ul ul li a {
+    padding: 0;
+  }
+  .main-navigation ul ul ul {
+    right: -999em;
+    top: 0;
+    padding-top: 0;
+  }
+  .main-navigation ul ul ul:before {
+    bottom: 0;
+    height: auto;
+    left: auto;
+    right: -2rem;
+    top: 0;
+    width: 2rem;
+  }
+  .main-navigation ul ul ul:after {
+    border-bottom-color: transparent;
+    border-left-color: #111111;
+    bottom: auto;
+    right: -1.325rem;
+    top: 0.5rem;
+  }
+  .main-navigation ul ul li:hover > ul,
+  .main-navigation ul ul li:focus > ul,
+  .main-navigation ul ul li.focus > ul {
+    right: calc(100% + 2rem);
+  }
+  .main-navigation ul ul li {
+    line-height: 1.25em;
+    margin-top: 0.625rem;
+  }
+  .main-navigation ul ul li a {
+    color: #ffffff;
+  }
+  .main-navigation ul ul li a:before {
+    display: none;
   }
 }
 
