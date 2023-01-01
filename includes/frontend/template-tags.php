@@ -462,7 +462,8 @@ function get_body_class( $class = '' ) {
 			KWO_TMPL_DIR . '/front-page-sections.php',
 			KWO_TMPL_DIR . '/front-page-content-only.php',
 			KWO_TMPL_DIR . '/no-sidebar.php',
-			KWO_TMPL_DIR . '/no-sidebar-no-featured.php'
+			KWO_TMPL_DIR . '/no-sidebar-no-featured.php',
+			KWO_TMPL_DIR . '/contact-no-sidebar.php'
 		] )
 	) {
 		$classes[] = 'no-sidebar';
