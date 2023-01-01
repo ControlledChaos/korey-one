@@ -12,6 +12,7 @@
 use KoreyOne\Tags as Tags;
 
 $slides = get_field( 'intro_slides' );
+$logo   = get_field( 'intro_logo' );
 
 /**
  * Intro title & description
@@ -96,7 +97,7 @@ endif; // $slides
 ?>
 <header class="intro-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
 
-	<?php if ( ! $slides ) { echo Tags\site_logo(); } ?>
+	<?php if ( ! $slides && $logo ) { echo Tags\site_logo(); } ?>
 	<p class="site-title"><?php echo wp_kses( $site_title, $allowed_html ); ?></p>
 	<p class="site-description"><?php echo wp_kses( $site_desc, $allowed_html ); ?></p>
 

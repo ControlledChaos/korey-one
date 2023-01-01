@@ -76,4 +76,5 @@ if ( $menu ) {
 	</div>
 </section>
 <?php endwhile; endif; ?>
+<section class="front-page-section"><div class="wrapper">&nbsp;</div></section>
 </div>

@@ -47,23 +47,48 @@ if ( $grid_columns ) {
 }
 echo $grid_columns;
 
-// Get taxonomy & terms to query.
-if ( 'role' == $grid_tax ) {
-	$taxonomy = 'project_role';
+// Get display &/or terms to query.
+$taxonomy  = null;
+$tax_query = [];
+$orderby   = 'date';
+$order     = 'DESC';
+
+if ( 'featured' == $grid_tax ) {
+	$orderby   = 'menu_order';
+	$order     = 'ASC';
+
+} elseif ( 'role' == $grid_tax ) {
+	$taxonomy  = 'project_role';
 	$get_terms = $grid_roles;
+	$terms = [];
+	foreach ( $get_terms as $term ) {
+		$terms[] .= $term->slug;
+	}
+	$tax_query = [
+		'relation' => 'OR',
+		[
+			'taxonomy' => $taxonomy,
+			'field'    => 'slug',
+			'terms'    => $terms,
+			'operator' => 'IN'
+		]
+	];
 } else {
 	$taxonomy  = 'project_type';
 	$get_terms = $grid_types;
-}
-
-/**
- * Set an array of taxonomy terms.
- * The terms subfields must return
- * the term object.
- */
-$terms = [];
-foreach ( $get_terms as $term ) {
-	$terms[] .= $term->slug;
+	$terms = [];
+	foreach ( $get_terms as $term ) {
+		$terms[] .= $term->slug;
+	}
+	$tax_query = [
+		'relation' => 'OR',
+		[
+			'taxonomy' => $taxonomy,
+			'field'    => 'slug',
+			'terms'    => $terms,
+			'operator' => 'IN'
+		]
+	];
 }
 
 // Project query arguments.
@@ -72,17 +97,9 @@ $query  = [
 	'post_status'    => [ 'publish' ],
 	'posts_per_page' => $posts_per_page,
 	'nopaging'       => false,
-	'orderby'        => 'menu_order',
-	'order'          => 'ASC',
-	'tax_query' => [
-		'relation' => 'OR',
-		[
-			'taxonomy' => $taxonomy,
-			'field'    => 'slug',
-			'terms'    => $terms,
-			'operator' => 'IN'
-		]
-	]
+	'orderby'        => $orderby,
+	'order'          => $order,
+	'tax_query'      => $tax_query
 ];
 
 // New post type query.
@@ -179,6 +196,7 @@ while ( $query->have_posts() ) : $query->the_post();
 	<?php endif; // If $image. ?>
 <?php endwhile; ?>
 </ul>
+<p class="front-grid-more"><a href="<?php echo get_post_type_archive_link( 'project' ); ?>" class="button front-grid-more-link"><?php _e( 'View All Projects', 'korey-one' ); ?></a></p>
 <?php else :
 	printf(
 		'<p>%s</p>',
