@@ -23,15 +23,6 @@ use KoreyOne\Classes\Front as Front;
 
 	else : ?>
 
-	<?php the_widget(
-		'KoreyOne\Classes\Widgets\Theme_Mode',
-		[ 'title' => __( 'Toggle Theme Mode', 'korey-one' ) ],
-		[
-			'before_title' => '<h3>',
-			'after_title'  => '</h3>'
-		]
-		); ?>
-
 	<?php get_search_form(); ?>
 
 	<h3><?php _e( 'Archives', 'korey-one' ); ?></h3>
