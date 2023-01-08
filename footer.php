@@ -48,7 +48,7 @@ jQuery(document).ready( function($) {
 			navigation      : true,
 			dragAndMove     : true,
 			sectionSelector : '.front-page-section',
-			paddingTop      : '64px',
+			paddingTop      : '72px',
 			paddingBottom   : '32px',
 			responsiveWidth     : 480,
 			responsiveHeight    : 560,
