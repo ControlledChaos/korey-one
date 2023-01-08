@@ -410,6 +410,7 @@ a:hover, a.hover, a:focus, a.focus {
   max-width: var(--kwo-content-width);
   margin: 0 auto;
   padding: 2em;
+  gap: 2rem;
 }
 
 .site-content .content-area {
@@ -1130,13 +1131,14 @@ h2 + .search-form {
 }
 
 .menu-toggle button {
+  padding: 0;
   background: inherit;
   border: none;
   color: inherit;
 }
 
 .menu-toggle button:hover, .menu-toggle button.hover, .menu-toggle button:focus, .menu-toggle button.focus {
-  background: inherit;
+  background: inherit !important;
   border: none;
   color: inherit;
 }
@@ -1613,6 +1615,10 @@ h2 + .search-form {
   max-width: var(--kwo-content-width);
   margin: 0 auto;
   padding: 2rem;
+}
+
+.projects-grid .entry-content {
+  margin: 0;
 }
 
 .project-imdb a {

@@ -235,6 +235,7 @@
 
 .menu-toggle {
 	button {
+		padding: 0;
 		background: inherit;
 		border: none;
 		color: inherit;
@@ -243,7 +244,7 @@
 		&.hover,
 		&:focus,
 		&.focus {
-			background: inherit;
+			background: inherit !important;
 			border: none;
 			color: inherit;
 		}
