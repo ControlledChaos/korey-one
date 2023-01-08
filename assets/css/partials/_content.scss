@@ -265,6 +265,20 @@
 	}
 }
 
+.single-project-top {
+	@media screen and (max-width: $break_primary_phone ) {
+		flex-direction: column;
+	}
+}
+
+.project-featured-image {
+	min-width: 30%;
+
+	@media screen and (max-width: $break_primary_phone ) {
+		min-width: unset;
+	}
+}
+
 .project-imdb {
 	a {
 		text-decoration: none;
