@@ -1403,3 +1403,50 @@ function projects_galleries() {
 
 	endif;
 }
+
+/**
+ * Front page sections
+ *
+ * @since  1.0.0
+ * @return mixed Returns an array of section slugs/IDs.
+ *               Returns null if no static front page.
+ *               Returns null if no ACF Pro.
+ */
+function front_page_sections() {
+
+	// Get the front page option.
+	$front_show = (string) get_option( 'show_on_front' );
+	$front_page = (int) get_option( 'page_on_front' );
+
+	if ( 'page' != $front_show || ! is_front_page() ) {
+		return null;
+	}
+
+	if ( ! class_exists( 'acf_pro' ) ) {
+		return null;
+	}
+
+	$sections = [];
+	if ( get_the_ID() == $front_page ) {
+
+		$front_sections = get_field( 'front_sections', $front_page );
+
+		if ( $front_sections ) {
+			$sections[] .= "'slider'";
+			foreach( $front_sections as $section ) {
+				$heading = $section['front_section_heading'];
+				$menu    = $section['front_section_menu'];
+				if ( $menu ) {
+					$slug = preg_replace( "/[^A-Za-z0-9]/", '', strtolower( $menu ) );
+				} else {
+					$slug = preg_replace( "/[^A-Za-z0-9]/", '', strtolower( $heading ) );
+				}
+				$sections[] .= sprintf(
+					"'%s'",
+					$slug
+				);
+			}
+		}
+	}
+	return implode( ',', $sections );
+}

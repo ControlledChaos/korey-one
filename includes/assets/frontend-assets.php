@@ -66,9 +66,10 @@ function frontend_scripts() {
 
 	// FullPage & slider.
 	if ( is_front_page() && is_page_template( KWO_TMPL_DIR . '/front-page-sections.php' ) ) {
-		wp_enqueue_script( 'kwo-slider', get_theme_file_uri( '/assets/js/slider' . suffix() . '.js' ), [], KWO_VERSION, true );
-		wp_enqueue_script( 'kwo-fullpage', get_theme_file_uri( '/assets/js/fullpage' . suffix() . '.js' ), [], KWO_VERSION, true );
-		wp_enqueue_script( 'kwo-fullpage-ext', get_theme_file_uri( '/assets/js/fullpage.extensions' . suffix() . '.js' ), [], KWO_VERSION, true );
+		wp_enqueue_script( 'jpt-scrolloverflow', get_theme_file_uri( '/assets/js/scrolloverflow' . suffix() . '.js' ), [ 'jquery' ], KWO_VERSION, true );
+		wp_enqueue_script( 'kwo-fullpage', get_theme_file_uri( '/assets/js/fullpage' . suffix() . '.js' ), [ 'jquery' ], KWO_VERSION, true );
+		wp_enqueue_script( 'kwo-fullpage-ext', get_theme_file_uri( '/assets/js/fullpage.extensions' . suffix() . '.js' ), [ 'kwo-fullpage' ], KWO_VERSION, true );
+		wp_enqueue_script( 'kwo-slider', get_theme_file_uri( '/assets/js/slider' . suffix() . '.js' ), [ 'jquery' ], KWO_VERSION, true );
 	}
 
 	// Comments scripts.

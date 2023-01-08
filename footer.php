@@ -23,12 +23,26 @@ use KoreyOne\Tags as Tags;
 <?php Tags\after_page(); ?>
 <?php wp_footer(); ?>
 
+<script>
+jQuery(document).ready( function($) {
+
+if ( $.isFunction( $.fn.tooltipster ) ) {
+	$( '.button.tooltip, a.tooltip' ).tooltipster( {
+		theme    : 'kwo-tooltips',
+		delay    : 72,
+		distance : 36 ,
+		animationDuration : 250,
+	} );
+}
+});
+</script>
+
 <?php if ( is_front_page() && is_page_template( KWO_TMPL_DIR . '/front-page-sections.php' ) ) : ?>
 <script>
 jQuery(document).ready( function($) {
 	if ( $.isFunction( $.fn.fullpage ) ) {
 		$( '#front-page-sections' ).fullpage({
-			// anchors         : [ <?php // echo Front\tags()->front_page_sections(); ?> ],
+			anchors         : [ <?php echo Tags\front_page_sections(); ?> ],
 			lockAnchors     : true,
 			menu            : '#site-navigation',
 			navigation      : true,
@@ -83,37 +97,22 @@ jQuery(document).ready( function($) {
 });
 </script>
 <?php else : // Else not front page. ?>
-	<script>
+<script>
 // Add class to header on scroll.
 ( function($) {
-	$(window).scroll( function() {
+$(window).scroll( function() {
 
-		scroll_top = $( '.site-header' ).outerHeight();
+	scroll_top = $( '.site-header' ).outerHeight();
 
-		if ( $(this).scrollTop() > scroll_top ) {
-			$( '.site-header-wrap' ).addClass( 'header-wrap-scrolled' );
-		} else {
-			$( '.site-header-wrap' ).removeClass( 'header-wrap-scrolled' );
-		}
-	});
+	if ( $(this).scrollTop() > scroll_top ) {
+		$( '.site-header-wrap' ).addClass( 'header-wrap-scrolled' );
+	} else {
+		$( '.site-header-wrap' ).removeClass( 'header-wrap-scrolled' );
+	}
+});
 })(jQuery);
 </script>
 <?php endif; ?>
-
-<script>
-jQuery(document).ready( function($) {
-
-	if ( $.isFunction( $.fn.tooltipster ) ) {
-		$( '.button.tooltip, a.tooltip' ).tooltipster( {
-			theme    : 'kwo-tooltips',
-			delay    : 72,
-			distance : 36 ,
-			animationDuration : 250,
-		} );
-	}
-});
-</script>
-
 <style>.no-js body { visibility: visible !important; }</style>
 </body>
 </html>
