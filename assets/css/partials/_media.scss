@@ -208,6 +208,19 @@ article .gallery {
 }
 
 // Fancybox.
+.fancybox-content {
+	background-color: $near_black;
+	color: $white;
+
+	a {
+		color: inherit;
+	}
+
+	h3 {
+		margin: 0;
+	}
+}
+
 .fancybox-bg {
 	background-color: $near_black;
 }

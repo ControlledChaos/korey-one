@@ -2052,6 +2052,19 @@ article .gallery .gallery-item img {
   }
 }
 
+.fancybox-content {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.fancybox-content a {
+  color: inherit;
+}
+
+.fancybox-content h3 {
+  margin: 0;
+}
+
 .fancybox-bg {
   background-color: #111111;
 }
