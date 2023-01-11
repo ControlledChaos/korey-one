@@ -628,8 +628,10 @@ function content_template() {
 		if ( 'page' == get_option( 'show_on_front' ) && is_front_page() ) {
 			$template = 'content-front-page' . $acf->suffix();
 
-		} elseif ( is_page_template( KWO_TMPL_DIR . '/page-builder.php' ) ) {
+		} elseif ( is_page_template( [ KWO_TMPL_DIR . '/contact-sidebar.php', KWO_TMPL_DIR . '/contact-no-sidebar.php' ] ) ) {
+			$template = 'content-contact' . $acf->suffix();
 
+		} elseif ( is_page_template( KWO_TMPL_DIR . '/page-builder.php' ) ) {
 			$template = 'content-builder';
 
 		// Look for `content-{$post-type}.php` template.
