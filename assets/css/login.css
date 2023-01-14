@@ -311,20 +311,24 @@ b, strong, optgroup {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-top: 6rem;
   background: var(--kwo-bg-color);
   font-size: 1.125rem;
   line-height: 1.5;
-  color: #333333;
+  color: var(--kwo-text-color);
 }
 
 .login h1 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-family: var(--kwo-heading-stack, var(--kwo-font-stack, var(--kwo-sans-stack)));
+  font-size: var(--kwo-primary-heading-size, 1.75rem);
+  font-weight: var(--kwo-primary-heading-weight);
+  line-height: var(--kwo-primary-heading--line-height, 1.2);
+  letter-spacing: var(--kwo-primary-heading-spacing, normal);
 }
 
 .login h1 a {
-  width: unset;
-  height: unset;
+  width: auto;
+  height: auto;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -339,13 +343,13 @@ b, strong, optgroup {
   margin: 0;
   text-indent: 0px;
   background: none;
-  font-size: unset;
+  font-size: inherit;
   font-weight: inherit;
-  color: #333333;
+  color: var(--kwo-link-color);
 }
 
 .login h1 a:hover, .login h1 a.hover, .login h1 a:focus, .login h1 a.focus {
-  color: #333333;
+  color: var(--kwo-link-action-color);
 }
 
 .login h1 a .login-title-logo {
@@ -355,14 +359,15 @@ b, strong, optgroup {
 
 .login h1 a .login-title-logo img {
   display: block;
+  border-radius: 50%;
 }
 
 .login h1 a .login-title-text {
-  line-height: 1;
+  line-height: unset;
 }
 
 .login a {
-  color: #0044aa;
+  color: #ffffff;
   text-decoration: none;
   transition: all .15s;
   -webkit-transition: all .15s;
@@ -381,6 +386,7 @@ b, strong, optgroup {
 }
 
 .login form {
+  background-color: inherit;
   border-color: #cccccc;
   border: none;
 }
@@ -407,7 +413,7 @@ b, strong, optgroup {
 .login #login #nav a,
 .login #login #backtoblog a {
   font-weight: 600;
-  color: #0044aa;
+  color: #ffffff;
 }
 
 .login #login #loginform a:hover, .login #login #loginform a:focus,
@@ -415,14 +421,16 @@ b, strong, optgroup {
 .login #login #nav a:focus,
 .login #login #backtoblog a:hover,
 .login #login #backtoblog a:focus {
-  color: #005ce7;
+  color: #ffffff;
 }
 
 .login input[type="password"],
 .login input[type="text"],
 .login input[type="checkbox"],
 .login input[type="radio"] {
+  background-color: var(--kwo-form--bg-color);
   border-color: #cccccc;
+  color: var(--kwo-text-color);
   border-radius: 0px;
 }
 
@@ -432,44 +440,44 @@ b, strong, optgroup {
 .login input[type="radio"]:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
-  border-color: #005ce7;
+  border-color: #ffffff;
 }
 
 .login.wp-core-ui .button-primary {
   min-height: unset;
   line-height: 1;
   padding: 1rem;
-  background-color: #ffffff;
-  border-color: #cccccc;
+  background-color: var(--kwo-button--bg-color);
+  border-color: var(--kwo-button--border-color);
   border-radius: 0px;
   font-size: 1rem;
   font-weight: bold;
-  color: #333333;
+  color: var(--kwo-button--text-color);
 }
 
 .login.wp-core-ui .button-primary:hover {
-  background-color: #cccccc;
-  border-color: #555555;
-  color: #333333;
+  background-color: var(--kwo-button--action-bg-color);
+  border-color: var(--kwo-button--border-color);
+  color: var(--kwo-button--action-text-color);
 }
 
 .login.wp-core-ui .button-primary:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
-  background-color: #ffffff;
-  border-color: #cccccc;
-  color: #333333;
+  background-color: var(--kwo-button--action-bg-color);
+  border-color: var(--kwo-button--border-color);
+  color: var(--kwo-button--action-text-color);
 }
 
 .login.wp-core-ui .button-primary:focus:hover {
-  background-color: #cccccc;
-  border-color: #555555;
-  color: #333333;
+  background-color: var(--kwo-button--action-bg-color);
+  border-color: var(--kwo-button--border-color);
+  color: var(--kwo-button--action-text-color);
 }
 
 .login.wp-core-ui .button-secondary {
   border-radius: 0px;
-  color: #333333;
+  color: var(--kwo-button--text-color);
 }
 
 .login.wp-core-ui .button-secondary:focus {

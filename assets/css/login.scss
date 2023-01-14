@@ -13,18 +13,22 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	padding-top: 6rem;
 	background: var( --kwo-bg-color );
 	font-size: 1.125rem;
 	line-height: 1.5;
-	color: $text_color;
+	color: var( --kwo-text-color );
 
 	h1 {
-		font-size: 2rem;
-		font-weight: $primary_heading_weight;
+		font-family: var(--kwo-heading-stack, var(--kwo-font-stack, var(--kwo-sans-stack)));
+		font-size: var(--kwo-primary-heading-size, 1.75rem);
+		font-weight: var(--kwo-primary-heading-weight);
+		line-height: var(--kwo-primary-heading--line-height, 1.2);
+		letter-spacing: var(--kwo-primary-heading-spacing, normal);
 
 		a {
-			width: unset;
-			height: unset;
+			width: auto;
+			height: auto;
 			display: inline-flex;
 			flex-direction: column;
 			align-items: center;
@@ -32,15 +36,15 @@
 			margin: 0;
 			text-indent: 0px;
 			background: none;
-			font-size: unset;
+			font-size: inherit;
 			font-weight: inherit;
-			color: $text_color;
+			color: var( --kwo-link-color );
 
 			&:hover,
 			&.hover,
 			&:focus,
 			&.focus {
-				color: $text_color;
+				color: var( --kwo-link-action-color );
 			}
 
 			.login-title-logo {
@@ -49,11 +53,12 @@
 
 				img {
 					display: block;
+					border-radius: 50%;
 				}
 			}
 
 			.login-title-text {
-				line-height: 1;
+				line-height: unset;
 			}
 		}
 	}
@@ -80,6 +85,7 @@
 	}
 
 	form {
+		background-color: inherit;
 		border-color: $box_border_color;
 		border: none;
 
@@ -116,7 +122,9 @@
 	input[type="text"],
 	input[type="checkbox"],
 	input[type="radio"] {
+		background-color: var( --kwo-form--bg-color );
 		border-color: $form_border_color;
+		color: var(--kwo-text-color);
 		border-radius: 0px;
 
 		&:focus {
@@ -131,36 +139,36 @@
 			min-height: unset;
 			line-height: 1;
 			padding: 1rem;
-			background-color: $button_background_color;
-			border-color: $button_border_color;
+			background-color: var( --kwo-button--bg-color );
+			border-color: var( --kwo-button--border-color );
 			border-radius: 0px;
 			font-size: 1rem;
 			font-weight: bold;
-			color: $button_text_color;
+			color: var( --kwo-button--text-color );
 
 			&:hover {
-				background-color: $button_action_background_color;
-				border-color: $button_action_border_color;
-				color: $button_action_text_color;
+				background-color: var( --kwo-button--action-bg-color );
+				border-color: var( --kwo-button--border-color );
+				color: var( --kwo-button--action-text-color );
 			}
 
 			&:focus {
 				box-shadow: none;
-				background-color: $button_background_color;
-				border-color: $button_border_color;
-				color: $button_text_color;
+				background-color: var(--kwo-button--action-bg-color);
+				border-color: var(--kwo-button--border-color);
+				color: var(--kwo-button--action-text-color);
 
 				&:hover {
-					background-color: $button_action_background_color;
-					border-color: $button_action_border_color;
-					color: $button_action_text_color;
+					background-color: var(--kwo-button--action-bg-color);
+					border-color: var(--kwo-button--border-color);
+					color: var(--kwo-button--action-text-color);
 				}
 			}
 		}
 
 		.button-secondary {
 			border-radius: 0px;
-			color: $text_color;
+			color: var(--kwo-button--text-color);
 
 			&:focus {
 				box-shadow: none;

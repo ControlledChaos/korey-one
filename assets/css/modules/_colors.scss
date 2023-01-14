@@ -27,10 +27,10 @@ $warning: $yellow !default;
 $success: $green !default;
 
 // Theme general colors: light mode.
-$body_bg: $white !default;
-$text_color: $dark_gray !default;
-$link_color: #0044aa !default;
-$link_action_color: lighten( $color: $link_color, $amount: 12% ) !default;
+$body_bg: $near_black !default;
+$text_color: $white !default;
+$link_color: $white !default;
+$link_action_color: $white;
 
 // Theme general colors: dark mode.
 $body_bg_dark: $near_black !default;
